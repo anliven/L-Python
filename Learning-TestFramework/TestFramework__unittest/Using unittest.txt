@@ -1,0 +1,162 @@
+# -*- coding: utf-8 -*-
+__author__ = 'guowli'
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+# unittest --- Python自带的单元测试框架，可用于解决较复杂详细的单元测试。
+# Python单元测试框架（The Python unit testing framework），简称为PyUnit， 是 JUnit 的Python版本。
+# PyUnit创建于1999,2001年被加入到python2.1的基础类库中,名字就叫做 unittest 。
+
+# 更多内容请查看
+Python documentation » The Python Standard Library » Development Tools » unittest — Unit testing framework
+
+# unittest的基本使用方法：
+1.导入unittest模块：import unittest
+2.定义一个继承自unittest.TestCase的测试用例类
+3.定义setUp和tearDown，在每个测试用例前后做一些辅助工作。
+4.定义测试用例，名字以test开头。
+5.一个测试用例应该只测试一个方面，测试目的和测试内容应很明确。主要是调用assertEqual、assertRaises等断言方法判断程序执行结果和预期值是否相符。
+6.调用unittest.main()启动测试。
+7.如果测试未通过，会输出相应的错误提示。使用-v参数可以获得更多的测试结果信息。
+
+# 常用的断言
+# assertEqual(a, b) ---------- a == b
+# assertNotEqual(a, b) ---------- a != b
+# assertTrue(x) ---------- bool(x) is True
+# assertFalse(x) ---------- bool(x) is False
+# assertIs(a, b) ---------- a is b
+# assertIsNot(a, b) ---------- a is not b
+# assertIsNone(x) ---------- x is None
+# assertIsNotNone(x) ---------- x is not None
+# assertIn(a, b) ---------- a in b
+# assertNotIn(a, b) ---------- a not in b
+# assertIsInstance(a, b) ---------- isinstance(a, b)
+# assertNotIsInstance(a, b) ---------- not isinstance(a, b)
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+### 测试的对象与加载
+
+# 单元测试是对程序中最小的可测试模块--函数来进行测试；
+# 被测试对象一定要有输出结果，即使是异常的输出，以便单元测试模块能够捕获返回值，并且与预期值进行比较，从而得出测试通过与否。
+# unittest会为每一个符合名称要求的函数方法构建一个TestCase对象。
+
+# 一个测试用例是一个完整的测试流程单元，包括测试前准备环境的搭建(setUp)，执行测试代码(run)，以及测试后环境的还原(tearDown)。
+# 通过运行这个测试流程单元，可以对某一个问题进行验证。
+
+# 单元测试的加载执行方式有2种：
+# 一种是通过unittest.main()来启动单元测试的测试模块；
+# 一种是添加到TestSuite集合中再加载所有的被测试对象，而TestSuit里存放的就是单元测试的用例。
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+### 简单的测试
+
+import unittest
+class IntegerArithmenticTestCase(unittest.TestCase):
+    def testAdd(self):  ## test method names begin 'test*'
+        self.assertEquals((2 + 2), 3)
+        self.assertEquals(0 + 1, 1)
+    def testMultiply(self):
+        self.assertEquals((0 * 10), 0)
+        self.assertEquals((5 * 8), 40)
+if __name__ == '__main__':
+    unittest.main()
+
+# 把上面的内容保存到test_UsingUnittest.py中，然后在命令行里进入相应目录，执行“python test_UsingUnittest.py” 就可以运行测试了。
+
+# 测试输出结果如下：
+F.    # F表示一个fail，点表示一个通过，E表示程序自身异常
+======================================================================
+FAIL: testAdd (__main__.IntegerArithmenticTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_UsingUnittest.py", line 11, in testAdd
+    self.assertEquals((2 + 2), 3)
+AssertionError: 4 != 3
+----------------------------------------------------------------------
+Ran 2 tests in 0.010s
+FAILED (failures=1)
+
+# 执行单个测试文件时使用-v参数可以获得更多的测试结果信息,执行“python test_UsingUnittest.py -v” 会给出如下信息：
+testAdd (__main__.IntegerArithmenticTestCase) ... FAIL
+testMultiply (__main__.IntegerArithmenticTestCase) ... ok
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+### 测试函数举例
+
+# 测试模块中的函数，执行“python test_ExampleModule.py -v”
+# 被测模块 --- ExampleModule.py
+# 单元测试模块 --- test_ExampleModule.py
+
+# 测试模块类中的函数，执行“python test_ExampleModuleClass.py -v”
+# 被测模块 --- ExampleModuleClass.py
+# 单元测试模块 --- test_ExampleModuleClass.py
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+### 测试套件（TestSuite）
+
+# 一个测试用例是一个完整的测试流程单元，包括测试前准备环境的搭建(setUp)，执行测试代码(run)，以及测试后环境的还原(tearDown)。
+# 通过运行这个测试流程单元，可以对某一个问题进行验证。
+# 而多个测试用例集合在一起，就是TestSuite，而且TestSuite也可以嵌套TestSuite。
+
+# unittest的整个过程集成在unittest.main模块中，可以如下描述：
+#    第一步：TestLoader根据传入的参数（自身的模块__main__）加载已写好TestCase，获得相应的测试用例，即对应具体的测试方法。
+#    第二步：makeSuite把自身模块中的所有测试类中的测试方法提取出来，并组装成TestSuite。
+#    第三步：然后由TextTestRunner来运行TestSuite进行具体的测试，运行的结果保存在TextTestResult。
+
+# unittest模块的成员
+# 命令行下执行 import unittest 导入unittest模块，然后执行 dir(unittest) 可查看成员信息。
+# 执行dir(unittest.TestCase)可查看TestCase的方法信息。
+
+# 部分成员解释
+'TestCase' ----- 所有测试用例的基本类，给一个测试方法的名字，返回一个测试用例实例。
+'TestLoader' ----- 测试用例加载器，其包括多个加载测试用例的方法，返回一个
+'makeSuite' ----- 通常是由单元测试框架调用的，用于生产testSuite对象的实例
+'TestSuite' ----- 组织测试用例的实例，支持测试用例的添加和删除，最终将传递给testRunner进行测试执行
+'TextTestRunner' ----- 进行测试用例执行的实例，其中Text的意思是以文本形式显示测试结果。
+'TestProgram', ----- 命令行进行单元测试的调用方法，作用是执行一个测试用例。
+'main': ----- unittest.main()方法执行的其实就是TestProgram
+
+# 测试套件举例，执行“python test_ExampleSuite.py -v”
+# 被测模块 --- ExampleSuite.py
+# 单元测试模块 --- test_ExampleSuite.py
+
+# 以下是单元测试模块 --- test_ExampleSuite.py 的内容：
+import random
+import unittest
+
+
+class TestSequenceFunctions(unittest.TestCase):  # TestSequenceFunctions继承自unittest.TestCase类
+
+    def setUp(self):  # 重写了setUp方法
+        self.seq = range(10)
+
+    def test_shuffle(self):  # 新定义了test_shuffle方法
+        # make sure the shuffled sequence does not lose any elements
+        random.shuffle(self.seq)
+        self.seq.sort()
+        self.assertEqual(self.seq, range(10))
+        # should raise an exception for an immutable sequence
+        self.assertRaises(TypeError, random.shuffle, (1, 2, 3))
+
+    def test_choice(self):  # 新定义了test_choice方法
+        element = random.choice(self.seq)
+        self.assertTrue(element in self.seq)
+
+    def test_sample(self):  # 新定义了test_sample方法
+        with self.assertRaises(ValueError):
+            random.sample(self.seq, 20)
+        for element in random.sample(self.seq, 5):
+            self.assertTrue(element in self.seq)
+
+if __name__ == '__main__':
+    unittest.main()
+
+# random.choice(seq)可以从任何序列seq中返回随机的元素，比如list列表中，选取一个随机的元素返回，可以用于字符串、列表、元组等。
+# random.shuffle(seq)可以将序列seq中的元素随机打乱。
+# random.sample(seq,n)可以从指定的序列seq中，随机的截取指定长度n的片断，不作原地修改。
+
+# ----------------------------------------------------------------------------------------------------------------------

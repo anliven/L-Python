@@ -3,7 +3,7 @@
 if True:
     print('Yes, it is true')
 
-for i in range(0, 3, 1):  # range(1,5,2)将输出序列[1, 3]
+for i in range(0, 3, 1):
     print(i)
 else:
     print('The for loop is over')
@@ -25,7 +25,7 @@ else:
 print('Done')
 
 while True:
-    s = input('Enter something : ')
+    s = input("Enter something or quit: ")
     if s == 'quit':
         break
     if len(s) < 3:  # 内置len函数获取字符串的长度

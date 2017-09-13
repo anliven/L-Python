@@ -28,7 +28,7 @@ print('List Step -1 : ', testList[::-1], ' Step -2 : ', testList[::-2], ' Step 3
 print('Strings Step 1 : ', testString[::1], ' Step 2 : ', testString[::2], ' Step 3 : ', testString[::3])
 print('Strings Step -1 : ', testString[::-1], ' Step -2 : ', testString[::-2], ' Step -3 : ', testString[::-3])
 
-# ### 序列（ Sequence）
+# ### 序列（Sequence）
 # - 序列的三种形态：列表、元组与字符串；
 #
 # ### 资格测试

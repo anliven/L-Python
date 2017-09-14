@@ -46,3 +46,7 @@ os.remove(logging_file)
 # - os模块：用以和操作系统交互；
 # - platform模块：用以获取平台或操作系统的信息；
 # - logging模块：用来记录信息；
+# 
+# ### PyPI - the Python Package Index
+# - The Python Package Index is a repository of software for the Python programming language.
+# - https://pypi.python.org/pypi

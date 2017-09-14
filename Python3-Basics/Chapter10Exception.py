@@ -21,6 +21,11 @@ else:
 finally:
     print("Done.")
 
+testList = ['item']
+assert len(testList) >= 1
+# testList.pop()
+# assert len(testList) >= 1
+
 # ### 异常（Exception）
 # - 程序出现例外情况时就会发生异常（Exception）;
 # - 使用try..except语句处理异常状况，必须至少存在一个except语句与try配合使用；
@@ -29,3 +34,6 @@ finally:
 # - 如果没有指定错误或异常的处理方式，默认只会在终端打印出相应信息；
 # - 可以将一个else子句与try..except代码块相关联，在没有发生异常的时候执行；
 # - finally子句总会得到执行，常见做法是在try块中获取资源，然后在finally块中释放资源；
+#
+# ### 断言（Assert）
+# - assert 语句用以断言某事是否为真，如果不是真的，就抛出一个断言失败错误AssertionError；

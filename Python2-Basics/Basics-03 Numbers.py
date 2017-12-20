@@ -20,5 +20,4 @@ print 3 + 2 + 1 - (5 + 4) % 2 - 1 / 4 + 6
 # >=  greater-than-equal 大于等于号
 
 # Python运算优先级：
-# “括号、指数、乘、除、加、减”——Parentheses Exponents Multiplication Division Addition Subtraction
-# 可用 PEMDAS 这个简称来辅助记忆
+# “括号、指数、乘、除、加、减”(简记为PEMDAS):Parentheses Exponents Multiplication Division Addition Subtraction

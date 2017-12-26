@@ -1,13 +1,14 @@
+
 # -*- coding: utf-8 -*-
 __author__ = 'Anliven'
 
 print (3 + 2), (5 - 7)
-print 3 + 2 < 5 - 7
-print "Is it greater or equal?", 5 >= -2
-print "Is it less or equal?", 5 <= -2
+print (3 + 2 < 5 - 7)
+print ("Is it greater or equal?"), (5 >= -2)
+print ("Is it less or equal?"), (5 <= -2)
 
-print 100 - 25 * 3 % 4
-print 3 + 2 + 1 - (5 + 4) % 2 - 1 / 4 + 6
+print (100 - 25 * 3 % 4)
+print (3 + 2 + 1 - (5 + 4) % 2 - 1 / 4 + 6)
 
 # +  plus 加号
 # -  minus 减号

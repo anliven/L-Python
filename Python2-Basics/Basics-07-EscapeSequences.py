@@ -1,10 +1,11 @@
+
 # -*- coding: utf-8 -*-
 __author__ = 'Anliven'
 
 # 转义字符：反斜杠 \(back-slash)；双反斜杠(double backslash)“\\”会打印出一个反斜杠
-print "I am 6'2\" tall."  # 双引号转义
-print 'I am 6\'2" tall.'  # 单引号转义
-print "\\"
+print ("I am 6'2\" tall.")  # 双引号转义
+print ('I am 6\'2" tall.')  # 单引号转义
+print ("\\")
 
 tabby_cat = "\tI'm tabbed in."  # \t ASCII --- HorizontalTab (TAB) 水平制表符
 persian_cat = "I'm split\non a line."  # \n --- ASCII Linefeed(LF) 换行符
@@ -16,10 +17,10 @@ I'll do a list:
 \t* Catnip\n\t* Grass
 """
 # 一组三引号(triple-quotes)之间放入任意多行文字
-print tabby_cat
-print persian_cat
-print backslash_cat
-print fat_cat
+print (tabby_cat)
+print (persian_cat)
+print (backslash_cat)
+print (fat_cat)
 
 # 转义序列(escape sequences)
 # 转义符功能

@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 __author__ = 'Anliven'
 
@@ -24,14 +25,14 @@ print txt_again.read()
 
 
 #用下面的方法运行程序
-# >python Exercise-15.py Exercise-15-sample.txt
+# >python Exercise-15.py Basics-sample01.txt
 #将看到下面的结果
-# Here's your file 'Exercise-15-sample.txt':
+# Here's your file 'Basics-sample01.txt':
 # This is stuff I typed into a file.
 # It is really cool stuff.
 # Lots and lots of fun to have in here.
 # Type the filename again:
-# > Exercise-15-sample.txt
+# > Basics-sample01.txt
 # This is stuff I typed into a file.
 # It is really cool stuff.
 # Lots and lots of fun to have in here.

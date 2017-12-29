@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 __author__ = 'Anliven'
 
@@ -12,6 +11,6 @@ my_name = 'Anliven'
 my_age = 35
 my_height = 175
 my_weight = 72
-print ("Let's talk about %s." % my_name)  # "%s"格式化字符串(formatstring);"%"运算符实际上是一种“格式控制工具”
+print ("Let's talk about %s." % my_name)  # "%s"格式化字符串(formatstring)
 print ("He's %d inches tall and %d kilos heavy." % (my_height, my_weight))  # 两个及以上的值则需要用小括号括起来
 print ("If I add %d, %d, and %d I get %d." % (my_age, my_height, my_weight, my_age + my_height + my_weight))

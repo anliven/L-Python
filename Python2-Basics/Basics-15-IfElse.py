@@ -2,8 +2,8 @@
 __author__ = 'Anliven'
 
 aaa = 111
-bbb = 222
-ccc = 333
+bbb = 333
+ccc = 222
 
 if bbb > aaa:
     print ("bbb is greater than aaa.")
@@ -19,6 +19,7 @@ if bbb > aaa:
     else:
         if ccc > aaa:
             print ("aaa < ccc <= bbb")
+    exit(0)  # sys.exit()可以执行中断，而其中的数字参数用来表示中断的退出代码
 elif bbb < aaa:
     print ("bbb is less than aaa.")
 elif bbb == aaa:

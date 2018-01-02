@@ -67,3 +67,21 @@ print ("Value-1:%d, Value-2:%d, Value-3:%d." % (v1, v2, v3))
 
 # print - 打印到屏幕
 # return - 返回值；如果函数没有通过return语句返回值，那么打印出来的结果是None
+
+
+def run_again():
+    """
+
+    No params.
+    """
+    nextstep = raw_input("# Select options: again? exit? > ")
+    if "again" in nextstep:
+        run_again()
+    elif "exit" in nextstep:
+        exit(0)  # sys.exit()可以执行中断，而其中的数字参数用来表示中断的退出代码
+    else:
+        print ("Wrong input.")
+        run_again()  # 函数对自身的调用
+
+
+run_again()

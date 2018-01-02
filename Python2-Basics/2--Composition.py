@@ -1,33 +1,40 @@
 # -*- coding: utf-8 -*-
 __author__ = 'Anliven'
 
+
 # 合成(Composition)就是直接使用别的类和模块，实现与继承相同功能的方法。
 
 class Other(object):
     def override(self):
         print "OTHER override()"
+
     def implicit(self):
         print "OTHER implicit()"
+
     def altered(self):
         print "OTHER altered()"
 
+
 class Child(object):
     def __init__(self):
-        self.other = Other() # 直接使用Other类实例化对象
+        self.other = Other()  # 直接使用Other类实例化对象
+
     def implicit(self):
-        self.other.implicit() # 直接调用Other类的implicit方法
+        self.other.implicit()  # 直接调用Other类的implicit方法
+
     def override(self):
         print "CHILD override()"
+
     def altered(self):
         print "CHILD, BEFORE OTHER altered()"
-        self.other.altered() # 直接调用Other类的altered方法
+        self.other.altered()  # 直接调用Other类的altered方法
         print "CHILD, AFTER OTHER altered()"
+
 
 son = Child()
 son.implicit()
 son.override()
 son.altered()
-
 
 # 继承和合成都能够解决代码重用的问题，可依据需求和习惯来使用
 

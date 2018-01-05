@@ -28,7 +28,7 @@ def print_a_line(row_number, f):
     # 文件f会记录每次调用readline()后的读取位置，这样它就可以在下次被调用时读取接下来的一行
 
 
-input_file = "Basics-sample03.txt"
+input_file = "Basics-File-sample03.txt"
 current_file = open(input_file)
 print ("Print the whole file:\n")
 print_all(current_file)

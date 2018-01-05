@@ -50,7 +50,8 @@ class Song(object):
         for line in self.lyrics:
             print (line)
 
-    def some_function(self):
+    @staticmethod
+    def some_function():
         """
         sample.
         """

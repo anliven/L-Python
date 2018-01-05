@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 __author__ = 'Anliven'
 
-# ----------------------------------------------------------------------------------------------------------------------
-### 利用getattr函数实现动态加载
+# 利用getattr函数实现动态加载
 
 class_name = "TestClass"  # 类名
 module_name = "ReviewPython_Dynamic Invocation module file"  # 模块名
@@ -28,7 +27,7 @@ mtd_sub = getattr(obj, "sub")  # 利用getattr获取对象obj的sub方法属性
 print " # this is a test for sub :", mtd_sub(2, 1)  # 实际上是调用了对象obj的sub方法
 
 
-### 将如下内容保存在同一个目录下，并命名为 ReviewPython_Dynamic Invocation module file.py的文件
+# 将如下内容保存在同一个目录下，并命名为 ReviewPython_Dynamic Invocation module file.py的文件
 # class TestClass:
 #     def sub(self, a, b):
 #         return a-b
@@ -38,5 +37,3 @@ print " # this is a test for sub :", mtd_sub(2, 1)  # 实际上是调用了对�
 #
 #     def echo(self):
 #         print "This is an show for test method"
-
-# ----------------------------------------------------------------------------------------------------------------------

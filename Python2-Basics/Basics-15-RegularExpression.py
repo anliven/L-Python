@@ -117,14 +117,14 @@ print r"\bhi"  # r是raw的意思,表示对字符串不进行转义
 print "\\bhi"
 
 text3 = "Hi, I am Shirley Hilton. I am his wife."
-#"."在正则表达式中表示除换行符以外的任意一个字符
+# "."在正则表达式中表示除换行符以外的任意一个字符
 print re.findall(r"i.", text3)
 print re.findall(r"i..", text3)
 print re.findall(r".", text3)
-#"*"在正则表达式中表示前面任意一个字可以重复多次(包括0次)
+# "*"在正则表达式中表示前面任意一个字可以重复多次(包括0次)
 print re.findall(r"i.*e", text3)  # ".*"贪婪匹配,匹配尽可能长的结果
 print re.findall(r"i.*?e", text3)  # ".*?"懒惰匹配,匹配尽可能短的结果
-#"\S"斜线加大写字符S,表示不是空白符的任意字符
+# "\S"斜线加大写字符S,表示不是空白符的任意字符
 print re.findall(r"\S", text3)
 
 txt4 = "site sea sue sweet see case sse ssee loses"

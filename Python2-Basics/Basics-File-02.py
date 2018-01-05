@@ -2,7 +2,7 @@
 from os.path import exists  # exists方法将文件名作为参数，如果文件存在返回True，否则返回False
 __author__ = 'Anliven'
 
-filename = "Basics-sample01.txt"
+filename = "Basics-File-sample01.txt"
 print ("Opening the file : %s" % filename)
 target = open(filename, 'w')  # 'w'表示写入(write)模式；'r'读取（read）；'a'追加(append)
 target.truncate()  # truncate方法清空文件，小心使用
@@ -25,7 +25,7 @@ print (txt.read())
 # truncate – 清空文件，小心使用
 # write – 将stuff写入文件
 
-to_file = "Basics-sample02.txt"
+to_file = "Basics-File-sample02.txt"
 print ("Copying from %s to %s" % (filename, to_file))
 inData = open(filename).read()
 print ("The input file is %d bytes long" % len(inData))  # len()函数以数字的形式返回传递的字符串的长度

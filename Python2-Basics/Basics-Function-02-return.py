@@ -74,10 +74,10 @@ def run_again():
 
     No params.
     """
-    nextstep = raw_input("# Select options: again? exit? > ")
-    if "again" in nextstep:
+    next_step = raw_input("# Select options: again? exit? > ")
+    if "again" in next_step:
         run_again()
-    elif "exit" in nextstep:
+    elif "exit" in next_step:
         exit(0)  # sys.exit()可以执行中断，而其中的数字参数用来表示中断的退出代码
     else:
         print ("Wrong input.")
@@ -85,3 +85,7 @@ def run_again():
 
 
 run_again()
+
+# 函数的返回值
+# return是函数的结束语句，函数中任何地方的return语句一旦被执行，这个函数就会结束
+# return后面的值作为函数的返回值

@@ -1,15 +1,35 @@
 # -*- coding: utf-8 -*-
 __author__ = 'Anliven'
 
-# ----------------------------------------------------------------------------------------------------------------------
-# ### 如何理解self？
 
-# 类的方法与函数有一个明显的区别，在类的方法中必须有一个参数（self） ，但在调用类的方法时却不必为这个参数赋值。
-# self 参数所指的是对象本身，所以习惯性地命名为 self
+class TheMultiplier(object):
+    """
+    sample.
+    """
 
-# 为何 Python 给 self 赋值而你不必给 self 赋值？
-# 创建了一个类 MyClass，实例化 MyClass 得到了 MyObject 这个对象，然后调用这个对象的方法 MyObject.method(a,b)
-# 在这个过程中， Python会自动转为Myclass.method(MyObject,a,b)， 这就是Python的 self 的原理。
+    def __init__(self, base):  # __init__函数是一个特殊的初始方法，可以预设重要的变量；self是Python创建的空对象；
+        self.base = base  # 初始化值
+
+    def do_it(self, m):
+        """
+        :param m:
+        :return:
+        """
+        return m * self.base
+
+
+x = TheMultiplier(20)
+print ("Multiplier: "), (x.do_it(30))
+
+
+# 理解self
+# 定义类的方法时，必须有self参数（即使类的方法不需要任何参数）；但调用类的方法时却不必为self参数赋值；
+# self参数所指的是对象本身
+
+# 不必为self赋值的原因
+# 举例说明：
+# 1. 创建了一个类 MyClass，实例化 MyClass 得到了 MyObject 这个对象，然后调用这个对象的方法 MyObject.method(a,b)
+# 2. 在这个过程中， Python会自动转为MyClass.method(MyObject,a,b)， 这就是Python的 self 的原理。
 # 即使类的方法不需要任何参数，但还是得给这个方法定义一个 self 参数，虽然在实例化调用的时候不用理会这个参数。
 
 # self 是编程规范约定的在对象的方法中用来指代实例的变量名称
@@ -60,4 +80,3 @@ print p.name  # 如果执行print p.name 则会显示：’tianya‘.
 # 所以当执行p＝Person('tianya')时，“tianya”会被当作参数传到__init__中，执行p.name='tianya'。
 
 
-# ----------------------------------------------------------------------------------------------------------------------

@@ -23,8 +23,8 @@ class Employee(Person):
     sample.
     """
 
-    def __init__(self, name):
-        Person.__init__(self, name)  # 将父类的 __init__ 方法运行起来；直接类名调用；
+    def __init__(self, name):  # 重新定义__init__函数，覆盖父类同名函数；
+        Person.__init__(self, name)  # 直接类名调用父类的 __init__ 方法；
         print ("Employee created.")
 
     def employee_name(self):

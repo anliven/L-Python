@@ -8,18 +8,15 @@ letters = {
 letters['CCC'] = 'ccc'  # 增加新键值对
 print (letters['AAA']), (letters['BBB']), (letters['CCC'])  # 通过键名访问对应的值
 
-numbers = dict(aaa=111, bbb=222)
-numbers['ccc'] = 333  # 增加新键值对
-print (numbers['aaa']), (numbers['bbb']), (numbers['ccc'])  # 通过键名访问对应的值
-
-print (numbers[letters['AAA']]), (numbers[letters['BBB']]), (numbers[letters['CCC']])
-
 for x, y in letters.items():  # dict.items()以列表返回可遍历的(键, 值) 元组数组
     print ("%s---%s, " % (x, y)),
 print ("\n")
-for x, y in numbers.items():
-    print ("%s---%s, " % (x, y)),
-print ("\n")
+
+numbers = dict(aaa=111, bbb=222)
+numbers['ccc'] = 333  # 增加新键值对
+print (numbers['aaa']), (numbers['bbb']), (numbers['ccc'])  # 通过键名访问对应的值
+print (numbers[letters['AAA']]), (numbers[letters['BBB']]), (numbers[letters['CCC']])
+
 for x, y in letters.items():
     print ("%s---%s---%s, " % (x, y, numbers[y])),
 print ("\n")

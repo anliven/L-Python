@@ -1,5 +1,4 @@
 #  -*- coding: utf-8 -*-
-
 __author__ = 'Anliven'
 
 print ("A comment")  # “#”之后的内容将被作为注解，不被执行；添加适量的注解，有助于代码的理解和维护

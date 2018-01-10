@@ -1,3 +1,4 @@
+#! python3
 # -*- coding: utf-8 -*-
 
 testSet = {'111', '222', '333'}

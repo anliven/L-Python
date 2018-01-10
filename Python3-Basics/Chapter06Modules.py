@@ -1,3 +1,4 @@
+#! python3
 # -*- coding: utf-8 -*-
 import sys  # import语句导入sys模块，sys模块包含了与Python解释器及其环境有关的函数；
 from math import sqrt  # 不建议使用from...import语句

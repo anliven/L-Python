@@ -6,8 +6,11 @@ y = 22
 z = 35
 
 
-def say_hello():
-    print('Hello!')
+def say_hello():  # 定义函数“def 函数名（参数列表）:”
+    print('Hello!')  # 函数体
+
+
+say_hello()  # 调用函数
 
 
 def print_max(a, b=7):
@@ -24,6 +27,11 @@ def changed_global():
     print('z is', z)
     z = 29
     print('Changed global z to', z)
+
+
+def print_para(*items):
+    for var in items:
+        print("*: ", var)
 
 
 def total(a=5, *numbers, **phonebook):
@@ -43,8 +51,6 @@ def empty_function():
     pass
 
 
-say_hello()  # 调用函数
-
 print_max(5)  # 直接传递，并使用默认参数值
 print_max(x, y)  # 以参数的形式传递
 print_max(b=333, a=444)  # 使用命名（关键字）而非位置来指定函数中的参数；
@@ -52,6 +58,7 @@ print_max(b=333, a=444)  # 使用命名（关键字）而非位置来指定函�
 changed_global()
 print('Value of z is', z)
 
+print_para(1, 'aaa', "AAA")
 print(total(10, 1, 2, 3, Jack=11111, John=22222, Inge=33333))
 
 empty_function()
@@ -68,9 +75,9 @@ print(empty_function.__doc__)  # 打印函数的文档字符串属性（__doc__�
 # - 实参（Arguments）：在调用函数时所提供给函数的值；
 # - 默认参数值：在函数定义时通过赋值运算符（=）可以指定参数的默认值；
 # - 有默认值的参数必须位于没有默认值的参数之后；
-# - 使用命名（关键字）而非位置来指定函数中的参数；
+# - 使用命名（关键字）而非位置来指定函数中的参数，也就是说只需在调用时指明参数名称及其值即可；
 #
-# ### 可变参数
+# ### 可变参数（不定长参数）
 # - 函数里的参数数量是可变的，通过使用星号来实现；
 # - 类似“*param”星号参数，从此处开始直到结束的所有位置参数（Positional Arguments）被汇集成一个名为param的元组（Tuple）；
 # - 类似“**param”双星号参数，从此处开始直至结束的所有关键字参数被汇集成一个名为param的字典（Dictionary）；

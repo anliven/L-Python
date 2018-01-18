@@ -30,7 +30,7 @@ print(chr(65), chr(20013))  # chr()函数把编码转换为对应的字符
 print('ABC', len('ABC'), b'ABC', len(b'ABC'))  # bytes类型的数据用带b前缀的单引号或双引号表示
 print(len('ABC'), len(b'ABC'))  # len()计算str的字符数; bytes的字节数；
 print('ABC'.encode('ascii'))  # encode()方法转换str为指定的bytes
-print('中文'.encode('utf-8'))  # 中文编码范围超过了ASCII编码范围，含有中文的str无法用ASCII编码，会报错
+print('中文'.encode('utf-8'))  # 中文使用UTF-8编码
 print(b'ABC'.decode('ascii'))  # decode()方法将bytes变为str
 print(b'\xe4\xb8\xad\xe6\x96\x87'.decode('utf-8', errors='ignore'))  # 传入errors='ignore'忽略错误的字节
 
@@ -65,6 +65,7 @@ print(delimiter.join(testList))  # 联结序列中的项目并生成字符串
 # encode()方法转换str为指定的bytes；
 # decode()方法将bytes变为str；
 # 中文编码范围超过了ASCII编码范围，含有中文的str无法用ASCII编码，会报错；
+# 如无特殊业务要求，仅使用UTF-8编码；
 #
 # ### 保存中文
 # 源代码包含中文的时，在保存源代码时，务必指定保存为UTF-8编码；

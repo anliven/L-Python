@@ -10,7 +10,7 @@ def is_palindrome(text):  # 判断是否是回文
     return text == reverse(text)
 
 
-something = input("Enter text: ")  # 标准键盘输入
+something = input("Enter text: ")  # Python交互式命令行：标准键盘输入
 if is_palindrome(something):
     print("Yes, it is a palindrome")
 else:

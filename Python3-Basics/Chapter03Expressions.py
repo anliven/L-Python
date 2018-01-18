@@ -5,6 +5,7 @@ print(-7)
 print(2 * 3)
 print('Test' * 3)
 print(10 / 3)  # 注意观察实际结果
+print(10 // 3)  # 注意观察实际结果
 
 print(11 >> 1)
 print(~555)

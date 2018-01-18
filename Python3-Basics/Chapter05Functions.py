@@ -64,6 +64,15 @@ print(total(10, 1, 2, 3, Jack=11111, John=22222, Inge=33333))
 empty_function()
 print(empty_function.__doc__)  # 打印函数的文档字符串属性（__doc__）
 
+
+def get_two_values():  # 通过函数来返回不同的值
+    return 123, 'test'
+
+
+returnNum, returnStr = get_two_values()
+print('Values-1:', returnNum, '\nValues-2:', returnStr)
+
+
 # ### 函数（Functions）
 # - 函数是指可重复使用的程序片段；
 # - Python具有大量实现常用功能的内置函数，也可以自定义函数，建议尽可能使用内置函数；

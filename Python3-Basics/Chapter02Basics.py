@@ -4,10 +4,12 @@
 print('abc')
 print("abc'ABC")  # 双引号之间可以包含单引号
 print('''abc'ABC"123''')  # 三引号之间可以包含单引号和双引号
+print(111, '222', "333", '''444''', """555""")  # 多个字符串用逗号“,”隔开，逗号“,”会输出一个空格
+print('100 + 100 =', 100 + 100)  # 计算结果
 
 name = 'Anliven'  # 声明变量，使用赋值运算符（=）赋值给变量
 age = 29
-print("I'm {0}.".format(name))
+print('I\'m', name)  # 转义字符\
 print("I'm {0}.".format(age))
 print(name + ' was ' + str(age) + ' years old')  # 丑陋易错的方式；str(age)，类型转换；
 print('{0} was {1} years old.'.format(name, age))
@@ -19,6 +21,8 @@ print('{0:_^9}'.format('WOW'))  # 使用下划线填充文本，并保持文字�
 print('This is the 1st line.\nThis is the 2nd line.')  # 换行显示
 print('This is the 1st line. \
 This is the 2nd line.')  # 换行书写，显式行连接（Explicit Line Joining）
+print('''This is the 1st line.
+This is the 2nd line.''')  # 用'''...'''格式换行书写
 
 print(r'This is the 1st line.\nThis is the 2nd line.')  # 原始字符串
 
@@ -33,9 +37,15 @@ a = b = c = 1
 i, j, k = 3.5, 'hello', "python"  # 多个变量同时赋值
 print(x, a, b, c, i, j, k)
 
+a = 555  # 重新赋值
+b = 888
+print('a:', a, 'b:', b)
+a, b = b, a  # the fastest way to swap two variables in Python
+print('a:', a, 'b:', b)
+
 
 # ###
-# - 字面常量（Literal Constants）：表示本身字面意义上的值或内容，常量不能被改变
+# - 字面常量（Literal Constants）：表示本身字面意义上的值或内容，常量不能被改变，通常用全部大写的变量名表示；
 # - 数字：包括整数（Integers）与浮点数（Floats），例如“11.3E-4”表示“11.3 * 10^-4”
 # - 字符串（String）：字符（Characters）的序列（Sequence）
 #
@@ -52,6 +62,7 @@ print(x, a, b, c, i, j, k)
 # ### 变量（Variables）
 # Python中的变量不需要声明类型，其在使用前必须赋值
 # Python允许多个变量同时赋值
+# 等号=是赋值语句，可以把任意数据类型赋值给变量，可以反复赋值，而且可以赋不同类型的值;
 #
 # ### 变量的标识符（Identifiers）
 # - 首字符必须是字母或下划线（_）；
@@ -91,4 +102,8 @@ print(x, a, b, c, i, j, k)
 # - 错误的缩进可能会导致运行错误，或引发不期望的行为；
 #
 # ### 多行语句（多行书写）
-# 在Python shell界面或IDE中可以用反斜\实现多行语句。
+# 在Python shell界面或IDE中可以用反斜\或'''...'''实现多行语句;
+#
+# ### Python是动态语言
+# 动态语言:变量本身类型不固定；和静态语言相比，动态语言更灵活；
+# 静态语言:在定义变量时必须指定变量类型，如果赋值的时类型不匹配，会报错；

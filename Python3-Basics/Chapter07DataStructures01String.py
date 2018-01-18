@@ -23,6 +23,17 @@ print('Java' not in string_sample)  # 判断'Java'是否不是str的子串
 print('\nHello')  # 转义字符\n可以换行
 print(r'\nHello')  # 字符串前加上r或R可以使字符串原样输出，防止被转义
 
+print('中文')  # Python3中字符串以Unicode编码，支持多语言
+print(ord('A'), ord('中'))  # ord()函数获取字符的整数表示
+print(chr(65), chr(20013))  # chr()函数把编码转换为对应的字符
+
+print('ABC', len('ABC'), b'ABC', len(b'ABC'))  # bytes类型的数据用带b前缀的单引号或双引号表示
+print(len('ABC'), len(b'ABC'))  # len()计算str的字符数; bytes的字节数；
+print('ABC'.encode('ascii'))  # encode()方法转换str为指定的bytes
+print('中文'.encode('utf-8'))  # 中文编码范围超过了ASCII编码范围，含有中文的str无法用ASCII编码，会报错
+print(b'ABC'.decode('ascii'))  # decode()方法将bytes变为str
+print(b'\xe4\xb8\xad\xe6\x96\x87'.decode('utf-8', errors='ignore'))  # 传入errors='ignore'忽略错误的字节
+
 name = 'Anliven'
 print("The length of this string: %d" % len(name))  # len(string)方法返回字符串长度
 print("name.count('n'): %d" % name.count("n", 0, len(name)))  # 返回str在 string 里面出现的次数
@@ -48,6 +59,16 @@ print(delimiter.join(testList))  # 联结序列中的项目并生成字符串
 # ### 字符串输出格式化
 # 字符串有多种输出方式，最基本的用法是将一个值插入到一个有字符串格式符 %s 的字符串中；
 # 字符串前加上r或R可以使字符串原样输出，防止被转义;
+#
+# ### str和bytes互换
+# 为了避免乱码问题，应当始终坚持使用UTF-8编码对str和bytes进行转换；
+# encode()方法转换str为指定的bytes；
+# decode()方法将bytes变为str；
+# 中文编码范围超过了ASCII编码范围，含有中文的str无法用ASCII编码，会报错；
+#
+# ### 保存中文
+# 源代码包含中文的时，在保存源代码时，务必指定保存为UTF-8编码；
+# 指定Python解释器按UTF-8编码读取源代码：“# -*- coding: utf-8 -*-”
 #
 # ### 字符串常用方法
 # - help(str)获取String类的更多信息；

@@ -31,9 +31,12 @@ print(r'This is the 1st line.\nThis is the 2nd line.')  # 原始字符串
 
 print("abc")  # print()函数默认会换行，可以使用语法print(str,end='')实现不换行输出
 print('ABC', end=' ')  # 以空格结尾，不换行
-print('123', end='')  # 以空白结尾，不换行
+print('123')
 
 x = "hi"  # Python中的变量不需要声明类型，其在使用前必须赋值
+if not isinstance(x, (int, float)):  # 内置函数isinstance()实现数据类型检查
+    print('Bad operand type.')
+
 a = b = c = 1
 i, j, k = 3.5, 'hello', "python"  # 多个变量同时赋值
 print(x, a, b, c, i, j, k)
@@ -76,6 +79,8 @@ print('a:', a, 'b:', b)
 # ### 数据类型（Data Type）
 # - 变量可以将各种形式的值保存为不同的数据类型；
 # - python具有基本的数据类型，也可以通过类（Classes）创建自定义的数据类型；
+# - 内置的数据类型转换函数：int(),str(),chr(),float(),bool(),hex()等;
+# - 内置函数isinstance()实现数据类型检查;
 #
 # ### 转义序列（Escape Sequence）
 # - 通过反斜杠（\）可以转义特殊字符；

@@ -1,13 +1,15 @@
 #! python3
 # -*- coding: utf-8 -*-
 
+sample_set = set(['AAA', 'BBB', 'AAA', 'BBB', 111, 222])  # 重复元素在set中自动被过滤
+print(sample_set)
 sample_set1 = {'Dog', 'Sheep', 'Pig'}
 print(sample_set1)
 sample_set2 = set('Dog Sheep Pig')
 print(sample_set2)
 
 testSet = {'111', '222', '333'}
-testSet.add('444')
+testSet.add('444')  # add(key)方法添加元素到set中，可以重复添加，但会自动被过滤
 if '444' in testSet:  # 检测成员关系
     print(True)
 print('testSet:', testSet)
@@ -29,6 +31,7 @@ print('testSet3:', testSet3)
 
 # ### 集合（Set）
 # - 集合（Set）是无序不重复的序列；
+# - 重复元素在set中自动被过滤;
 # - 通常用来进行成员关系测试和删除重复元素，且支持集合运算（并交差等）；
 # - 使用set()函数或大括号{}声明集合，但创建空集合必须使用set()；
 #

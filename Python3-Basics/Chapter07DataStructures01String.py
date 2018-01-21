@@ -9,6 +9,9 @@ e = True + False  # True代表1，False代表0
 print(a, b, c, d, e)
 
 string_sample = "HelloPython!"
+print(string_sample.replace('!', '!!!'))  # replace方法创建一个新字符串并返回
+print(string_sample)
+
 print(string_sample[0:2])  # 从下标0到下标2，包括0不包括2
 print(string_sample[0:-1])  # 从下标0到倒数第1个,不包括倒数第1个
 print(string_sample[5:])  # 从下标5到最后

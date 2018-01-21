@@ -35,7 +35,7 @@ def print_para(*items):
 
 
 def total(a=5, *numbers, **phonebook):
-    print('a:', a)
+    print('#a: ', a, ' #numbers: ', numbers, ' #other: ', phonebook)
 
     for single_item in numbers:  # 遍历元组中的所有项目
         print('single_item:', single_item)
@@ -46,9 +46,21 @@ def total(a=5, *numbers, **phonebook):
     return "This is a test!"  # 函数的返回值
 
 
-def empty_function():
+def person(name, age, *, city, job):  # 命名关键字参数
+    print(name, age, city, job)
+
+
+def f1(a, b, c=0, *args, **kw):
+    print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
+
+
+def f2(a, b, c=0, *, d, **kw):
+    print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
+
+
+def empty_function():  # 空函数
     """This is an sample of docstrings."""
-    pass
+    pass  # pass用来作为占位符，先让代码能运行起来
 
 
 print_max(5)  # 直接传递，并使用默认参数值
@@ -61,35 +73,52 @@ print('Value of z is', z)
 print_para(1, 'aaa', "AAA")
 print(total(10, 1, 2, 3, Jack=11111, John=22222, Inge=33333))
 
+person('Anliven', 29, city='Chengdu', job='Engineer')  # 命名关键字参数，调用时必须指明参数名字
+f1(1, 2, 3, 'a', 'b', x=99)
+f2(1, 2, d=99, ext=None)
+
 empty_function()
 print(empty_function.__doc__)  # 打印函数的文档字符串属性（__doc__）
 
 
 def get_two_values():  # 通过函数来返回不同的值
-    return 123, 'test'
+    return 123, 'test'  # 返回多个值
 
 
 returnNum, returnStr = get_two_values()
 print('Values-1:', returnNum, '\nValues-2:', returnStr)
 
+x = abs  # 函数名其实就是指向一个函数对象的引用，这里将求绝对值的函数abs赋给一个变量，相当于给这个函数起了一个“别名”
+print(x(-3))  # 通过变量调用abs函数
 
 # ### 函数（Functions）
 # - 函数是指可重复使用的程序片段；
 # - Python具有大量实现常用功能的内置函数，也可以自定义函数，建议尽可能使用内置函数；
-# - 通过关键字def定义函数，并具有固定格式；
+# - 通过关键字def定义函数，依次写出函数名、括号、括号中的参数和冒号:，然后在缩进块中编写函数体，函数的返回值用return语句返回；
 #
 # ### 函数参数
 # - 函数参数在定义函数的一对圆括号中指定，并通过逗号予以分隔；
 # - 形参（Parameters）：在定义函数时给定的名称；
 # - 实参（Arguments）：在调用函数时所提供给函数的值；
+# - 默认定义的参数都是位置参数，实参以参数位置来指定给形参；
+# - 可以使用命名（关键字）而非位置来指定函数中的参数，也就是说只需在调用时指明参数名称及其值即可；
+# - 注意！参数定义的顺序必须是：必选参数、默认参数、可变参数、命名关键字参数、关键字参数；
+#
+# ### 默认参数
 # - 默认参数值：在函数定义时通过赋值运算符（=）可以指定参数的默认值；
 # - 有默认值的参数必须位于没有默认值的参数之后；
-# - 使用命名（关键字）而非位置来指定函数中的参数，也就是说只需在调用时指明参数名称及其值即可；
+# - 特别注意：定义默认参数时，必须指向不可变对象！
 #
-# ### 可变参数（不定长参数）
-# - 函数里的参数数量是可变的，通过使用星号来实现；
-# - 类似“*param”星号参数，从此处开始直到结束的所有位置参数（Positional Arguments）被汇集成一个名为param的元组（Tuple）；
-# - 类似“**param”双星号参数，从此处开始直至结束的所有关键字参数被汇集成一个名为param的字典（Dictionary）；
+# ### 不定长参数
+# - 可选参数可以通过星号来实现可变的参数数量；
+# - 可变参数：类似“*param”，从此处开始直到结束的所有位置参数（Positional Arguments）被汇集成一个名为param的元组（Tuple）；
+# - 关键字参数：类似“**param”，从此处开始直至结束的所有关键字参数被汇集成一个名为param的字典（Dictionary）；
+#
+# ### 命名关键字参数
+# - 利用命名关键字参数可以限制：调用时必须指明参数名字；
+# - 命名关键字参数需要一个特殊分隔符*，*后面的参数被视为命名关键字参数；
+# - 如果函数定义中已有一个可变参数，后面跟着的命名关键字参数就不再需要一个特殊分隔符*：
+# - 命名关键字参数可以提供默认值；
 #
 # ### 变量
 # - 所有变量的作用域（Scope）是其被定义的所在代码块；
@@ -98,12 +127,13 @@ print('Values-1:', returnNum, '\nValues-2:', returnStr)
 # - 可以在同一global语句中指定不止一个的全局变量，例如“global x, y, z”；
 #
 # ### return
-# - 用于从函数中返回一个值；
+# - 用于从函数中返回值，可以返回一个或多个值；同时返回多个值时，结果是一个tuple；
 # - 如果return语句没有搭配任何一个值则代表着返回None，代表着虚无；
-# - 每一个函数都在其末尾隐含了一句“return None”；
+# - 如果没有return语句，函数执行完后会返回结果为None（可以理解为，每一个函数都在其末尾隐含了一句“return None”）；
 #
 # ### pass
 # - 用于指示一个没有内容的语句块；
+# - 可以用来作为占位符，比如代替未完成的代码，就可以放一个pass，先让代码能运行起来
 #
 # ### 文档字符串（Documentation Strings）
 # - 函数的文档字符串（DocString）放置在函数的第一逻辑行；

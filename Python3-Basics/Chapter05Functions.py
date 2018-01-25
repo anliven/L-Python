@@ -139,3 +139,6 @@ print(x(-3))  # 通过变量调用abs函数
 # - 函数的文档字符串（DocString）放置在函数的第一逻辑行；
 # - 可以通过使用函数的“__doc__”属性来获取函数的文档字符串属性，例如：help()函数和pydoc命令；
 # - 强烈建议为所有重要的函数配以文档字符串；
+#
+# ### 内置函数（Built-in Functions）
+# https://docs.python.org/3/library/functions.html

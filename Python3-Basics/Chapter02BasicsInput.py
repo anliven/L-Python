@@ -2,12 +2,9 @@
 # -*- coding: utf-8 -*-
 
 
-def reverse(text):
-    return text[::-1]
-
-
 def is_palindrome(text):  # 判断是否是回文
-    return text == reverse(text)
+    text2 = text[::-1]
+    return text == text2
 
 
 something = input("Enter text: ")  # Python交互式命令行：标准键盘输入

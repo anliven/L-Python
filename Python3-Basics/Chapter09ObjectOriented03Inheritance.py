@@ -18,9 +18,12 @@ class Teacher(SchoolMember):  # 派生类（Derived Classes）或子类（Subcla
         self.salary = salary
         print('(Initialized Teacher: {})'.format(self.name))
 
-    def tell(self):
+    def tell(self):  # 重写方法
         SchoolMember.tell(self)
         print('Salary: "{:d}"'.format(self.salary))
+
+    def teahing(self):  # 在子类中增加方法
+        print('This is a teacher! - Teaching!')
 
 
 class Student(SchoolMember):
@@ -33,15 +36,23 @@ class Student(SchoolMember):
         SchoolMember.tell(self)
         print('Marks: "{:d}"'.format(self.marks))
 
+    def learning(self):
+        print('This is a student! - Learning!')
+
 
 t = Teacher('AAA', 29, 50000)
+t.tell()
+t.teahing()
 s = Student('BBB', 18, 85)
+s.tell()
+s.learning()
+
 members = [t, s]
 for member in members:
     member.tell()
 
 # ### 继承（Inheritance）
-# - 通过继承机制可以重用（Reuse）代码；
+# - 通过继承机制可以重用（Reuse）代码，子类自动获得父类的全部属性和方法；
 # - 继承是类之间实现类型与子类型（Type and Subtype）关系；
 # - 定义派生类或子类时，需要在类后面跟一个包含基类名称的元组；
 #
@@ -53,3 +64,7 @@ for member in members:
 # - 除了从一个父类继承外，Python允许从多个父类继承；
 # - 通过多重继承，一个子类可以同时获得多个父类的所有功能；
 # - 请注意基类的排列顺序，当子类调用基类方法时，从左到右依次查找继承的基类中是否包含该方法，直到找到就停止，否则报错；
+#
+# ### 方法重写
+# - 子类继承会继承父类的所有方法，当父类方法无法满足需求，可在子类中定义一个同名方法覆盖父类的方法；
+# - 当子类的实例调用该方法时，优先调用子类自身定义的同名方法；

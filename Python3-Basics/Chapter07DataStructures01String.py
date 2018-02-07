@@ -9,7 +9,8 @@ e = True + False  # True代表1，False代表0
 print(a, b, c, d, e)
 
 string_sample = "HelloPython!"
-print(string_sample.replace('!', '!!!'))  # replace方法创建一个新字符串并返回
+print(string_sample.replace('!', '!!!'))  # replace方法并返回一个新字符串
+print(string_sample.split('P'))  # split方法分解字符串，并返回一个字符串列表
 print(string_sample)
 
 print(string_sample[0:2])  # 从下标0到下标2，包括0不包括2

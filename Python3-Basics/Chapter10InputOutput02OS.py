@@ -8,6 +8,7 @@ print("OS-type: ", os.name)
 print("OS-ENV: ", os.environ)
 print("OS-ENV-PATH: ", os.environ.get('PATH'))
 
+print(os.getcwd())
 print(os.path.abspath('.'))
 testPath = os.path.join('.', 'testDir')
 os.mkdir(testPath)
@@ -38,7 +39,9 @@ os.remove('test2.py')
 #
 # - os.mkdir() ： 创建目录
 # - os.rmdir() ： 删除目录
+# - os.chdir() ： 切换目录
 #
+# - os.getcwd() : 查看当前目录
 # - os.path.abspath() ： 查看目录的绝对路径
 # - os.path.isdir() ： 判断是否为目录；
 # - os.listdir() ： 列出目录；

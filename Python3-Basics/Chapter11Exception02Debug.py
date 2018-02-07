@@ -34,7 +34,8 @@ test()
 # - 可以指定记录信息的级别：debug，info，warning，error等；
 #
 # Python的调试器pdb
+# - 调试效率不高，很少使用
 #
 # 支持调试功能的IDE
 # - PyCharm：http://www.jetbrains.com/pycharm/
-# - Eclipse加上pydev插件
+# - Eclipse：加上pydev插件

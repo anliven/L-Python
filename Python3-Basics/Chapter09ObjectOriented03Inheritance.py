@@ -40,7 +40,7 @@ class Student(SchoolMember):
         print('This is a student! - Learning!')
 
 
-class Master(SchoolMember, Teacher):  # 多重继承
+class Master(Teacher, Student):  # 多重继承
     pass
 
 
@@ -50,8 +50,11 @@ t.teahing()
 s = Student('BBB', 18, 85)
 s.tell()
 s.learning()
+m = Master('CCC', 35, 1000000)
+m.teahing()
+m.learning()
 
-members = [t, s]
+members = [t, s, m]
 for member in members:
     member.tell()
 

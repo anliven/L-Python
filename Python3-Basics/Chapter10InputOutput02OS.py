@@ -26,6 +26,8 @@ testFile = 'test.txt'
 f = open(testFile, 'w', encoding="utf-8")
 f.write(testText)
 f.close()
+
+print(os.path.exists(testFile))  # 判断是否存在
 os.rename('test.txt', 'test.py')
 shutil.copyfile('test.py', 'test2.py')
 os.remove('test.py')
@@ -41,9 +43,10 @@ os.remove('test2.py')
 # - os.rmdir() ： 删除目录
 # - os.chdir() ： 切换目录
 #
-# - os.getcwd() : 查看当前目录
-# - os.path.abspath() ： 查看目录的绝对路径
+# - os.getcwd() : 查看当前目录；
+# - os.path.abspath() ： 查看目录的绝对路径；
 # - os.path.isdir() ： 判断是否为目录；
+# - os.path.exists() : 判断路径是否存在；
 # - os.listdir() ： 列出目录；
 # - os.path.join() ： 合成路径，能够正确处理不同操作系统的路径分隔符；
 # - os.path.split() ： 拆分路径，可以把一个路径拆分为两部分，后一部分总是最后级别的目录或文件名；

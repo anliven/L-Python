@@ -8,7 +8,7 @@ d = 3.14j  # 复数型变量
 e = True + False  # True代表1，False代表0
 print(a, b, c, d, e)
 
-string_sample = "HelloPython!"
+string_sample = "Hello Python!"
 print(string_sample.replace('!', '!!!'))  # replace方法并返回一个新字符串
 print(string_sample.find('P'))  # find方法判断指定子字符串是否存在，若存在，返回索引位置，若不存在，返回-1
 print(string_sample.split('P', 1))  # split方法分解字符串，并返回一个字符串列表

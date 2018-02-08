@@ -15,11 +15,11 @@ f.write(testText)
 f.close()
 
 try:
-    data = open(testFile)
+    data = open('test.txt')
 
     for each_line in data:
         try:
-            (role, line_spoken) = each_line.split(':', 1)
+            (role, line_spoken) = each_line.split(':', 1)  # 分解字符串并分别赋值给多个变量
             print(role, end='')
             print(' said: ', end='')
             print(line_spoken, end='')
@@ -27,8 +27,8 @@ try:
             pass  # Python的空语句或null语句，什么也不做
 
     data.close()
-except IOError:  # IOError表示数据无法正常访问
-    print('The datafile is missing!')
+except IOError as err:  # IOError表示数据无法正常访问；使用as关键字赋给一个标识符
+    print('File error : The datafile is missing!' + str(err))  # 这里str()将异常对象转换为字符串
 
 os.remove(testFile)
 

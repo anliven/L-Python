@@ -12,9 +12,11 @@ testFile = 'test.txt'
 
 f = open(testFile, 'w', encoding="utf-8")  # 以写入方式打开文件，不存在就创建
 f.write(testText)  # 写入文本
-f.close()  # 关闭打开的文件
+print("This is a test!", file=f)  # 利用print函数的file参数，写入数据到文件
+if testFile in locals():  # 判断testFile是否存在；locals()返回当前作用域中定义的所有名的集合
+    f.close()  # 关闭打开的文件
 
-with open(testFile) as f:  # 引入with语句自动调用close()方法
+with open(testFile, 'r') as f:  # 引入with语句自动调用close()方法，妥善关闭一个可能打开的数据文件
     for line in f.readlines():
         print("# ", line.strip())  # 删掉末尾的'\n'
 
@@ -56,7 +58,10 @@ os.remove(testFile)
 # - file.seek()：回到文件指定位置；
 # - file.write()：写文件，可以反复调用write()来写入文件；
 # - file.close()：关闭文件，文件使用完毕后必须关闭，释放系统资源；
+#
+# ### with语句
 # - 引入with语句可以自动调用close()方法，来保证把没有写入的数据全部写入磁盘；
+# - 可以将两个open()调用合并到一个with语句中，但要将两个open()用逗号隔开；
 #
 # ### 避免读取过多内容的方法
 # - read()一次性读取文件的全部内容，适合文件较小的情况；

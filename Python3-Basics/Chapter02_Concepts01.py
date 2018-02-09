@@ -48,7 +48,7 @@ a, b = b, a  # the fastest way to swap two variables in Python
 print('a:', a, 'b:', b)
 
 
-# ###
+# ### 一些定义
 # - 字面常量（Literal Constants）：表示本身字面意义上的值或内容，常量不能被改变，通常用全部大写的变量名表示；
 # - 数字：包括整数（Integers）与浮点数（Floats），例如“11.3E-4”表示“11.3 * 10^-4”
 # - 字符串（String）：字符（Characters）的序列（Sequence）

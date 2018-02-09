@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 import sys  # import语句导入sys模块，sys模块包含了与Python解释器及其环境有关的函数；
 from math import sqrt  # 不建议使用from...import语句
-import Chapter06ModuleTest  # 导入同一目录下的自定义模块
+import Chapter06_ModuleTest  # 导入同一目录下的自定义模块
 import TestPackage.ModuleTest  # 导入自定义包中的模块
 
-Chapter06ModuleTest.say_hi()
-print('Version', Chapter06ModuleTest.__version__)
+Chapter06_ModuleTest.say_hi()
+print('Version', Chapter06_ModuleTest.__version__)
 
 TestPackage.ModuleTest.say_hello()
 print('Version', TestPackage.ModuleTest.__version__)
@@ -17,7 +17,7 @@ print("Square root of 36 is", sqrt(36))  # 通过“from...import...语句”引
 print('dir(): ', dir())
 print('dir(sys): ', dir(sys))
 
-Chapter06ModuleTest.greeting('Anliven')
+Chapter06_ModuleTest.greeting('Anliven')
 
 # ### 模块（Modules）
 # - 模块是一个包含函数和变量的.py文件，可以被其它程序通过import方式导入，从而使用该模块中的函数等功能，提升代码复用性；

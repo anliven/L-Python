@@ -4,7 +4,7 @@ __version__ = '0.1'
 
 
 def say_hi():
-    print('Hi, Chapter06ModuleTest.')
+    print('Hi, Chapter06_ModuleTest.')
 
 
 def _private_1(name):

@@ -17,7 +17,7 @@ def sanitize(time_string):
     return mins + '.' + secs
 
 
-def get_coach_data(in_str):
+def get_coach_data(in_str):  # 字符串转换为字典
     try:
         temp_list = in_str.strip().split(',')
         return ({'Name': temp_list.pop(0),

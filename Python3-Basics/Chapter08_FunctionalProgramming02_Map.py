@@ -17,6 +17,7 @@ for var in result2:
 result3 = list(map(str, [1, 2, 3, 4, 5, 6, 7, 8, 9]))  # 将list所有数字转为字符串
 print("Result_3:", result3)
 
+
 # ### map函数
 # 接收两个参数，一个是函数f，一个是Iterator，map在Iterable的每个元素上依次执行函数f，并把结果作为新的Iterator返回；
 # 如果函数f比较简单，可以不事先定义函数，而是以匿名函数的形式来进行计算；

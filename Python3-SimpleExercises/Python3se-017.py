@@ -9,4 +9,4 @@ def is_sqr(x):
 
 print(list(filter(is_sqr, range(1, 101))))
 
-# 过滤出1~100中平方根是整数的数；
+# 筛选出1~100中平方根是整数的数；

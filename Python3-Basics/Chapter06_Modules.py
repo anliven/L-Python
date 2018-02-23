@@ -35,6 +35,7 @@ Chapter06_ModuleTest.greeting('Anliven')
 # - 通过“from...import...语句”导入模块的指定函数后，调用方法时不需要加模块名；
 # - “from support import *”可以引入support模块的所有函数，作用与“import support”一致；
 # - 为了使程序更加易读和避免名称冲突，建议使用import语句导入模块，而不是from...import语句；
+# - 如果导入的模块不存在，Python解释器会报ImportError错误；
 #
 # ### 同时引入多个模块
 # - “import 语句”格式：import module1,module2,...；
@@ -45,6 +46,7 @@ Chapter06_ModuleTest.greeting('Anliven')
 # - 包是按目录来组织模块的一种层次结构，是包含模块与一个__init__.py文件（必须存在）的文件夹；
 # - 包可以有多级目录，组成多级层次的包结构，每一个层次都有一个__init__.py文件；
 # - 通过包来组织模块，可以避免模块名冲突，只要顶层的包名不冲突，那么其所有模块都不会冲突；
+# - 简而言之，包就是一个包含__init__.py文件的文件夹；
 #
 # ### dir()
 # - 内置dir()函数能够返回由对象所定义的名称列表，能够对任何对象工作；

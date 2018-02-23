@@ -9,4 +9,15 @@ def product(x, y):
 
 print(reduce(product, [1, 4, 9, 16, 25]))
 
+
+def calc_product(lst):
+    def count():
+        return reduce(lambda x, y: x * y, lst)
+
+    return count
+
+
+func = calc_product([1, 2, 3, 4])
+print(func())
+
 # 求一个整数列表所有元素的积；

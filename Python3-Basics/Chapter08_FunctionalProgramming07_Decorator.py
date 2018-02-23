@@ -47,6 +47,7 @@ print(test2.__name__)
 # ### 装饰器（Decorator）
 # 装饰器：在代码运行期间动态增加功能的方式；
 # 本质上，decorator就是一个返回函数的高阶函数；
+# 利用Python提供的@语法，可以将语句“test = log(test)”简写为“@log”；
 #
 # ### functools.wraps
 # 在定义wrapper()函数时，需要把原始函数的__name__等属性复制到wrapper()函数中，否则有些依赖函数签名的代码执行就会出错；

@@ -13,6 +13,14 @@ print(sorted(list_sample2, key=str.lower, reverse=True))  # 忽略大小写反�
 
 list_sample3 = [('BBB', 77), ('AAA', 99), ('RRR', 66), ('LLL', 88)]
 
+s = 'asdf234GDSdsf23'  # 自定义规则对字符串排序：小写<大写<奇数<偶数；
+print("".join(sorted(s, key=lambda x: (x.isdigit(), x.isdigit() and int(x) % 2 == 0, x.isupper(), x))))
+# Boolean值的排序：False在前，True在后
+# x.isdigit()  把数字放前,字母放后；
+# x.isdigit() and int(x) % 2 == 0  奇数在前，偶数在后；
+# x.isupper()  字母小写在前，大写在后；
+# x  对所有类别数字或字母排序；
+
 
 def by_name(t):
     return t[0].lower()

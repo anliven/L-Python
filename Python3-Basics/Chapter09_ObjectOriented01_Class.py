@@ -56,6 +56,23 @@ print("__color = ", R.get_color())  # 访问对象的内部状态
 R.set_color('red')  # 设置对象的内部状态
 print("__color = ", R.get_color())
 
+
+class Person3(object):
+    __count = 0  # 可以通过一个类方法获取类的私有属性
+
+    @classmethod  # 通过标记一个@classmethod将how_many()方法绑定到Person3类
+    def how_many(cls):
+        return cls.__count
+
+    def __init__(self, name):
+        self.name = name
+        Person3.__count += 1
+
+
+print(Person3.how_many())
+p1 = Person3('Test')
+print(Person3.how_many())  # 统计类实例的生成数目
+
 # ### 使用类
 # 使用类将有助于降低复杂性，减少bug，并且使代码更可维护；
 # 类可以从零开始创建，也可以从Python的内置类或从其他定制类继承；
@@ -68,7 +85,7 @@ print("__color = ", R.get_color())
 # ### 属性（Attribute）
 # - 属性包括字段与方法；
 # - 字段（Field）：对象或类的变量，分别被称为实例变量（Instance Variables）与类变量（Class Variables）；
-# - 方法（Method）：方法也分实例方法和类方法；
+# - 方法（Method）：方法也分实例方法和类方法；在class中定义的全部是实例方法，实例方法第一个参数self是实例本身;
 # - 将属性名以双下划线开头可将属性定义为私有属性，表示其只能在类内部以self.的方式访问，类的实例（实例）无法访问；
 # - 当实例属性和类属性重名时，实例属性优先级高；
 #
@@ -85,6 +102,12 @@ print("__color = ", R.get_color())
 # ### 举例说明
 # - 创建了一个类MyClass，实例化对象为MyObject，然后调用对象的方法MyObject.method(a,b)；
 # - 在此过程中，Python自动将对象的方法转化为Myclass.method(MyObject,a,b)，self参数被赋值为MyObject；
+#
+# ### 类方法
+# 在class中定义的全部是实例方法，实例方法第一个参数self是实例本身;
+# 但可以通过标记一个@classmethod将一个方法绑定到类上，而非类的实例；
+# 类方法的第一个参数将传入类本身，通常将参数名命名为cls；
+# 类方法是在类上调用，而非实例上调用，因此类方法无法获得任何实例变量，只能获得类的引用；
 #
 # ### 访问限制
 # - 属性名称前加上两个下划线__，就变成了一个私有（private）属性，只有内部可以访问，外部不能访问；

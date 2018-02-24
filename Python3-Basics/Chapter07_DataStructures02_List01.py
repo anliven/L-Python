@@ -41,7 +41,7 @@ def print_lol(a_list, indent=False, level=0, fh=sys.stdout):  # 遍历嵌套的�
     """Prints each item in a list, recursively descending into nested lists (if necessary)."""
 
     for each_item in a_list:
-        if isinstance(each_item, list):  # isinstance()判断是否是摸个指定类型的数据对象
+        if isinstance(each_item, list):  # isinstance()判断是否是某个指定类型的数据对象
             print_lol(each_item, indent, level + 1, fh)  # 调用自身
         else:
             if indent:

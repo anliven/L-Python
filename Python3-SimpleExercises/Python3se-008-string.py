@@ -19,4 +19,4 @@ input_string = input()
 print(str_swap(input_string))  # 利用ASCII码
 print(input_string.swapcase())  # 利用string的swapcase方法
 
-# 编写一个函数：反转输入字符串的大小写
+# 编写函数：反转输入字符串的大小写；

@@ -6,6 +6,8 @@ zoo = ('python', 'elephant', 'penguin')
 print('Number of animals in the zoo is', len(zoo))
 print(zoo[0])  # 打印索引为0的元素（注意：返回元素而不是元组，所以返回值没有中括号）
 print(zoo[1:3])  # 打印索引为1到2的元素，作为一个元组返回
+for single_item in zoo:  # 遍历元组中的所有项目
+    print('single_item:', single_item)
 
 newZoo = 'monkey', 'camel', zoo
 print('All animals in new zoo are', newZoo)  # 注意打印结果

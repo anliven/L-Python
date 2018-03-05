@@ -7,7 +7,7 @@ def func(x):  # 显式定义函数
 
 
 print(list(map(func, [1, 2, 3, 4, 5, 6, 7, 8, 9])))  # 调用自定义函数
-print(list(map(lambda x: x * x, [1, 2, 3, 4, 5, 6, 7, 8, 9])))  # 匿名函数ambda的形式
+print(list(map(lambda x: x * x, [1, 2, 3, 4, 5, 6, 7, 8, 9])))  # 匿名函数lambda的形式
 
 
 def multiply(x, y):

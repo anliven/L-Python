@@ -7,4 +7,4 @@ in_numbers = list(map(int, sys.stdin.readline().split()))
 print(sorted(in_numbers))
 print(sorted(in_numbers, reverse=True))
 
-# 对输入的整数进行正向和逆向排序;
+# 对输入的整数进行正向和逆向排序；

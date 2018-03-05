@@ -1,14 +1,25 @@
 #! python3
 # -*- coding: utf-8 -*-
 
-test_str = "aaa,111,BBB,222,---,###"
-print(test_str.strip().split(','))  # 字符串转换为列表
+test_str = "aaa,111,---,###"
+print(list(test_str))  # 字符串转换为列表 - list()函数
+print(test_str.strip().split(','))  # 字符串转换为列表 - 字符串的strip().split()方法
 
 test_list = [222, 555, 777, 333, 666, 999, 444, 111, 888]
 print(sorted(test_list, reverse=True))
 print("# test_list: ", test_list)
 test_list.sort()
 print("# test_list: ", test_list)
+
+test_list2 = ["Hello", "Python", '!']
+print("".join(test_list2))  # 列表转换为字符串 - 针对所有元素为str类型的列表
+print(" ".join(test_list2))
+
+test_list3 = ["Hello", "Python", 2018, '!']
+out_str = ""
+for item in test_list3:  # 列表转换为字符串
+    out_str = out_str + str(item) + " "
+print(out_str)
 
 str1 = "2-34,3:21,2.34,2.45,3.01,2:01,2:01,3:10,2-22"
 str2 = "2.59,2.11,2:11,2:23,3-10,2-23,3:10,3.21,3-21"

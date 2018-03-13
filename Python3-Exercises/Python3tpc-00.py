@@ -21,4 +21,8 @@ while n > 0:
     n -= 1
 print(count)
 
+
+# 计算2的38次幂的值
+#
+# Problem Link: http://www.pythonchallenge.com/pc/def/0.html
 # Solution Link : http://www.pythonchallenge.com/pcc/def/map.html

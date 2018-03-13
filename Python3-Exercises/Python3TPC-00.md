@@ -1,2 +1,0 @@
-- 计算2的38次幂的值；
-- Link: http://www.pythonchallenge.com/pc/def/0.html

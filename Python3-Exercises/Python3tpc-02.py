@@ -48,4 +48,3 @@ print("".join(re.findall("[A-Za-z]", data)))
 # view-source:http://www.pythonchallenge.com/pc/def/ocr.html
 #
 # Problem Link : http://www.pythonchallenge.com/pc/def/ocr.html
-# Solution Link : http://www.pythonchallenge.com/pcc/def/equality.html

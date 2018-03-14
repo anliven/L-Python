@@ -49,4 +49,3 @@ print(ttt.translate(tran_tab))
 # lmu ynnjw ml rfc spj.
 #
 # Problem Link : http:// www.pythonchallenge.com/pc/def/map.html
-# Solution Link : http://www.pythonchallenge.com/pcc/def/ocr.html

@@ -54,7 +54,10 @@ for i in range(1, 400):
     url2 = get_addr2(url2)
     print(i, "::", url2)
 
-# 根据提示，尝试获取指定网页地址来获得线索信息（根据上一个网页地址内容来获取下一个网页地址）
-# view-source:http://www.pythonchallenge.com/pc/def/linkedlist.php
+# 根据提示获得线索信息
+# Link: http://www.pythonchallenge.com/pc/def/linkedlist.php
+# Next: http://www.pythonchallenge.com/pc/def/peak.html
 #
-# Problem Link : http://www.pythonchallenge.com/pc/def/linkedlist.php
+# Points：
+# - re模块（正则表达式）
+# - urllib模块

@@ -44,7 +44,10 @@ html = page.read().decode('utf-8')
 data = re.findall("<!--(.*?)-->", html, re.DOTALL)[-1]
 print("".join(re.findall("[A-Za-z]", data)))
 
-# 从如下网页源代码中找出稀有字符来获得线索信息
-# view-source:http://www.pythonchallenge.com/pc/def/ocr.html
+# 根据提示获得线索信息
+# Link: http://www.pythonchallenge.com/pc/def/ocr.html
+# Next: http://www.pythonchallenge.com/pc/def/equality.html
 #
-# Problem Link : http://www.pythonchallenge.com/pc/def/ocr.html
+# Points：
+# - 文件处理
+# - re模块（正则表达式）

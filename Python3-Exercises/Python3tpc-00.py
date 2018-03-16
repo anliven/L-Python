@@ -21,7 +21,10 @@ while n > 0:
     n -= 1
 print(count)
 
-
-# 计算2的38次幂的值
+# 根据提示获得线索信息
+# Link: http://www.pythonchallenge.com/pc/def/0.html
+# Next: http://www.pythonchallenge.com/pc/def/map.html
 #
-# Problem Link: http://www.pythonchallenge.com/pc/def/0.html
+# Points：
+# - 数值计算
+# - 逻辑循环（for、while）

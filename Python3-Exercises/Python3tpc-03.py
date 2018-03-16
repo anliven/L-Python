@@ -20,8 +20,10 @@ html = request.urlopen("http://www.pythonchallenge.com/pc/def/equality.html").re
 data2 = re.findall("<!--(.*?)-->", html, re.DOTALL)[-1]
 print("".join(re.findall("[^A-Z]+[A-Z]{3}([a-z])[A-Z]{3}[^A-Z]+", data2)))
 
-# 从如下网页源代码中找出符合要求的字符（前后有三个大写字符）来获得线索信息
-# view-source:http://www.pythonchallenge.com/pc/def/equality.html
+# 根据提示获得线索信息
+# Link: http://www.pythonchallenge.com/pc/def/equality.html
+# Next: http://www.pythonchallenge.com/pc/def/linkedlist.php
 #
-# Problem Link : http://www.pythonchallenge.com/pc/def/equality.html
-# Solution Link : http://www.pythonchallenge.com/pcc/def/linkedlist.php
+# Points：
+# - re模块（正则表达式）
+# - urllib模块

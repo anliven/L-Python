@@ -28,4 +28,5 @@ for lst in unPickled:
 # Next: http://www.pythonchallenge.com/pc/def/channel.html
 #
 # Points：
-# - pickle模块（序列化及反序列化）
+# - 标准库urllib模块：https://docs.python.org/3/library/urllib.html
+# - 标准库pickle模块：https://docs.python.org/3/library/pickle.html

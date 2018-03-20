@@ -59,5 +59,5 @@ for i in range(1, 400):
 # Next: http://www.pythonchallenge.com/pc/def/peak.html
 #
 # Points：
-# - re模块（正则表达式）
-# - urllib模块
+# - 标准库re模块：https://docs.python.org/3/library/re.html
+# - 标准库urllib模块：https://docs.python.org/3/library/urllib.html

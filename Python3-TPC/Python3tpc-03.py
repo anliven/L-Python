@@ -25,5 +25,5 @@ print("".join(re.findall("[^A-Z]+[A-Z]{3}([a-z])[A-Z]{3}[^A-Z]+", data2)))
 # Next: http://www.pythonchallenge.com/pc/def/linkedlist.php
 #
 # Points：
-# - re模块（正则表达式）
-# - urllib模块
+# - 标准库re模块：https://docs.python.org/3/library/re.html
+# - 标准库urllib模块：https://docs.python.org/3/library/urllib.html

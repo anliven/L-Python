@@ -50,4 +50,5 @@ print("".join(re.findall("[A-Za-z]", data)))
 #
 # Points：
 # - 文件处理
-# - re模块（正则表达式）
+# - 标准库string模块：https://docs.python.org/3/library/string.html
+# - 标准库re模块（正则表达式）：https://docs.python.org/3/library/re.html

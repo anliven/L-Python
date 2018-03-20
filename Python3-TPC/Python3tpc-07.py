@@ -25,6 +25,5 @@ for i in range(0, len(nums)):
 # Next: http://www.pythonchallenge.com/pc/def/integrity.html
 #
 # Points：
-# - PIL（Python Imaging Library）模块（图像处理）
-# - 三原色光模式(RGB color model，也称为RGB颜色模型或红绿蓝颜色模型）
-# - 像素（px, pixel）的定义
+# - 第三方Pillow模块(PIL, Python Imaging Library，用于图像处理)：https://python-pillow.org
+# - 三原色光模式(RGB color model，RGB颜色模型）及像素（px, pixel）的定义

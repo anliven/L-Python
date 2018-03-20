@@ -25,6 +25,5 @@ print("".join(comments))  # 查看页面提示内容（http://www.pythonchalleng
 # Next: http://www.pythonchallenge.com/pc/def/oxygen.html
 #
 # Points：
-# - zipfile模块（zip格式压缩包）
-# - ZipFile.comment: comment associated with the ZIP file.
-# - ZipInfo.comment: comment for the individual archive member.
+# - 标准库zipfile模块：https://docs.python.org/3/library/zipfile.html
+# - 标准库re模块：https://docs.python.org/3/library/re.html

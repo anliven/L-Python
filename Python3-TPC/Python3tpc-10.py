@@ -36,5 +36,5 @@ print(len(y))
 # Next: http://www.pythonchallenge.com/pc/return/5808.html
 #
 # Points：
-# - 外观数列(Look-and-say sequence)
-# - itertools模块：用于操作迭代对象
+# - 外观数列(Look-and-say sequence)的定义
+# - 标准库itertools模块：https://docs.python.org/3/library/itertools.html

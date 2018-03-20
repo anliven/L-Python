@@ -14,4 +14,4 @@ print(bz2.decompress(pw))
 # Next: http://www.pythonchallenge.com/pc/return/good.html（需要用户名和密码）
 #
 # Points：
-# - bz2模块（bz2格式压缩包）
+# - bz2模块：https://docs.python.org/3/library/bz2.html

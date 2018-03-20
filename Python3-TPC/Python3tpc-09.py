@@ -43,4 +43,4 @@ im.show()  # http://www.pythonchallenge.com/pc/return/cow.html
 # Next: http://www.pythonchallenge.com/pc/return/bull.html
 #
 # Points：
-# - Pillow(PIL, Python Imaging Library）模块(图像处理)
+# - 第三方Pillow模块(PIL, Python Imaging Library，用于图像处理)：https://python-pillow.org

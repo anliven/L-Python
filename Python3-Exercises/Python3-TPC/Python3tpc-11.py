@@ -3,6 +3,7 @@
 from PIL import Image
 
 im = Image.open('Python3tpc-11.jpg')
+print(im.size)
 (w, h) = im.size
 
 evenPic = Image.new('RGB', (w // 2, h // 2))

@@ -34,20 +34,16 @@ with open(logging_file) as f:
 os.remove(logging_file)
 
 # ### Python标准库（Python Standard Library）
-# - 标准库是标准的Python安装包中的一部分，包含了大量有用的模块，能够满足和实现基础的功能需求；
+# - 标准库是标准的Python安装包中的一部分，包含了大量有用的模块，能够满足和实现大部分的功能需求；
 # - 熟悉Python标准库将极大地有助于解决问题；
 #
 # ### 一些文档
 # - Python标准库文档: http://docs.python.org/3/library/
-# - Python Module of the Week : https://pymotw.com/2/
 # - Python 3 Module of the Week : https://pymotw.com/3/
 #
 # ### 一些标准库
-# - sys模块：包括针对特定系统的功能；
-# - os模块：用以和操作系统交互；
-# - platform模块：用以获取平台或操作系统的信息；
-# - logging模块：用来记录信息；
-# 
-# ### PyPI - the Python Package Index
-# - The Python Package Index is a repository of software for the Python programming language.
-# - https://pypi.python.org/pypi
+# - sys模块（特定系统的功能）：https://docs.python.org/3/library/sys.html
+# - os模块（操作系统交互）：https://docs.python.org/3/library/os.html
+# - platform模块（获取平台或操作系统的信息）：https://docs.python.org/3/library/platform.html
+# - logging模块（信息记录）：https://docs.python.org/3/library/logging.html
+# - ......

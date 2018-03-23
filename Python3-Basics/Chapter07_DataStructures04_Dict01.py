@@ -3,8 +3,10 @@
 
 new_d1 = {}  # 创建空字典，使用{}或工厂函数dict()可以创建一个空字典
 new_d2 = dict()  # 创建空字典
+new_d3 = dict(aaa=555, bbb=444, ddd=222, ccc=333, eee=555)  # 创建字典
+print("d1:", new_d1, "d2:", new_d2, "d3:", new_d3)
 
-testDict = {
+testDict = {  # 创建字典
     'AAA': '11111',
     'BBB': '22222',
     'CCC': '33333',

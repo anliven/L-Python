@@ -10,11 +10,13 @@ There are two best times to plant a tree: one is ten years ago, and the other is
 testList = ['AAA', 'BBB', 'CCC']
 testFile = 'test.txt'
 
-f = open(testFile, 'w', encoding="utf-8")  # 以写入方式打开文件，不存在就创建
-f.write(testText)  # 写入文本
-print("This is a test!", file=f)  # 利用print函数的file参数，写入数据到文件
-if testFile in locals():  # 判断testFile是否存在；locals()返回当前作用域中定义的所有名的集合
-    f.close()  # 关闭打开的文件
+try:
+    f = open(testFile, 'w', encoding="utf-8")  # 以写入方式打开文件，不存在就创建
+    f.write(testText)  # 写入文本
+    print("This is a test!", file=f)  # 利用print函数的file参数，写入数据到文件
+finally:
+    if testFile in locals():  # 判断testFile是否存在；locals()返回当前作用域中定义的所有名的集合
+        f.close()  # 必须在使用完后关闭打开的文件
 
 with open(testFile, 'r') as f:  # 引入with语句自动调用close()方法，妥善关闭一个可能打开的数据文件
     for line in f.readlines():

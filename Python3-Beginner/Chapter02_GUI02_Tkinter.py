@@ -28,8 +28,3 @@ class Application(Frame):  # 从Frame派生一个Application类，这是所有Wi
 app = Application()  # 实例化Application
 app.master.title('Hello World')  # 设置窗口标题
 app.mainloop()  # 主消息循环
-
-# ### Tkinter
-# Python内置的是支持Tk的Tkinter，无需安装任何包，可以直接使用，能够满足基本的GUI程序的要求；
-# 如果是非常复杂的GUI程序，建议用操作系统原生支持的语言和库来编写；
-# 常见的第三方图形界面库包括Tk、wxWidgets、Qt、GTK等；

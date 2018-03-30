@@ -16,6 +16,8 @@ test_List[4] = 2018  # 直接赋值，修改列表的元素值
 print(test_List)
 
 test_List2 = ['apple', 'mango', 'carrot', 'banana']
+a, b, c, d = test_List2
+print(a, b, c, d)  # 列表的拆分
 print(test_List2 * 2)  # list*n：列表重复，生成一个新列表
 print(test_List + test_List2)  # list1+list2：列表拼接
 print('apple' in test_List2)  # obj in list：判断元素是否在列表中
@@ -35,6 +37,8 @@ for item in test_List2:  # 列表迭代
 print('\n')
 
 test_List3 = ["aaa", 111, ["BBB", ["CCC", "DDD"], "222"], "EEE"]  # 嵌套的列表
+print(test_List3[2][1])  # 访问嵌套的列表
+print(test_List3[-2][-2])
 
 
 def print_lol(a_list, indent=False, level=0, fh=sys.stdout):  # 遍历嵌套的列表；sys.stdout是“标准输出”

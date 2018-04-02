@@ -29,7 +29,7 @@ button1.bind('<Button-1>', star)  # 绑定事件
 root.mainloop()  # 进入消息循环
 
 # ### Tkinter
-# Python内置的是支持Tk的Tkinter，无需安装任何包，可以直接使用，能够满足基本的GUI程序的要求；
+# Python内置的支持Tk的图形模块，无需安装任何包，可以直接使用，能够满足基本的GUI程序的要求；
 # 如果是非常复杂的GUI程序，建议用操作系统原生支持的语言和库来编写；
 # 编写GUI程序的一般过程：创建窗口---》添加组件---》事件响应；
 # 常见的第三方图形界面库包括Tk、wxWidgets、Qt、GTK等；

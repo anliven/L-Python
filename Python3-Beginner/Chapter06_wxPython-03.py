@@ -18,6 +18,12 @@ class MyApp(wx.App):  # 继承wx.App类
                                    size=(75, 25),
                                    pos=(5, 5))
         self.Bind(wx.EVT_BUTTON, self.OnButtonWJX, self.buttonWJX)
+        self.buttonSJX = wx.Button(panel,
+                                   -1,
+                                   "三角形",
+                                   size=(75, 25),
+                                   pos=(85, 5))
+        self.Bind(wx.EVT_BUTTON, self.OnButtonSJX, self.buttonSJX)
         frame.Show()  # 显示框架窗口
         return True
 
@@ -26,6 +32,12 @@ class MyApp(wx.App):  # 继承wx.App类
         for i in range(5):
             t.forward(150)
             t.right(144)
+
+    def OnButtonSJX(self, event):
+        t = Turtle()
+        for i in range(3):
+            t.forward(150)
+            t.right(120)
 
 
 if __name__ == "__main__":

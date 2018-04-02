@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 
 sample_set = set(['AAA', 'BBB', 'AAA', 'BBB', 111, 222])  # 重复元素在set中自动被过滤
-print(sample_set)
-sample_set1 = {'Dog', 'Sheep', 'Pig'}
-print(sample_set1)
-sample_set2 = set('Dog Sheep Pig')
-print(sample_set2)
+print('sampleSet:', sample_set)
+sample_set1 = {'Dog', 'Sheep', 'Pig'}  # {}定义：每个元素就是obj1,obj2,...，“s1 = {obj1,obj2,obj3,…}”；
+print('sampleSet1:', sample_set1)
+sample_set2 = set('Dog Sheep Pig')  # set()定义：每个元素为obj拆分的单个字符列表，“s2 = set(obj)”；
+print('sampleSet2:', sample_set2)
 
 testSet = {'111', '222', '333'}
 testSet.add('444')  # add(key)方法添加元素到set中，可以重复添加，但会自动被过滤
@@ -29,11 +29,18 @@ testSet3 = set()
 testSet3.add('AAA')
 print('testSet3:', testSet3)
 
+testSet4 = frozenset('aaa bbb ccc')  # 不可变集合
+print('testSet4:', testSet4)
+print(dir(testSet4))
+
 # ### 集合（Set）
-# - 集合（Set）是无序不重复的序列；
-# - 重复元素在set中自动被过滤;
+# - 集合（Set）是无序不重复的序列；重复元素在集合中自动被过滤;
+#
+# 可变集合set(iterable)
+# - 集合中的元素是可变的；
 # - 通常用来进行成员关系测试和删除重复元素，且支持集合运算（并交差等）；
 # - 使用set()函数或大括号{}声明集合，但创建空集合必须使用set()；
+# 不可变集合frozenset(iterable)：冻结的集合，不可变；
 #
 # ### 集合的定义
 # {}定义：每个元素就是obj1,obj2,...，“s1 = {obj1,obj2,obj3,…}”；

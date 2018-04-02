@@ -1,6 +1,7 @@
 #! python3
 # -*- coding: utf-8 -*-
 
+
 str1 = "AAA aaa,2018-12-31,2-34,3:21,2.34,2.45,3.01,2:01,2:01,3:10,2-22,2-01,2.01,2:16"
 str2 = "BBB bbb,2017-12-31,2.59,2.11,2:11,2:23,3-10,2-23,3:10,3.21,3-21,3.01,3.02,2:59"
 str3 = "CCC ccc,2016-12-31,2:22,3.01,3:01,3.02,3:02,3.02,3:22,2.49,2:38,2:40,2.22,2-31"
@@ -31,3 +32,14 @@ def get_coach_data(in_str):  # 字符串转换为字典
 print(get_coach_data(str1)['Name'] + "'s fastest times are: " + get_coach_data(str1)['Times'])
 print(get_coach_data(str2)['Name'] + "'s fastest times are: " + get_coach_data(str2)['Times'])
 print(get_coach_data(str3)['Name'] + "'s fastest times are: " + get_coach_data(str3)['Times'])
+
+# 将字典当做“分支语法结构”来使用
+x = int(input("First number:"))
+o = input("Operator:")
+y = int(input("Second number:"))
+operator = {"+": x + y,  # 值可以存储表达式
+            "-": x - y,
+            "*": x * y,
+            "/": x / y}
+# print("Result: ", operator[o])
+print("Result: ", operator.get(o, "Operator must be +|-|*|/"))  # 对比了解get()的用法

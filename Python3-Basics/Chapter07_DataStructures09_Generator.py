@@ -1,9 +1,9 @@
 #! python3
 # -*- coding: utf-8 -*-
 
-listSample = [2 * x for x in range(3)]  # 使用列表生成式来创建列表
+listSample = [2 * x for x in range(3)]  # 使用列表解析来创建列表
 print("listSample: ", listSample)
-listSample2 = [m + n for m in 'ABC' for n in 'abc']  # 使用两层循环的列表生成式来创建列表
+listSample2 = [m + n for m in 'ABC' for n in 'abc']  # 使用两层循环的列表解析来创建列表
 print("listSample2: ", listSample2)
 
 geneSample = (2 * x for x in range(3))  # 创建生成器geneSample：把一个列表生成式的[]改成()
@@ -41,8 +41,8 @@ print(next(fibSample))  # 输出斐波拉契数列的第6项
 for n in fib(6):  # 通过for循环来迭代生成器
     print("fib: ", n)
 
-# ### 列表生成式（List Comprehensions）
-# 运用列表生成式可以直接快速生成list，也可以通过一个list推导出另一个list，而代码却十分简洁；
+# ### 列表解析（List Comprehensions）
+# 运用列表解析可以直接快速生成list，也可以通过一个list推导出另一个list，而代码却十分简洁；
 # 受到内存限制，列表容量是有限的，一个庞大的列表将占用很大的存储空间，很可能会造成浪费；
 #
 # ### 生成器（Generator）

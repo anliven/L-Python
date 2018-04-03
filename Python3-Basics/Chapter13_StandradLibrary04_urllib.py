@@ -15,6 +15,7 @@ proxy_handler = request.ProxyHandler({'http': '10.144.1.10:8080'})
 # proxy_auth_handler.add_password('realm', 'host', 'username', 'password')
 opener = request.build_opener(proxy_handler)
 with opener.open('http://www.pythonchallenge.com/') as f:
+    print('Status:', f.status, f.reason)
     print("Proxy is ok!")
     pass
 

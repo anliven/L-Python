@@ -30,16 +30,16 @@ def fib(x):  # 斐波拉契数列
 fibSample = fib(6)  # fibSample是生成器，斐波拉契数列的前6项
 print("fibSample: ", fibSample)
 
-print(next(fibSample))  # 输出斐波拉契数列的第1项
-print(next(fibSample))
-print(next(fibSample))
-print(next(fibSample))
-print(next(fibSample))
-print(next(fibSample))  # 输出斐波拉契数列的第6项
+print("Fib: ", next(fibSample))  # 输出斐波拉契数列的第1项
+print("Fib: ", fibSample.__next__())  # 使用__next__()逐项访问，这里输出斐波拉契数列的第2项
+print("Fib: ", fibSample.__next__())
+print("Fib: ", next(fibSample))
+print("Fib: ", next(fibSample))
+print("Fib: ", next(fibSample))  # 输出斐波拉契数列的第6项
 # print(next(fibSample))  # 生成器f只有6个元素，继续调用next()会提示错误StopIteration
 
 for n in fib(6):  # 通过for循环来迭代生成器
-    print("fib: ", n)
+    print("# fib: ", n)
 
 # ### 列表解析（List Comprehensions）
 # 运用列表解析可以直接快速生成list，也可以通过一个list推导出另一个list，而代码却十分简洁；

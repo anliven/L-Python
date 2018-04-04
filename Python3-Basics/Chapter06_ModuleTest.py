@@ -4,7 +4,7 @@ __version__ = '0.1'
 
 
 def say_hi():
-    print('Hi, Chapter06_ModuleTest.')
+    print("Hi,", __name__)
 
 
 def _private_1(name):
@@ -24,6 +24,7 @@ def greeting(name):
 
 if __name__ == '__main__':  # 判断是否是在直接运行
     print('This program is being run by itself. __name__ ： ', __name__)
+    say_hi()
 else:
     print('I am being imported from another module. __name__ ： ', __name__)
 

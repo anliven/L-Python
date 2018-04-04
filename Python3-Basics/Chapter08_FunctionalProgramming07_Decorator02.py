@@ -20,7 +20,7 @@ def test():
     print(now)
 
 
-test()  # 调用test()函数，不仅会运行test()函数本身，还会在运行test()函数前打印一行日志(执行log()函数中返回的wrapper()函数)
+test()  # 调用test()函数，运行test()函数本身之前打印一行日志(执行log()函数中返回的wrapper()函数)
 print(test.__name__)  # 经过decorator装饰之后的函数，__name__已变成'wrapper'
 
 
@@ -45,8 +45,6 @@ test2()
 print(test2.__name__)
 
 # ### 装饰器（Decorator）
-# 装饰器：在代码运行期间动态增加功能的方式；
-# 本质上，decorator就是一个返回函数的高阶函数；
 # 利用Python提供的@语法，可以将语句“test = log(test)”简写为“@log”；
 #
 # ### functools.wraps

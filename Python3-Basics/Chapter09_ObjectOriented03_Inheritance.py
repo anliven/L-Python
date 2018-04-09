@@ -37,7 +37,7 @@ class Student(SchoolMember):
         print('(Initialized Student: {})'.format(self.name))
 
     def tell(self):
-        SchoolMember.tell(self)
+        SchoolMember.tell(self)  # 直接调用父类的方法
         print('Marks: "{:d}"'.format(self.marks))
 
     def learning(self):
@@ -66,6 +66,24 @@ for member in members:
 
 print(isinstance(s, SchoolMember), isinstance(s, Student), isinstance(s, Master))
 
+
+class MyList:
+    __ml = []
+
+    def __init__(self, *args):
+        self.__ml = []
+        for i in args:
+            self.__ml.append(i)
+
+    def __add__(self, x):  # 运算符“+”重载（重写）
+        for i in range(0, len(self.__ml)):
+            self.__ml[i] += x
+        return self.__ml
+
+
+la = MyList(1, 2, 3, 4, 5)
+print(la + 10)
+
 # ### 继承（Inheritance）
 # - 通过继承机制可以重用（Reuse）代码，子类自动获得父类的全部属性和方法；
 # - 继承是类之间实现类型与子类型（Type and Subtype）关系；
@@ -75,9 +93,18 @@ print(isinstance(s, SchoolMember), isinstance(s, Student), isinstance(s, Master)
 # 如果在子类中定义了__init__ 方法，Python不会自动调用基类的构造函数，如果需要可以显式地调用；
 # 如果子类中没有定义__init__ 方法，Python将会自动调用基类的构造函数；
 #
+# ### 新式类与经典类的区别
+# 调用父类对的方式：
+# - 经典类：父类.方法(self)
+# - 新式类：父类.方法(self)和super(当前类,self).方法()
+# 多继承属性搜索顺序：
+# - 经典类：先深入继承树左侧，再返回，然后开始找右侧；
+# - 新式类：先水平搜索，然后再向上搜索；
+# 特别注意：在Python3中默认都是创建新式类，在Python2中只有继承自object类的才是新式类；
+#
 # ### super()
-# 可以在__init__前加上基类名作为前缀，再传入self和其余变量，来初始化基类；
-# 也可以使用super()来初始化基类；
+# 可以在__init__前加上父类名作为前缀，再传入self和其余变量，来初始化父类；
+# 也可以使用super()来初始化父类；
 # 示例： super(Student, self).__init__(name, age)
 # - 函数super(Student, self)将返回当前类继承的父类，然后调用__init__()方法；
 # - self参数已在super()中传入，在__init__()中将隐式传递，不需要写出（也不能写）；
@@ -92,9 +119,14 @@ print(isinstance(s, SchoolMember), isinstance(s, Student), isinstance(s, Master)
 # - MixIn的目的就是给一个类增加多个功能;
 # - 在设计类的时候，优先考虑通过多重继承来组合不同类的功能，而不是设计多层次的复杂的继承关系;
 #
-# ### 方法重写
+# ### 方法重写（重载）
 # - 子类继承会继承父类的所有方法，当父类方法无法满足需求，可在子类中定义一个同名方法覆盖父类的方法；
 # - 当子类的实例调用该方法时，优先调用子类自身定义的同名方法；
+#
+# ### 运算符重写（重载）
+# 通过重写Python内置魔法方法来实现运算符的重载；
+# 例如，如果类重写了__add__方法，当类的对象出现在+运算符中时会调用这个方法；
+# 类可以重载算术运算、打印、函数调用、索引、属性等魔法方法；
 #
 # ### isinstance()
 # isinstance()判断是否是摸个指定类型的数据对象；

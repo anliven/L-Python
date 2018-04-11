@@ -7,11 +7,6 @@ import time
 class TextFrame(wx.Frame):
     def __init__(self):
         wx.Frame.__init__(self, None, -1, u"这是Text Example", size=(500, 430))
-
-        box_sizer = wx.WrapSizer()
-        self.SetAutoLayout(True)
-        self.SetSizer(box_sizer)
-
         wx.StaticText(self, -1, "All Contents", pos=(200, 0))
         self.textAll = wx.TextCtrl(self, -1,
                                    size=(465, 200),
@@ -47,5 +42,5 @@ if __name__ == '__main__':
     root.MainLoop()
 
 # ### 文本框
-# 在wxPython中，wx.TextCtrl类实现文本框功能，可以输入、显示和编辑文本；
+# wx.TextCtrl类实现文本框功能，可以输入、显示和编辑文本；
 # TextCtrl部件可以是只读（wx.TE_READONLY），多行（wx.TE_MULTILINE）或密码字段（wx.TE_PASSWORD）;

@@ -14,6 +14,7 @@ testDict = {  # 创建字典
 }
 
 print(testDict)
+print(testDict.items())  # 返回整个字典列表
 print(testDict.keys())  # 输出所有的键，返回一个列表
 print(testDict.values())  # 输出所有的值，返回一个列表
 print("AAA's value is", testDict['AAA'])  # 注意：返回元素而不是列表，所以返回值没有中括号

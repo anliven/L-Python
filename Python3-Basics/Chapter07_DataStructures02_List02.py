@@ -13,7 +13,7 @@ print("# test_list: ", test_list)
 
 test_list2 = ["Hello", "Python", '!']
 print("".join(test_list2))  # 列表转换为字符串 - 针对所有元素为str类型的列表
-print(" ".join(test_list2))
+print(" ".join(test_list2))  # 用空格分割
 
 test_list3 = ["Hello", "Python", 2018, '!']
 out_str = ""
@@ -53,9 +53,14 @@ print(unique_top3_items(test(str1)))
 print(unique_top3_items(test(str2)))
 print(unique_top3_items(test(str3)))
 
-print(sorted(set([sanitize(t) for t in str1.strip().split(',')]))[0:3])  # 利用set()来去除重复项
+print(sorted(set([sanitize(t) for t in str1.strip().split(',')]))[0:3])  # 利用set()去除列表的重复项
 print(sorted(set([sanitize(t) for t in str2.strip().split(',')]))[0:3])
 print(sorted(set([sanitize(t) for t in str3.strip().split(',')]))[0:3])
+
+print(list(set(['123', 'abc', '123', '123'])))  # 通过集合set()去除列表的重复项
+
+for i, n in enumerate(['aaa', 'bbb', 'ccc']):  # enumerate得到每个值的对应位置
+    print(i, n)
 
 # ### 方法串链（method chaining）
 # 多个方法串联在一起，可以简化代码书写；

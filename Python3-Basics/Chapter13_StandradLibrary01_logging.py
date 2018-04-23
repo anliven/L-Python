@@ -41,9 +41,12 @@ os.remove(logging_file)
 # - Python标准库文档: http://docs.python.org/3/library/
 # - Python 3 Module of the Week : https://pymotw.com/3/
 #
+# ### 标准库logging模块
+# - Logging facility for Python
+# - 官方文档：https://docs.python.org/3/library/logging.html
+#
 # ### 一些标准库
 # - sys模块（特定系统的功能）：https://docs.python.org/3/library/sys.html
 # - os模块（操作系统交互）：https://docs.python.org/3/library/os.html
 # - platform模块（获取平台或操作系统的信息）：https://docs.python.org/3/library/platform.html
-# - logging模块（信息记录）：https://docs.python.org/3/library/logging.html
 # - ......

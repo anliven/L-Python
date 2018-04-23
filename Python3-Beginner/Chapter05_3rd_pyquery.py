@@ -3,14 +3,18 @@
 from pyquery import PyQuery
 from urllib import request
 
+# link = 'https://www.python.org/events/python-events/'
+# doc = PyQuery(url=link)
+# events = doc('.shrubbery').text()
+# print(events)
+
 proxy_handler = request.ProxyHandler({'https': '10.144.1.10:8080'})  # 使用https的代理
 opener = request.build_opener(proxy_handler)
 with opener.open('https://www.python.org/events/python-events/') as f:
     data = f.read().decode('utf-8')
     doc = PyQuery(data)
-    events = doc('.shrubbery').text()
-
-print(events)
+    events2 = doc('.shrubbery').text()
+print(events2)
 
 # ### pyquery
 # A jquery-like library for python

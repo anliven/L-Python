@@ -1,15 +1,9 @@
 #! python3
 # -*- coding: utf-8 -*-
 
-print(type(123))  # 使用type()函数判断对象类型
-print(type(None))
-print(type(abs))
+print(type(123), type(None), type(abs))  # 使用type()函数判断对象类型
 print(type('abc') == str)  # 比较两个变量的type类型是否相同
-
-print(isinstance('a', str))
-print(isinstance(b'a', bytes))
-print(isinstance('abc', type(123)))
-
+print(isinstance('a', str), isinstance(b'a', bytes), isinstance('abc', type(123)))
 print(dir('abc'))
 
 
@@ -45,7 +39,13 @@ print(test.dsc, Sample.dsc)
 # - dir()函数： 获得一个对象的所有属性和方法；
 #
 # ### 操作对象状态
-# 配合getattr()、setattr()以及hasattr()，可以直接操作一个对象的状态
+# 配合getattr()、setattr()以及hasattr()，可以直接操作一个对象的状态；
+# getattr(object,name,default)
+# - 返回object的名称为name的属性的属性值,如果属性name存在,则直接返回其属性值；
+# - 如果属性name不存在,则触发AttributeError异常或当可选参数default定义时返回default值；
+# setattr(object,name,value)
+# - 设置object的名称为name(type：string)的属性值为value；
+# - 属性name可以是已存在属性也可以是新属性；
 #
 # ### 实例属性和类属性
 # - 类属性属于类所有，所有实例共享一个属性；

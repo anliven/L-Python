@@ -10,8 +10,11 @@ class Person2:
     def __init__(self, name):  # __init__方法在类的对象被实例化（Instantiated）时立即运行，进行初始化（Initialization）操作
         self.name = name
 
-    def sayhi(self):
+    def sayhi(self):  # 函数第一个参数是self表明此函数是类的方法
         print('Hello, my name is', self.name)
+
+    def __del__(self):  # __del__方法在对象消逝时被调用，一般不做自定义
+        print('Over！')
 
 
 p = Person1()

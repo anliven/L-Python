@@ -28,7 +28,7 @@ print('Java' not in string_sample)  # 判断'Java'是否不是str的子串
 print('\nHello')  # 转义字符\n可以换行
 print(r'\nHello')  # 字符串前加上r或R可以使字符串原样输出，防止被转义
 
-print('中文')  # Python3中字符串以Unicode编码，支持多语言
+print('中文', u'显示')  # Python3中字符串以Unicode编码，支持多语言
 print(ord('A'), ord('中'))  # ord()函数获取字符的整数表示
 print(chr(65), chr(20013))  # chr()函数把编码转换为对应的字符
 

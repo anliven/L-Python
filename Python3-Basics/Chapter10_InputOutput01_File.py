@@ -12,6 +12,7 @@ testFile = 'test.txt'
 
 try:
     f = open(testFile, 'w', encoding="utf-8")  # 以写入方式打开文件，不存在就创建
+    print("file name:%s, encode:%s, access mode:%s" % (f.name, f.encoding, f.mode))  # 文件对象的属性
     f.write(testText)  # 写入文本
     print("This is a test!", file=f)  # 利用print函数的file参数，写入数据到文件
 finally:
@@ -29,6 +30,10 @@ while True:
         break
     print("## ", line, end='')
 f.close()
+
+log = open(testFile, 'a', encoding="utf-8")  # 追加方式
+log.write("新写入的内容!")
+log.close()
 
 text = io.open(testFile, encoding="utf-8", errors='ignore').read()
 print(text)
@@ -55,16 +60,28 @@ os.remove(testFile)
 # - errors参数表示如果遇到编码错误后如何处理，最简单的方式是直接忽略“errors='ignore'”；
 # - help(open)获得更多信息；
 #
+# ### 文件对象的属性
+# - file.encoding: 文件所使用的编码
+# - file.mode: Access文件打开时使用的访问模式
+# - file.name: 文件名
+#
 # ### 常用文件操作
 # 文件读写是通过open()函数打开的文件对象完成的：open函数打开文件，返回一个file对象，然后对其进行相关操作；
-# - file.read()：读文件，一次读取文件的全部内容；file.read(x)：每次读取x个字符；
-# - file.seek(offset[, whence])：设置文件当前位置；
-# - file.tell()：返回文件当前位置；
+# - file.read()：读文件，所有内容为字符串，一次读取文件的全部内容；
+# - file.read(x)：每次读取x个字符并改变指针；
+# - f.readlines()：打印所有内容按行分割的列表；
+# - file.tell()：返回当前读写位置；
 # - file.write()：写文件，可以反复调用write()来写入文件，适合少量写入；
 # - file.writelines()：多行写文件，效率比write()高，速度快；
 # - file.close()：关闭文件，文件使用完毕后必须关闭，释放系统资源；
 # - file.next()：返回当前行，并将文件指针到下一行；
 # - file.flush()：提交更新（刷新文件内部缓冲，直接把内部缓冲区的数据立刻写入文件）；
+# file.seek(offset[, whence])：设置文件当前位置；
+# - f.seek(5)：改变用户态读写指针偏移位置,可做随机写
+# - f.seek(p,0)：移动当文件第p个字节处，绝对位置
+# - f.seek(p,1)：移动到相对于当前位置之后的p个字节
+# - f.seek(p,2)：移动到相对文件尾之后的p个字节
+# - f.seek(0,2)：指针指到尾部
 #
 # ### with语句
 # - 引入with语句可以自动调用close()方法，来保证把没有写入的数据全部写入磁盘；

@@ -3,7 +3,16 @@
 from collections import Iterable
 from collections import Iterator
 
-listSample = [111, 'aaa', "AAA"]
+x = iter("abc")  # 字符串
+for i in x:
+    print(i)
+
+d = {'one': 1, 'two': 2, 'three': 3}  # 字典
+m = iter(d)
+for i in d:  # 注意这里i是迭代key
+    print(i, d[i])
+
+listSample = [111, 'aaa', "AAA"]  # 列表
 print("Is it iterable? ", isinstance(listSample, Iterable))  # 判断一个对象是否是可迭代对象（Iterable）
 for i in listSample:
     print(i)

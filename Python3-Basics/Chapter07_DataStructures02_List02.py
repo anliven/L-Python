@@ -59,7 +59,7 @@ print(sorted(set([sanitize(t) for t in str3.strip().split(',')]))[0:3])
 
 print(list(set(['123', 'abc', '123', '123'])))  # 通过集合set()去除列表的重复项
 
-for i, n in enumerate(['aaa', 'bbb', 'ccc']):  # enumerate得到每个值的对应位置
+for i, n in enumerate(['aaa', 'bbb', 'ccc']):  # enumerate函数得到索引值和对应值
     print(i, n)
 
 # ### 方法串链（method chaining）

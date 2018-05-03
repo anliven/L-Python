@@ -38,7 +38,8 @@ Slicing是一种能够在有序的对象类型（列表，元组，字符串）�
 ### 014 - 什么是PEP8？
 ```
 PEPs(Python Enhancement Proposals，https://www.python.org/dev/peps/)。
-PEP8(Style Guide for Python Code)是一个编程规范，关于如何让代码更具有可读性的一些建议，具体信息（https://www.python.org/dev/peps/pep-0008/）。
+PEP8(Style Guide for Python Code)是一个编程规范，关于如何让代码更具有可读性的一些建议。
+具体信息（https://www.python.org/dev/peps/pep-0008/）。
 ```
 ### 015 - 文档字符串（docstring）的含义？
 文档字符串（docstring）为函数，模块和类注释生成文档。
@@ -51,8 +52,10 @@ PEP8(Style Guide for Python Code)是一个编程规范，关于如何让代码�
 ### 019 - 生成器(generator)与函数的主要区别？
 生成器是包含yield关键字的函数，在运行过程中，每次遇到yield时函数会暂停并保存当前所有的运行信息，返回yield的值；生成器返回迭代器，而函数返回值。
 ### 020 - re.match()和re.search() 方法的不同？
-re.match()只匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败，函数返回None；re.search()  扫描整个字符串并返回第一个成功的匹配。
-
+```
+re.match()只匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败，函数返回None；
+re.search()  扫描整个字符串并返回第一个成功的匹配。
+```
 
 
 ## 021-030
@@ -93,7 +96,21 @@ re.match()只匹配字符串的开始，如果字符串开始不符合正则表�
 新式类增加了一些内置属性和方法，例如：__slots__内置属性和__getattribute__方法。
 Python2.x中默认都是经典类，只有显式继承了object才是新式类；Python3.x中默认都是新式类，经典类被移除，不必显式的继承object。
 ```
+### 026 - Python如何获取当前的绝对路径？
+通过标准库os模块的os.path.abspath('.')方法获取。
+### 027 - Python如何获取当前模块的文件名？
+通过特殊变量__file__获取。
+### 028 - Python如何获取命令行参数?
+通过标准库sys模块的sys.argv变量获取。
+### 029 - 如何获取当前Python命令的可执行文件路径？
+通过标准库sys模块的sys.executable变量获取。
+### 030 - 参数“*args”和“**kwargs”的区别？
+```
+如果不确定要往函数中传入多少个参数，或者想往函数中以列表和元组的形式传参数时，使用“*args”。
+如果不确定要往函数中传入多少个关键词参数，或者想传入字典的值作为关键词参数时，使用“**kwargs”。
+约定俗成使用args和kwargs这两个标识符，也可以用其他标识符名称（不建议）。
+```
 
 
 
-
+## 031-040

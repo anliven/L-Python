@@ -3,7 +3,7 @@
 import xml.etree.ElementTree as ET
 import os
 
-tree = ET.parse('Chapter13_StandradLibrary11_XML02.xml')  # 读取文件
+tree = ET.parse('Chapter11_XML02.xml')  # 读取文件
 root = tree.getroot()  # 获取根元素
 print(root.tag, root.attrib)  # 根元素的标签和属性
 print(root[1][2].text)  # 通过索引访问特定的元素
@@ -29,7 +29,7 @@ for country in root.findall('country'):
     if rank > 50:
         root.remove(country)  # 删除元素
 
-new_xml = 'Chapter13_StandradLibrary11_XML02-new.xml'
+new_xml = 'Chapter11_XML02-new.xml'
 tree.write(new_xml)  # 写入更改并构建XML文档
 os.remove(new_xml)
 

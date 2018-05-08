@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from PIL import Image, ImageFilter
 
-im = Image.open('Chapter05_3rd_pillow-tj.jpg')  # 打开当前目录下的图片
+im = Image.open('Chapter05_pillow-tj.jpg')  # 打开当前目录下的图片
 w, h = im.size  # 获得图像尺寸:
 print('Original image size: %sx%s' % (w, h))
 im.thumbnail((w // 2, h // 2))  # 缩放到50%:

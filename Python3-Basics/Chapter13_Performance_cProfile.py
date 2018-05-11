@@ -23,9 +23,14 @@ cProfile.run('func2(testlist)')
 # ### 标准库cProfile和profile模块
 # The Python Profilers
 # https://docs.python.org/3/library/profile.html
-# profile和cProfile是内置的性能分析工具，能够描述程序运行时候的性能，并提供统计数据以定位程序的性能瓶颈。
+# 两者都是内置的性能分析工具，能够描述程序运行时候的性能，并提供统计数据以定位程序的性能瓶颈；
+# 两者接口相同，但profile是由纯Python实现，而cProfile由c语言实现；
 #
-# ### 统计数据列
+# ### 标准库pstats模块
+# Analysis of the profiler data is done using the Stats class.
+# https://docs.python.org/3/library/profile.html#module-pstats
+#
+# ### 结果说明
 # - ncalls：函数调用的次数；
 # - tottime：指定函数的总运行时间(不包括调用子函数的运行时间）；
 # - percall：函数运行一次的平均时间（第1个percall），等于“tottime/ncalls”；

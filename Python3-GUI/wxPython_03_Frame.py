@@ -10,7 +10,7 @@ class MyApp(wx.App):  # 自定义App类，继承自wx.App
     def OnInit(self):  # 程序开始时自动被调用，不需要任何参数
         self.frame = wx.Frame(parent=None,
                               id=-1,
-                              title="Test",
+                              title="Frame Demo",
                               pos=wx.DefaultPosition,
                               size=wx.DefaultSize,
                               style=wx.DEFAULT_FRAME_STYLE,
@@ -25,9 +25,16 @@ class MyApp(wx.App):  # 自定义App类，继承自wx.App
         return True
 
 
-app = MyApp()  # 创建类实例，这里OnInit()自动被调用
-app.MainLoop()  # 开始事件循环
+if __name__ == "__main__":
+    app = MyApp()  # 创建类实例，这里OnInit()自动被调用
+    app.MainLoop()  # 开始事件循环
 
+# ### wx.App类
+# https://docs.wxpython.org/wx.App.html
+#
+# ### wx.Frame类
+# https://docs.wxpython.org/wx.Frame.html
+#
 # ### wx.App的OnInit与OnExit()方法
 # - OnInit()方法 : 程序开始时自动被调用，不需要任何参数
 # - OnExit()方法 : 如果调用了全局的Exit()方法来关闭应用程序，那么该方法会被自动触发

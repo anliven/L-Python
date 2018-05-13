@@ -3,7 +3,7 @@
 import wx
 
 app = wx.App()  # 创建wx.App应用实例对象
-frame = wx.Frame(None, -1, "Test")  # 创建wx.Frame窗口实例对象：生成顶层框架窗口和设置标题
+frame = wx.Frame(None, -1, "Demo")  # 创建wx.Frame窗口实例对象：生成顶层框架窗口和设置标题
 frame.Show()  # 显示框架窗口
 app.MainLoop()  # 进入消息循环（接受各种事件，并作出相应的反应）
 
@@ -12,6 +12,9 @@ app.MainLoop()  # 进入消息循环（接受各种事件，并作出相应的�
 #
 # ### wxPython
 # 开源的、免费的、跨平台的GUI库，是C++类库wxWidgets的Python版本；
+# - PyPI : https://pypi.org/project/wxPython/
+# - Homepage : https://wxpython.org/
+# - Docs : https://docs.wxpython.org/
 #
 # ### 对象化开发
 # 适用于简洁的GUI程序创建，直接使用wx.App、wx.Frame等相关类的方法；

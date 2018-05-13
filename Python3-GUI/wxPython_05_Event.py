@@ -5,41 +5,35 @@ import wx
 
 class MyFrame(wx.Frame):
     def __init__(self):
-        wx.Frame.__init__(self,
-                          parent=None,
-                          id=-1,
-                          title="Test",
-                          pos=wx.DefaultPosition,
-                          size=(300, 300))
-
+        wx.Frame.__init__(self, None, -1, "Event Demo", wx.DefaultPosition, (300, 300))
         panel = wx.Panel(self)
-
-        def onButtonClick(self):
-            print("# The button is clicked.")
-
-        def onTextClick(self):
-            print("$ The static text is clicked.")
-
         test_button = wx.Button(panel,
                                 id=-1,
                                 label="Click on the button",
                                 pos=(60, 150))
-        test_button.Bind(wx.EVT_BUTTON, onButtonClick, test_button)  # 按钮被按下调用函数onButtonClick
+        test_button.Bind(wx.EVT_BUTTON, self.onButtonClick, test_button)  # 按钮被按下调用函数
         test_label = wx.StaticText(panel,
                                    id=-1,
                                    label="Click on the static text",
                                    pos=(60, 50))
-        test_label.Bind(event=wx.EVT_LEFT_DOWN, handler=onTextClick, source=test_label)  # 鼠标左键被按下调用函数onTextClick
+        test_label.Bind(event=wx.EVT_LEFT_DOWN, handler=self.onTextClick, source=test_label)  # 鼠标左键被按下调用函数
+
+    def onButtonClick(self, event):
+        print("# The button is clicked.")
+
+    def onTextClick(self, event):
+        print("$ The static text is clicked.")
 
 
-app = wx.App()
-frame = MyFrame()
-frame.Show()
-app.MainLoop()
+if __name__ == "__main__":
+    app = wx.App()
+    frame = MyFrame()
+    frame.Show()
+    app.MainLoop()
 
 # ### 事件（wx.Event类）
-# 事件：操作系统接收用户的操作，然后传递信息给应用程序，应用程序执行相应的功能（执行相应的代码）；
 # https://docs.wxpython.org/wx.Event.html
+# 事件：操作系统接收用户的操作，然后传递信息给应用程序，应用程序执行相应的功能（执行相应的代码）；
 #
 # ### 一些概念
 # - 在wxPython中，所有事件都是wx.Event或其子类的实例，每个事件都有一个事件类型属性，用于区分不同的事件；

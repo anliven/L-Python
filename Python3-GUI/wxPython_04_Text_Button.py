@@ -5,12 +5,7 @@ import wx
 
 class MyFrame(wx.Frame):
     def __init__(self):
-        wx.Frame.__init__(self,
-                          parent=None,
-                          id=-1,
-                          title="Test",
-                          pos=wx.DefaultPosition,
-                          size=(300, 300))
+        wx.Frame.__init__(self, None, -1, "Text and Button Demo", wx.DefaultPosition, (300, 300))
         # 面板
         panel = wx.Panel(self, -1)  # 创建wx.Panel类的实例对象
         # 静态文本
@@ -45,7 +40,7 @@ class MyFrame(wx.Frame):
                                 size=(120, -1))
         # self.button.SetLabel("Change")  # 设置按钮显示的文本信息
         # 位图按钮
-        bmp = wx.Image("wxPython-04.bmp", wx.BITMAP_TYPE_BMP).ConvertToBitmap()  # 引入图片并装换为位图格式
+        bmp = wx.Image("wxPython_04.bmp", wx.BITMAP_TYPE_BMP).ConvertToBitmap()  # 引入图片并装换为位图格式
         self.button2 = wx.BitmapButton(panel,
                                        id=-1,
                                        bitmap=bmp,  # 指定使用的位图
@@ -53,26 +48,27 @@ class MyFrame(wx.Frame):
                                        size=(120, -1))
 
 
-app = wx.App()
-frame = MyFrame()
-frame.Show()
-app.MainLoop()  # 开始事件循环
+if __name__ == "__main__":
+    app = wx.App()
+    frame = MyFrame()
+    frame.Show()
+    app.MainLoop()  # 开始事件循环
 
 # ### 控件（组件）
 # 控件：窗口上的一个小型窗口，具有自己的界面并且可以执行一定的功能；
 # 常用的控件包括：静态文本、面板、输入框、按钮、位图按钮等；
 #
 # ### 静态文本（wx.StaticText类）
-# 用于显示一些文本信息；
 # https://docs.wxpython.org/wx.StaticText.html
+# 用于显示一些文本信息；
 #
 # ### 面板（wx.Panel类）
-# 作为一个容器（放置所有控件），用于将窗口内容与工具栏和状态栏等分开；
 # https://docs.wxpython.org/wx.Panel.html
+# 作为一个容器（放置所有控件），用于将窗口内容与工具栏和状态栏等分开；
 #
 # ### 输入框（wx.TextCtrl类）
-# 用于输入一些文本信息，让用户和程序进行信息交流；
 # https://docs.wxpython.org/wx.TextCtrl.html
+# 用于输入一些文本信息，让用户和程序进行信息交流；
 # 一些常用的方法：
 # - AppendText(text)：在尾部添加文本
 # - Clear()：清空文本框的信息
@@ -82,13 +78,13 @@ app.MainLoop()  # 开始事件循环
 # - Remove(from, to)：删除指定位置索引范围的文本信息
 #
 # ### 按钮（wx.Button类）
-# 触发设置的事件，获得响应；
 # https://docs.wxpython.org/wx.Button.html
+# 触发设置的事件，获得响应；
 # 一些常用的方法：
 # - SetLabel(): 设置按钮显示的文本信息
 # - GetLabel(): 获取按钮的文本信息
 # - SetDefault(): 设置为对话框或窗口的默认按钮
 #
 # ### 位图按钮（wx.BitmapButton类）
-# 位图按钮可以指定一张图片来显示自身；
 # https://docs.wxpython.org/wx.BitmapButton.html
+# 位图按钮可以指定一张图片来显示自身；

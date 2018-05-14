@@ -43,7 +43,7 @@ if __name__ == "__main__":
 # - parent=None ： 指定父对象，如果取值为None则表示为顶级窗口
 # - id=-1 ： 窗口内子部件的唯一标识，每个窗口内的子部件的ID必须是唯一的
 # - title="Test" ： 窗口的标题
-# - pos=wx.DefaultPosition ： 坐标位置，如果取值为(-1,-1)将采用系统默认的位置
-# - size=wx.DefaultSize ： 窗口大小（长度与宽度），如果取值为(-1,-1)将采用系统默认的大小
+# - pos=wx.DefaultPosition ： 坐标位置，如果取值为(-1, -1)将采用系统默认的位置
+# - size=wx.DefaultSize ： 窗口大小（长度与宽度），如果取值为(-1, -1)将采用系统默认的大小
 # - style=wx.DEFAULT_FRAME_STYLE : 显示格式风格
 # - name="frame" ： 窗口的标识，可用于查找此窗口

@@ -54,6 +54,18 @@ if __name__ == "__main__":
 #                如果只写一个id，那么和source的作用相同；
 #                如果写了两个id，则在这两个id之间的数值都被绑定相应的事件，并且调用相同的事件处理函数；
 #
+# ### 一些事件类型
+# - wx.EVT_LEFT_DOWN ：鼠标左键按下
+# - wx.EVT_LEFT_UP ：鼠标左键松开
+# - wx.EVT_LEFT_DCLICK ：鼠标左键双击
+# - wx.EVT_RIGHT_DOWN ：鼠标右键按下
+# - wx.EVT_RIGHT_UP ：鼠标右键松开
+# - wx.EVT_RIGHT_DCLICK ：鼠标右键双击
+# - wx.EVT_MOTION ：鼠标移动
+# - wx.EVT_MOUSE_EVENTS ：所有鼠标事件
+# - wx.EVT_BUTTON ：按钮被按下
+# - wx.EVT_MENU ：菜单项被选择
+#
 # ### 事件处理机制简介
 # 传递机制：
 # - 如果一个父对象中包含了子对象，两者都可以响应同一个事件，那么会优先在子对象中响应；

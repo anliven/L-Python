@@ -5,7 +5,7 @@ import wx
 
 class MyFrame(wx.Frame):
     def __init__(self):
-        wx.Frame.__init__(self, None, -1, "Menu Demo")
+        wx.Frame.__init__(self, None, -1, "Menu01 Demo")
         wx.Panel(self)
 
         menu_bar = wx.MenuBar()  # 创建菜单栏，不需要任何参数

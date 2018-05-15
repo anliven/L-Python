@@ -5,19 +5,20 @@ import wx
 
 class MyFrame(wx.Frame):
     def __init__(self):
-        wx.Frame.__init__(self, None, -1, "RadioMenu Demo")
+        wx.Frame.__init__(self, None, -1, "Menu02 Demo")
         wx.Panel(self)
         menu_bar = wx.MenuBar()
 
+        # 复选开关菜单项
         self.menu = wx.Menu()
         self.str1 = self.menu.AppendRadioItem(-1, "aaa")
         self.str2 = self.menu.AppendRadioItem(-1, "bbb")
-        self.str3 = self.menu.AppendRadioItem(id=-1, item="ccc", )
+        self.str3 = self.menu.AppendRadioItem(id=-1, item="ccc")
         self.Bind(wx.EVT_MENU, self.onStr1, self.str1)
         self.Bind(wx.EVT_MENU, self.onStr2, self.str2)
         self.Bind(wx.EVT_MENU, self.onStr3, self.str3)
         menu_bar.Append(self.menu, "RadioItemTesting")
-
+        # 单选开关菜单项
         self.menu2 = wx.Menu()
         self.num1 = self.menu2.AppendCheckItem(-1, "111")
         self.num2 = self.menu2.AppendCheckItem(-1, "222")
@@ -26,7 +27,7 @@ class MyFrame(wx.Frame):
         self.Bind(wx.EVT_MENU, self.onNum2, self.num2)
         self.Bind(wx.EVT_MENU, self.onNum3, self.num3)
         menu_bar.Append(self.menu2, "CheckItemTesting")
-
+        # 使用Append()方法创建开关菜单项
         self.menu3 = wx.Menu()
         items_count = self.menu3.Append(-1, "GetMenuItemCount", kind=wx.ITEM_CHECK)
         self.menu3.Append(-1, "testItem", kind=wx.ITEM_CHECK)

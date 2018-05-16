@@ -5,15 +5,15 @@ import wx
 
 class MyFrame(wx.Frame):
     def __init__(self):
-        wx.Frame.__init__(self, None, -1, "Dialog01 Demo", size=(400, 300))
+        wx.Frame.__init__(self, None, -1, "Dialog01 Demo", size=(300, 300))
         panel = wx.Panel(self)
-        btn1 = wx.Button(panel, -1, "MessageBox", (30, 50))
+        btn1 = wx.Button(panel, -1, "MessageBox", (30, 30))
         btn1.Bind(wx.EVT_BUTTON, self.onClick_MessageBtn)
-        btn2 = wx.Button(panel, -1, "GetTextFromUser", (30, 100))
+        btn2 = wx.Button(panel, -1, "GetTextFromUser", (30, 80))
         btn2.Bind(wx.EVT_BUTTON, self.onClick_GetTextFromUser)
-        btn3 = wx.Button(panel, -1, "GetSingleChoice", (30, 150))
+        btn3 = wx.Button(panel, -1, "GetSingleChoice", (30, 130))
         btn3.Bind(wx.EVT_BUTTON, self.onClick_GetSingleChoice)
-        btn4 = wx.Button(panel, -1, "FileSelector", (30, 200))
+        btn4 = wx.Button(panel, -1, "FileSelector", (30, 180))
         btn4.Bind(wx.EVT_BUTTON, self.onClick_GetFile)
 
     def onClick_MessageBtn(self, event):

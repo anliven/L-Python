@@ -25,12 +25,13 @@ class MyFrame(wx.Frame):
                                 style=wx.ALIGN_CENTER)  # 居中对齐
         text_st.SetBackgroundColour("white")
         text_st.SetForegroundColour("blue")
-        # 输入框
+        # 文本输入框
         text_ct = wx.TextCtrl(panel,
                               id=-1,
                               value="Input your name",
                               pos=(60, 90),
-                              size=(120, -1))
+                              size=(120, -1),
+                              style=wx.TE_PASSWORD)
         text_ct.SetInsertionPoint(0)  # 设置插入光标的位置
         # 按钮
         self.button = wx.Button(panel,
@@ -66,9 +67,10 @@ if __name__ == "__main__":
 # https://docs.wxpython.org/wx.Panel.html
 # 作为一个容器（放置所有控件），用于将窗口内容与工具栏和状态栏等分开；
 #
-# ### 输入框（wx.TextCtrl类）
+# ### 文本输入框（wx.TextCtrl类）
 # https://docs.wxpython.org/wx.TextCtrl.html
-# 用于输入一些文本信息，让用户和程序进行信息交流；
+# 用于输入、显示和编辑文本信息，让用户和程序进行信息交流；
+# style可以是只读（wx.TE_READONLY），多行（wx.TE_MULTILINE）或密码字段（wx.TE_PASSWORD）；
 # 一些常用的方法：
 # - AppendText(text)：在尾部添加文本
 # - Clear()：清空文本框的信息

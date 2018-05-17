@@ -7,15 +7,15 @@ class MyApp(wx.App):  # 自定义App类，继承自wx.App
     def __init__(self):  # 自定义__init__方法
         wx.App.__init__(self)
 
-    def OnInit(self):  # 程序开始时自动被调用，不需要任何参数
+    def OnInit(self):  # 重写方法，程序开始时自动被调用，不需要任何参数
         self.frame = wx.Frame(parent=None,
                               id=-1,
                               title="Frame Demo",
                               pos=wx.DefaultPosition,
                               size=wx.DefaultSize,
                               style=wx.DEFAULT_FRAME_STYLE,
-                              name="frame")
-        self.frame.Show()
+                              name="frame")  # 生成框架窗口
+        self.frame.Show()  # 显示框架窗口
         self.SetTopWindow(self.frame)  # 为应用程序指定一个顶级窗口
         print("Hi!")
         return True  # 返回一个布尔值：如果返回True，程序正常向下执行，如果返回False，程序退出

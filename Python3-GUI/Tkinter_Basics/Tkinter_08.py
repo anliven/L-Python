@@ -8,8 +8,9 @@ import tkinter.messagebox
 from PIL import ImageGrab, Image
 
 root = tkinter.Tk()
-root.geometry('100x60+400+300')  # 设置窗口大小与位置
-root.resizable(False, False)  # 设置窗口大小不可改变
+root.title("Tkinter08 Demo")
+root.geometry('200x120+400+300')  # 设置窗口大小与位置，“width x height + xoffset + yoffset”
+# root.resizable(False, False)  # 设置窗口大小不可改变
 
 
 class MyCapture:
@@ -23,7 +24,7 @@ class MyCapture:
         self.top.overrideredirect(True)  # 不显示最大化、最小化按钮
         self.image = tkinter.PhotoImage(file=png)
         self.canvas = tkinter.Canvas(self.top, bg='white', width=screen_width, height=screen_height)  # 创建画布
-        self.canvas.create_image(screen_width // 2, screen_height // 2, image=self.image)  # 显示全屏截图，在全屏截图上进行区域截图
+        self.canvas.create_image(screen_width // 2, screen_height // 2, image=self.image)  # 显示全屏截图，并进行区域截图
 
         def onLeftButtonUp(event):  # 获取鼠标左键抬起的位置并取色
             im = Image.open(png)
@@ -54,4 +55,13 @@ def buttonCaptureClick():  # 截图
 buttonCapture = tkinter.Button(root, text='取色', command=buttonCaptureClick)
 buttonCapture.place(x=10, y=10, width=80, height=20)
 
-root.mainloop()  # 启动消息主循环
+root.mainloop()
+
+# ### 窗口美化
+# title()/wm_title() ：窗口标题；
+# geometry() ：窗口大小；
+# overrideredirect() ：去除边框；
+# iconbitmap()/wm_iconbitmap() ：标题栏图标；
+#
+# ### 画布（Canvas）
+# 用于绘制图形；

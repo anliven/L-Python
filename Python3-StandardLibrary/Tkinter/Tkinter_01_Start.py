@@ -38,9 +38,9 @@ root.mainloop()  # 开始事件循环
 # ### Tkinter
 # https://docs.python.org/3/library/tk.html
 # Python内置的支持Tk的图形模块，简单方便，能够满足基本的GUI程序要求；
-# 虽然tkinter的界面简陋，但其简洁的优点，适合用于示例、Demo等快速开发场景；
+# 虽然tkinter的界面简陋，但其简洁的优点，适合用于小工具、示例程序、Demo等快速开发场景；
 # 编写GUI程序的一般过程：创建窗口---》添加组件并设置属性---》绑定事件响应；
-# tkinter的__init__.py文件包含常用的绝大多数类，阅读源代码是获取帮助信息的有效方式；
+# 源码__init__.py文件包含常用的绝大多数类（“Python安装目录\Lib\tkinter\__init__.py”）；
 #
 # ### 组件（widget）
 # 也称为控件，包括标签、按钮、菜单、对话框、消息框等；

@@ -37,5 +37,5 @@ if __name__ == "__main__":
     app = Application(master=root)  # 实例化Application
     app.mainloop()
 
-# ### 消息框（）
+# ### 消息框（messagebox）
 # 具体信息可查看源码文件（“Python安装目录\Lib\tkinter\messagebox.py”）；

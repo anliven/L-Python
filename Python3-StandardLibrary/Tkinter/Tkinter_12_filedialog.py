@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import tkinter
 import tkinter.messagebox
 import tkinter.filedialog
@@ -98,7 +99,7 @@ def popup(event):
 
 # 创建界面
 root = tkinter.Tk()
-root.title('NoteBook')
+root.title('Tkinter12 Demo')
 root.geometry("500x500+100+100")
 menu_bar = tkinter.Menu(root)
 # 文件菜单

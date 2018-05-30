@@ -1,10 +1,9 @@
-#! python3
 # -*- coding: utf-8 -*-
 import tkinter
 import tkinter.dialog
 
 root = tkinter.Tk()
-root.wm_title("Tkinter06 Demo")
+root.wm_title("Tkinter08 Demo")
 root.minsize(300, 100)
 
 

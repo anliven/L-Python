@@ -1,21 +1,22 @@
-#! python3
 # -*- coding: utf-8 -*-
-
 import tkinter
 
 root = tkinter.Tk()
-root.wm_title("Tkinter03 Demo")
+root.wm_title("Tkinter04 Demo")
 
 label1 = tkinter.Label(root, text=u"账号:").grid(row=0, sticky="w")
-entry1 = tkinter.Entry(root)
-entry1.grid(row=0, column=1, sticky="e")
-
 label2 = tkinter.Label(root, text=u"密码:").grid(row=1, sticky="w")
+label3 = tkinter.Label(root, text=u"")
+
+var = tkinter.Variable()
+var.set("tester")
+
+entry1 = tkinter.Entry(root, textvariable=var)  # textvariable属性绑定变量
 entry2 = tkinter.Entry(root)
 entry2["show"] = "*"  # 设置show属性，实现“不可见输入”
-entry2.grid(row=1, column=1, sticky="e")
 
-label3 = tkinter.Label(root, text=u"")
+entry1.grid(row=0, column=1, sticky="e")
+entry2.grid(row=1, column=1, sticky="e")
 label3.grid(row=3, column=1, sticky="w")
 
 
@@ -50,4 +51,5 @@ root.mainloop()
 #
 # ### 输入框（Entry）
 # 获取输入的文本信息；
+# 具体信息可查看源码文件__init__.py中的Entry类（“Python安装目录\Lib\tkinter\__init__.py”）；
 # get()方法获取输入框的内容，使用时不需要任何参数；

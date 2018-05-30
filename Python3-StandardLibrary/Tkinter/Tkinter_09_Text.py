@@ -1,11 +1,10 @@
-#! python3
 # -*- coding: utf-8 -*-
 import tkinter
 import tkinter.messagebox
 
 root = tkinter.Tk()
 root.minsize(300, 100)
-root.wm_title("Tkinter07 Demo")
+root.wm_title("Tkinter09 Demo")
 
 time_btn1 = 0
 
@@ -48,9 +47,14 @@ root.mainloop()
 
 # ### 复选按钮（Checkbutton）
 # 用来选择信息；
+# 具体信息可查看源码文件__init__.py中的Checkbutton类（“Python安装目录\Lib\tkinter\__init__.py”）；
 #
 # ### 单选按钮（Radiobutton）
 # 用来选择信息；
+# 具体信息可查看源码文件__init__.py中的Radiobutton类（“Python安装目录\Lib\tkinter\__init__.py”）；
 #
 # ### 文本域（Text）
 # 相当于一个大型的文本框，但拥有更多的属性；
+# 具体信息可查看源码文件__init__.py中的Text类（“Python安装目录\Lib\tkinter\__init__.py”）；
+# - insert(mark，string)方法：插入内容，参数mark可以是行号或位置标识符；
+# - delete(mark1, mark2)方法：删除内容；

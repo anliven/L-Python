@@ -1,9 +1,8 @@
-#! python3
 # -*- coding: utf-8 -*-
 import tkinter
 
 root = tkinter.Tk()
-root.wm_title("Tkinter05 Demo")
+root.wm_title("Tkinter07 Demo")
 root.minsize(300, 100)
 
 
@@ -47,9 +46,11 @@ root.config(menu=menu)  # 指定顶层菜单
 root.mainloop()
 
 # ### 菜单（Menu）
-# add_command()方法：添加菜单项；
-# add_cascade()方法：“级联”菜单，也就是设置子菜单；
-# post()方法：在相应位置弹出菜单；
-# add_separator()方法：分割线，区分界限；
-# add_radiobutton()方法：单选菜单，只能选定一个；
-# add_checkbutton()方法：复选菜单，可以同时选定多个菜单项；
+# 具体信息可查看源码文件__init__.py中的Menu类（“Python安装目录\Lib\tkinter\__init__.py”）；
+# 一些常用方法：
+# - add_command()方法：添加菜单项；
+# - add_cascade()方法：“级联”菜单，也就是设置子菜单；
+# - post()方法：在相应位置弹出菜单；
+# - add_separator()方法：分割线，区分界限；
+# - add_radiobutton()方法：单选菜单，只能选定一个；
+# - add_checkbutton()方法：复选菜单，可以同时选定多个菜单项；

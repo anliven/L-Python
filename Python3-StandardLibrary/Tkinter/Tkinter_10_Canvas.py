@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import os
 from time import sleep
@@ -8,7 +7,7 @@ import tkinter.messagebox
 from PIL import ImageGrab, Image
 
 root = tkinter.Tk()
-root.title("Tkinter08 Demo")
+root.title("Tkinter10 Demo")
 root.geometry('200x120+400+300')  # 设置窗口大小与位置，“width x height + xoffset + yoffset”
 # root.resizable(False, False)  # 设置窗口大小不可改变
 
@@ -65,3 +64,4 @@ root.mainloop()
 #
 # ### 画布（Canvas）
 # 用于绘制图形；
+# 具体信息可查看源码文件__init__.py中的Canvas类（“Python安装目录\Lib\tkinter\__init__.py”）；

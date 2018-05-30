@@ -1,5 +1,3 @@
-#! python3
-# -*- coding: utf-8 -*-
 import tkinter as tk
 import tkinter.messagebox
 
@@ -33,9 +31,13 @@ class Application(tk.Frame):  # 从Frame派生一个Application类，这是所�
 if __name__ == "__main__":
     root = tk.Tk()
     root.minsize(300, 100)
-    root.wm_title("Tkinter04 Demo")
+    root.wm_title("Tkinter05 Demo")
     app = Application(master=root)  # 实例化Application
     app.mainloop()
 
+# ### 框架（Frame）
+# 在屏幕上创建一块矩形区域，多作为容器来布局窗体；
+# 具体信息可查看源码文件__init__.py中的Frame类（“Python安装目录\Lib\tkinter\__init__.py”）；
+#
 # ### 消息框（messagebox）
 # 具体信息可查看源码文件（“Python安装目录\Lib\tkinter\messagebox.py”）；

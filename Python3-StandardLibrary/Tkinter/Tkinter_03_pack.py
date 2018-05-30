@@ -1,9 +1,8 @@
-#! python3
 # -*- coding: utf-8 -*-
 import tkinter
 
 root = tkinter.Tk()
-root.wm_title("Tkinter02 Demo")
+root.wm_title("Tkinter03 Demo")
 
 button1 = tkinter.Button(root, text="AAA").pack(side="left", expand="0", fill="y")
 button2 = tkinter.Button(root, text="BBB").pack(side="top", expand="0", fill="both")

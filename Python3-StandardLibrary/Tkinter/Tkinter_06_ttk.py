@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 from tkinter import *  # 必须添加此引用
 import tkinter.messagebox
@@ -33,7 +32,8 @@ if __name__ == "__main__":
     app = Application()
     style = Style()  # 在ttk中通过style对象来实现Tkinter中的fg和bg
     style.configure("BW.TLabel", foreground="black", background="white")
-    app.master.title('Hello World')  # 设置窗口标题
+    app.master.minsize(300, 100)
+    app.master.title('Tkinter06 Demo')  # 设置窗口标题
     app.mainloop()
 
 # ### tkinter.ttk

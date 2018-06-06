@@ -6,8 +6,10 @@ from datetime import timezone
 
 now = datetime.now()
 print(now)  # 获取当前日期和时间
+print("Date: ", now.date(), " Time: ", now.time())  # 分别获取当前日期与时间
 now_utc = datetime.utcnow()
 print(now_utc)
+
 
 dt = datetime(2018, 6, 30, 0, 00)  # 获取指定日期和时间的datetime
 print(dt)

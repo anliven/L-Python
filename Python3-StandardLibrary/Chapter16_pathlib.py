@@ -9,7 +9,7 @@ class DirTree():
     @ filename: 要保存成文件的名称
     """
 
-    def __init__(self, pathname='.', filename='show_tree.txt'):
+    def __init__(self, pathname='.', filename='Chapter16_dir_tree.txt'):
         super(DirTree, self).__init__()
         self.pathname = pathlib.Path(pathname)
         self.filename = filename

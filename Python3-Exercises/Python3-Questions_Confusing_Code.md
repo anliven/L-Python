@@ -288,6 +288,42 @@ print("e.stop", "&" * 20), e.stop()
 ```
 
 
+### 16
+以下代码的执行结果是什么？
+```python
+st = "abc"
+st_new = st.replace("a", "A")
+print("after: ", st, st_new)
+
+li = ['333', '222', '111']
+li_new = li.sort()
+print("after: ", li, li_new)
+```
+
+
+### 17
+以下代码的执行结果是什么？
+```python
+import copy
+
+tu = (1, 2, 3)
+a = tu
+b = copy.copy(tu)
+c = copy.deepcopy(tu)
+print(tu == a, tu == b, tu == c)
+print(id(tu) == id(a), id(tu) == id(b), id(tu) == id(c))
+
+li = [111, 222, 333]
+aaa = li
+bbb = copy.copy(li)
+ccc = copy.deepcopy(li)
+print(li == aaa, tu == bbb, tu == ccc)
+print(id(li) == id(aaa), id(li) == id(bbb), id(li) == id(ccc))
+```
+
+
+
+
 
 ## Tips:
 
@@ -314,6 +350,7 @@ print("e.stop", "&" * 20), e.stop()
 在Python3中“/ ”操作符是做浮点除法，而在Python2中则是整除。
 “//”操作符总是做整除，但Python的整除运算会向0的方向取值。
 ```
+
 
 
 ### 06
@@ -344,7 +381,9 @@ Python闭包的延迟绑定（late binding）：内部函数被调用时，参�
 ### 10
 ```
 带有默认参数的表达式在函数被定义的时候被计算，不是在调用的时候被计算。
+另外，“将可变数据类型作为函数定义中的默认参数”，这种行为是不建议的，甚至是禁止的
 ```
+
 
 
 ### 11
@@ -364,8 +403,21 @@ zip函数和列表解析（List Comprehension）的使用方法。
 ### 14
 ```
 带有默认参数的表达式在函数被定义的时候被计算，不是在调用的时候被计算。
+另外，“将可变数据类型作为函数定义中的默认参数”，这种行为是不建议的，甚至是禁止的
 ```
 ### 15
 ```
 继承的定义和super函数的用法。
+```
+
+
+
+### 16
+```
+不可变对象与可变对象的定义与区别。
+```
+### 17
+```
+不可变对象与可变对象的定义。
+赋值、浅拷贝与深拷贝的区别。
 ```

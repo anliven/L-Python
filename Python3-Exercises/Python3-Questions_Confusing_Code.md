@@ -47,6 +47,7 @@ print([i for i in list_1 if i not in list_2])
 print([i for i in list_2 if i not in list_1])
 ```
 
+
 ### 05
 在Python3和Python2中分别执行如下代码，结果分别是什么？
 ```python
@@ -140,30 +141,23 @@ fun2(b)
 print(a, b)
 ```
 
+
 ### 10
 以下代码的执行结果是什么？
 ```python
-def extendList(val, tl=[]):
-    tl.append(val)
-    return tl
+a = [1, 2, 3]
+b = a[:]
+print(a == b, a is b)
 
+c = {'1': "one", '2': 'two'}
+d = c
+d[3] = 'three'
+print(c == d, c is d)
 
-def extendList2(val, tl=None):
-    if tl is None:
-        tl = []
-    tl.append(val)
-    return tl
-
-
-list1 = extendList(123)
-list2 = extendList(789, [])
-list3 = extendList('abc')
-list4 = extendList2(111)
-list5 = extendList2(999, [])
-list6 = extendList2('ABC')
-
-print("list1= %s, list2= %s, list3= %s" % (list1, list2, list3))
-print("list4= %s, list5= %s, list6= %s" % (list4, list5, list6))
+e = (111, 333)
+f = e
+f = (555, 777)
+print(e == f, e is f)
 ```
 
 
@@ -213,21 +207,6 @@ print("\n", test1, "\n", test2, "\n", test3)
 
 
 ### 14
-以下代码的执行结果是什么？
-```python
-def f(x, li=[]):
-    for i in range(x):
-        li.append(i * i)
-    print(li)
-
-
-f(2)
-f(3, [3, 2, 1])
-f(3)
-```
-
-
-### 15
 以下代码的执行结果是什么？
 ```python
 class A(object):
@@ -288,7 +267,7 @@ print("e.stop", "&" * 20), e.stop()
 ```
 
 
-### 16
+### 15
 以下代码的执行结果是什么？
 ```python
 st = "abc"
@@ -301,7 +280,7 @@ print("after: ", li, li_new)
 ```
 
 
-### 17
+### 16
 以下代码的执行结果是什么？
 ```python
 import copy
@@ -322,7 +301,122 @@ print(id(li) == id(aaa), id(li) == id(bbb), id(li) == id(ccc))
 ```
 
 
+### 17
+以下代码的执行结果是什么？
+```python
+def f(x, li=[]):
+    for i in range(x):
+        li.append(i * i)
+    print(li)
 
+
+f(2)
+f(3, [3, 2, 1])
+f(3)
+```
+
+
+### 18
+以下代码的执行结果是什么？
+```python
+def extendList(val, tl=[]):
+    tl.append(val)
+    return tl
+
+
+def extendList2(val, tl=None):
+    if tl is None:
+        tl = []
+    tl.append(val)
+    return tl
+
+
+list1 = extendList(123)
+list2 = extendList(789, [])
+list3 = extendList('abc')
+list4 = extendList2(111)
+list5 = extendList2(999, [])
+list6 = extendList2('ABC')
+
+print("list1= %s, list2= %s, list3= %s" % (list1, list2, list3))
+print("list4= %s, list5= %s, list6= %s" % (list4, list5, list6))
+```
+
+
+### 19
+以下代码的执行结果是什么？
+```python
+def func(var1, var2=[]):
+    var2.append(var1)
+    print(var2)
+
+
+def func2(var1, var2=None):
+    if not var2:
+        var2 = []
+    var2.append(var1)
+    print(var2)
+
+
+func(1)
+func(2)
+func(3)
+func2("a")
+func2("b")
+func2("c")
+```
+
+
+### 20
+以下代码的执行结果是什么？
+```python
+class Test():
+    var = []
+
+    def add_str(self, string):
+        self.var.append(string)
+
+
+class Test2():
+    def __init__(self):
+        self.var = []
+
+    def add_str(self, string):
+        self.var.append(string)
+
+
+a = Test()
+a.add_str('111')
+b = Test()
+b.add_str('222')
+print(a.var, b.var)
+c = Test2()
+c.add_str('333')
+d = Test2()
+d.add_str('444')
+print(c.var, d.var)
+```
+
+
+### 21
+以下代码的执行结果是什么？
+```
+a = 1 or 3
+b = 1 and 3
+c = 1 < (3 == 3)
+d = 1 < 3 == 3
+e = 0 and 2 and 1
+f = 0 and 2 or 1
+g = 0 and 2 or 1 or 4
+h = 0 or False and 1
+
+print(a, b, c, d, e, f, g, h)
+```
+
+
+
+
+------
 
 
 ## Tips:
@@ -332,26 +426,28 @@ print(id(li) == id(aaa), id(li) == id(bbb), id(li) == id(ccc))
 试图访问一个超过列表索引值的成员将导致“IndexError”。
 访问一个起始索引超出列表成员数的列表切片将仅仅返回一个空列表。
 ```
+
 ### 02
 ```
 列表的切片操作重新分配了对象。
 “is”对比内存地址：是否完全相同，是否同一个对象；“==”对比值：内容是否相等（内存地址可以不同）。
 ```
+
 ### 03
 ```
 区分：是对同一个列表的多次引用，还是独立的多个列表。
 ```
+
 ### 04
 ```
 列表的交集与差集。
 ```
+
 ### 05
 ```
 在Python3中“/ ”操作符是做浮点除法，而在Python2中则是整除。
 “//”操作符总是做整除，但Python的整除运算会向0的方向取值。
 ```
-
-
 
 ### 06
 ```
@@ -361,63 +457,93 @@ print(id(li) == id(aaa), id(li) == id(bbb), id(li) == id(ccc))
 如果子类重写了此变量值，那么该值仅仅在子类中被改变。
 如果此变量值在父类中被改变，这个改变只会影响到任何未重写该变量值的子类。
 ```
+
 ### 07
 ```
 lambda函数是一种快速定义单行的最小函数。
 Python闭包的延迟绑定（late binding）：内部函数被调用时，参数的值在闭包内进行查找。
 避免此问题的方法：使用Python生成器和yield关键字；或者在闭包中，使用默认参数立即绑定它的参数。
 ```
+
 ### 08
 ```
 对象分为“不可更改”（immutable）和“可更改”（mutable）对象。
 不可变对象调用对象自身的方法，不会改变该对象自身的内容，而是创建新的对象并返回，这样就保证了不可变对象本身永远不可变。
 可变对象调用对象自身的方法，会改变该对象自身的内容。
 ```
+
 ### 09
 ```
 类型是属于对象的，而不是变量。
 在python中，strings、tuples,和numbers是不可更改的对象，而list、dict等则是可更改的对象。
 ```
+
 ### 10
 ```
-带有默认参数的表达式在函数被定义的时候被计算，不是在调用的时候被计算。
-另外，“将可变数据类型作为函数定义中的默认参数”，这种行为是不建议的，甚至是禁止的
+可变类型对象与不可变类型对象的区别；
+赋值（=）只是建立一个引用；
+完全切片“[:]”实际完成了浅拷贝的过程；
 ```
-
-
 
 ### 11
 ```
 类变量(供类使用的变量)与实例变量（供实例使用的变量）的关系。
 ```
+
 ### 12
 ```
 引用的含义。
 copy仅拷贝对象本身，而不拷贝对象中引用的其它对象。
 deepcopy除拷贝对象本身，而且拷贝对象中引用的其它对象。
 ```
+
 ### 13
 ```
 zip函数和列表解析（List Comprehension）的使用方法。
 ```
+
 ### 14
-```
-带有默认参数的表达式在函数被定义的时候被计算，不是在调用的时候被计算。
-另外，“将可变数据类型作为函数定义中的默认参数”，这种行为是不建议的，甚至是禁止的
-```
-### 15
 ```
 继承的定义和super函数的用法。
 ```
 
-
+### 15
+```
+不可变对象与可变对象的定义与区别。
+```
 
 ### 16
 ```
 不可变对象与可变对象的定义与区别。
+赋值、浅拷贝与深拷贝的区别。
 ```
+
 ### 17
 ```
-不可变对象与可变对象的定义。
-赋值、浅拷贝与深拷贝的区别。
+带有默认参数的表达式在函数被定义的时候被计算，不是在调用的时候被计算。
+不建议”将可变数据类型作为函数定义中的默认参数“。
+```
+
+### 18
+```
+带有默认参数的表达式在函数被定义的时候被计算，不是在调用的时候被计算。
+不建议”将可变数据类型作为函数定义中的默认参数“。
+```
+
+### 19
+```
+列表被实例化为函数定义的一部分，函数会一直使用同一个列表对象（列表并不是在每次函数运行时都被实例化），除非提供一个新的对象。
+不建议”将可变数据类型作为函数定义中的默认参数“。
+对于不可变数据类型（比如元组、字符串、整型），则不会出现类似问题。
+```
+
+### 20
+```
+创建类定义时，列表将被实例化，该类所有的实例使用相同的列表。
+不建议”将可变类型数据作为类变量“。
+```
+
+### 21
+```
+逻辑运算与顺序。
 ```

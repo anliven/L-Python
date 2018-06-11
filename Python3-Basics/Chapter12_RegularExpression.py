@@ -9,7 +9,7 @@ else:
     print('The match is failed.')
 
 m = re.match(r'^(\d{3})-(\d{3,8})$', '028-12345678')
-print(m.group(0), m.group(1), m.group(2))  # group(0)永远是原始字符串，group(1)、group(2)……表示第1、2……个子串
+print(m.groups(), m.group(), m.group(0), m.group(1), m.group(2))  # group(0)永远是原始字符串，group(1)、group(2)……表示第1、2……个子串
 
 re_telephone = re.compile(r'^(\d{3})-(\d{3,8})$')  # 预编译正则表达式，提高效率
 print(re_telephone.match('028-12345678').groups())
@@ -38,11 +38,19 @@ print(re.findall("((\w+)\s+\w+)", string))
 # 特别注意Python的字符串本身也用\转义；
 # 强烈建议使用Python的r前缀，就不用考虑转义的问题；
 #
-# re.match()  只匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败，函数返回None;
-# re.search()  扫描整个字符串并返回第一个成功的匹配;
-# re.findall()  查找所有匹配项；
-# re.sub()  替换字符串中的匹配项;
-# re.split()  切分字符串;
+# ### 常用方法
+# - re.match()  只匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败，函数返回None;
+# - re.search()  扫描整个字符串并返回第一个成功的匹配，否则返回None;
+# - re.findall()  返回字符串中所有的匹配，返回形式为数组；
+# - re.finditer()  返回字符串中所有的匹配，返回形式为迭代器，调用group()、groups()或group(index)方法获取匹配结果；
+# - re.sub()  替换字符串中的匹配项;
+# - re.split()  切分字符串;
+#
+# ### group()、groups()与group(index)的区别
+# - group()：原始字符串；
+# - group(0)：等同于group()；
+# - groups()：所有group组成的一个元组；
+# - group(index)：group(1)是第一个匹配成功的子串，group(2)是第二个，依次类推，如果index超了边界，抛出IndexError；
 #
 # ### 常用正则表达式
 # \d     匹配任意一个数字，等价于 [0-9]

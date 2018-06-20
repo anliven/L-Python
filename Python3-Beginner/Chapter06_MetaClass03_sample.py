@@ -1,7 +1,7 @@
 # coding=utf-8
 
 
-class ListMetaclass(type):  # 定义一个元类，类名默认以Metaclass结尾；metaclass是类的模板，所以必须从`type`类型派生
+class ListMetaclass(type):  # 定义一个元类，类名默认以Metaclass结尾；元类是由“type”衍生而出，所以必须从type类型派生
 
     def __new__(mcs, name, bases, attrs):  # 自定义__new__()方法
         attrs['add'] = lambda self, value: self.append(value)
@@ -34,8 +34,4 @@ print(L)
 # - attrs：类的属性和方法，是一个字典；
 #
 # ### 动态修改的意义
-# 一般情况下不会使用动态修改，只适用于某些特殊的场景，能够极大地精简代码；
-# 例如：编写ORM框架；
-#
-# ### ORM（Object Relational Mapping，对象-关系映射），
-# 把关系数据库的一行映射为一个对象，也就是一个类对应一个表，这样写代码更简单，不用直接操作SQL语句；
+# 一般情况下不会使用动态修改，只适用于某些特殊的场景，能够极大地精简代码，例如编写ORM框架；

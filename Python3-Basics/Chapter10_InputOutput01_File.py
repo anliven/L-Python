@@ -23,6 +23,9 @@ with open(testFile, 'r') as f:  # 引入with语句自动调用close()方法，�
     for line in f.readlines():
         print("# ", line.strip())  # 删掉末尾的'\n'
 
+with open(testFile) as source, open("target.txt", "w") as target:  # 在一个with语句中调用两个open()
+    target.write(source.read())
+
 f = open(testFile)
 while True:
     line = f.readline()  # 读取每一行
@@ -39,6 +42,7 @@ text = io.open(testFile, encoding="utf-8", errors='ignore').read()
 print(text)
 
 os.remove(testFile)
+os.remove("target.txt")
 
 # ### 处理文件
 # - 通过内置open函数打开文件，返回一个文件对象；

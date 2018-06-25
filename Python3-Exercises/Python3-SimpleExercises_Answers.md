@@ -343,3 +343,22 @@ def expanded_form(num):
             x.append(s)
     return ' + '.join(x)
 ```
+### 027：编写函数：统计指定字符在字符串中出现的次数；
+```python
+def countChars(s, c):
+    return format(s, 's').count(c)
+```
+### 028：编写函数：判断字符串中的括号是否有效；
+```python
+def valid_parentheses(s):
+    cnt = 0
+    for i in s:
+        if i == "(":
+            cnt += 1
+        if i == ")":
+            cnt -= 1
+    if cnt == 0:
+        return True
+    else:
+        return False
+```

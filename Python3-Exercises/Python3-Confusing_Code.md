@@ -483,3 +483,42 @@ h = 0 or False and 1
 print(a, b, c, d, e, f, g, h)
 ```
 
+### 27
+以下代码的执行结果是什么？
+- Temp.py
+```
+n = 111
+```
+- Test.py
+```
+import Temp
+import sys
+
+n = 222
+n += 1
+
+
+def func1():
+    global n
+    n += 1
+    Temp.n += 1
+    m = sys.modules['Temp']
+    m.n += 1
+    print(n, Temp.n, m.n)
+
+
+def func2():
+    Temp.n += 1
+    print(Temp.n)
+
+
+def func3():
+    m = sys.modules['Temp']
+    m.n += 1
+    print(m.n)
+
+
+func1()
+func2()
+func3()
+```

@@ -312,3 +312,34 @@ test_list = ["1", "a", "A"]
 print(myswitch(test_str))
 print(myswitch(test_list))
 ```
+### 023：编写函数：实现类似字符串"CbaBc"到字符串"C-Bb-Aaa-Bbbb-Ccccc"的转换；
+```python
+def convert(s):
+    return '-'.join(y.upper() + y.lower() * x for x, y in enumerate(s))
+```
+### 024：编写函数：将任何非负整数以降序的数字返回，例如“58769”的返回结果为“98765”；
+```python
+def descending_order(num):
+    return int("".join(sorted(str(num), reverse=True)))
+```
+### 025：编写函数：以二进制形式返回两个整数的和；
+```python
+def add_binary(n1, n2):
+    return format(n1 + n2, 'b')
+```
+
+
+
+## 026 - 030
+
+### 026：编写函数：以位数扩展的形式来表示一个非负整数，例如321的对应表示为“300 + 20 + 1”；
+```python
+def expanded_form(num):
+    nums = str(num)
+    x = []
+    for i in range(0, len(nums)):
+        if int(nums[i]) != 0:
+            s = str(int(nums[i]) * (10 ** (len(nums) - i - 1)))
+            x.append(s)
+    return ' + '.join(x)
+```

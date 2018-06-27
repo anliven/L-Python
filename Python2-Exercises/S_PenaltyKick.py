@@ -52,4 +52,4 @@ while score[0] == score[1]:  # 打破平局
 if score[0] > score[1]:  # 打印最终结果
     print('You Win!')
 else:
-    print('Computer Win!.')
+    print('Computer Win!')

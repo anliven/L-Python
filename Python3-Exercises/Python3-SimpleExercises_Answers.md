@@ -85,10 +85,10 @@ else:
 ### 006-function：编写函数：反转字符串的大小写；
 ```python
 def str_swap1(string):
-    return string.swapcase()
+    return string.swapcase()  # 利用string的swapcase方法
 
 
-def str_swap2(in_string):
+def str_swap2(in_string):  # 利用ASCII码
     out_string = ""
     for letter in in_string:
         if 97 <= ord(letter) <= 122:
@@ -113,24 +113,22 @@ def firstCharUpper(s):
 
 print(firstCharUpper('hello'))
 ```
-### 008-string：编写函数：反转输入字符串的大小写；
+### 008-string：编写函数：按单词反转字符串；
 ```python
-def str_swap(in_string):
-    out_string = ""
-    for letter in in_string:
-        if 97 <= ord(letter) <= 122:  # ord():以一个字符（长度为1的字符串）作为参数，返回对应的ASCII数值或者Unicode数值；
-            out_string += chr(ord(letter) - 32)  # chr():用一个范围0～255的整数作参数，返回一个对应的字符；
-        elif 65 <= ord(letter) <= 90:
-            out_string += chr(ord(letter) + 32)
-        else:
-            out_string = out_string + letter
-    return out_string
+import re
 
 
-print("Input a string :")
-input_string = input()
-print(str_swap(input_string))  # 利用ASCII码
-print(input_string.swapcase())  # 利用string的swapcase方法
+def reverse_word(st):
+    return ' '.join(st.split()[::-1])
+
+
+def reverse_word2(st):
+    return ''.join(reversed(re.split(r'(\s+|\w+)', st)))  # split by space and word
+
+
+s = 'Hello  World!'
+print(reverse_word(s))
+print(reverse_word2(s))
 ```
 ### 009-list：编写函数：接受一个list，然后把list中的所有字符串变成大写后返回，非字符串元素将被忽略；
 ```python

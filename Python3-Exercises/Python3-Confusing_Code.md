@@ -119,13 +119,15 @@ print([m(2) for m in test3()])
 ### 09
 以下代码的执行结果是什么？
 ```python
-a = 'I love PythonSomething!'
-b = 'I love PythonSomething!'
-c = [1, 2, 3]
-d = [1, 2, 3]
+a = "hello world"
+b = "hello world"
+c = "hello world" * 50
+d = "hello world" * 50
+e = [1, 2, 3]
+f = [1, 2, 3]
 
-print(a is b, c is d)
-print(a == b, c == d)
+print(a is b, c is d, e is f)
+print(a == b, c == d, e == f)
 ```
 
 
@@ -133,11 +135,22 @@ print(a == b, c == d)
 以下代码的执行结果是什么？
 ```python
 a = "abc"
-b = ['c', 'b', 'a']
-print(a.replace("a", "A"))
-print(a)
+id_a1 = id(a)
+a.replace("a", "A")
+a += "def"
+id_a2 = id(a)
+print(a, id_a1 == id_a2)
+
+b = ['333', '222', '111']
+id_b1 = id(b)
 b.sort()
-print(b)
+b.append('000')
+id_b2 = id(b)
+print(b, id_b1 == id_b2)
+
+c = b
+c.append("666")
+print(c is b, c == b)
 ```
 
 
@@ -470,7 +483,7 @@ print(c.var, d.var)
 
 ### 26
 以下代码的执行结果是什么？
-```
+```python
 a = 1 or 3
 b = 1 and 3
 c = 1 < (3 == 3)
@@ -486,11 +499,11 @@ print(a, b, c, d, e, f, g, h)
 ### 27
 以下代码的执行结果是什么？
 - Temp.py
-```
+```python
 n = 111
 ```
 - Test.py
-```
+```python
 import Temp
 import sys
 
@@ -521,4 +534,35 @@ def func3():
 func1()
 func2()
 func3()
+```
+
+### 28
+以下代码的执行结果是什么？
+```python
+def func1():
+    try:
+        return 1
+    finally:
+        return 11
+
+
+def func2():
+    try:
+        raise ValueError()
+    except:
+        return 2
+    finally:
+        return 22
+
+
+def func3():
+    try:
+        raise ValueError()
+    except IndexError:
+        return 3
+    finally:
+        return 33
+
+
+print(func1(), func2(), func3())
 ```

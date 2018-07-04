@@ -63,13 +63,3 @@ with tag("body"):  # 使用@contextmanager实现程序执行前后自动执行�
 with closing(request.urlopen('https://www.bing.com'))as page:  # closing()可以将任意对象变为上下文对象，使之能够用于with语句
     data = page.read()
     print('Status:', page.status, page.reason)
-
-# ### 标准库contextlib模块
-# - Utilities for with-statement contexts
-# - 官方文档：https://docs.python.org/3/library/contextlib.html
-#
-# Python的with语句可以方便地使用资源，而不必担心资源没有关闭；
-# 正确实现了上下文管理的任何对象，都可以用于with语句；
-#
-# 实现上下文管理是通过__enter__和__exit__这两个方法实现的，但编写仍然繁琐；
-# Python的标准库contextlib提供了更简单的实现方法，使用@contextmanager编写generator可以简化上下文管理；

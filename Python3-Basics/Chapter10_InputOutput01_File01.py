@@ -19,13 +19,6 @@ finally:
     if testFile in locals():  # 判断testFile是否存在；locals()返回当前作用域中定义的所有名的集合
         f.close()  # 必须在使用完后关闭打开的文件
 
-with open(testFile, 'r') as f:  # 引入with语句自动调用close()方法，妥善关闭一个可能打开的数据文件
-    for line in f.readlines():
-        print("# ", line.strip())  # 删掉末尾的'\n'
-
-with open(testFile) as source, open("target.txt", "w") as target:  # 在一个with语句中调用两个open()
-    target.write(source.read())
-
 f = open(testFile)
 while True:
     line = f.readline()  # 读取每一行
@@ -38,11 +31,10 @@ log = open(testFile, 'a', encoding="utf-8")  # 追加方式
 log.write("新写入的内容!")
 log.close()
 
-text = io.open(testFile, encoding="utf-8", errors='ignore').read()
+text = io.open(testFile, encoding="utf-8", errors='ignore').read()  # io模块的open方法
 print(text)
 
 os.remove(testFile)
-os.remove("target.txt")
 
 # ### 处理文件
 # - 通过内置open函数打开文件，返回一个文件对象；
@@ -86,10 +78,6 @@ os.remove("target.txt")
 # - f.seek(p,1)：移动到相对于当前位置之后的p个字节
 # - f.seek(p,2)：移动到相对文件尾之后的p个字节
 # - f.seek(0,2)：指针指到尾部
-#
-# ### with语句
-# - 引入with语句可以自动调用close()方法，来保证把没有写入的数据全部写入磁盘；
-# - 可以将两个open()调用合并到一个with语句中，但要将两个open()用逗号隔开；
 #
 # ### 避免读取过多内容的方法
 # - read()一次性读取文件的全部内容，适合文件较小的情况；

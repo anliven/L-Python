@@ -119,6 +119,10 @@ print([m(2) for m in test3()])
 ### 09
 以下代码的执行结果是什么？
 ```python
+A = 'abc'
+B = ''.join(['a', 'b', 'c'])
+print(A is B, A == B)
+
 a = "hello world"
 b = "hello world"
 c = "hello world" * 50
@@ -221,10 +225,10 @@ import copy
 a = [6, [0, 1], 8]
 b = copy.copy(a)
 a[1].append(2)
-print(b)
+print(b, a == b, a is b)
 c = copy.deepcopy(a)
 a[1].append(3)
-print(c)
+print(c, a == c, a is c)
 ```
 
 

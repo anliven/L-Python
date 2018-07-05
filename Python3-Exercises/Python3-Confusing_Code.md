@@ -500,7 +500,28 @@ h = 0 or False and 1
 print(a, b, c, d, e, f, g, h)
 ```
 
+
 ### 27
+以下代码的执行结果是什么？
+```python
+num = 6
+
+
+def func1():
+    num = 8
+
+
+def func2():
+    print(num)
+
+
+func2()
+func1()
+func2()
+```
+
+
+### 28
 以下代码的执行结果是什么？
 - Temp.py
 ```python
@@ -540,9 +561,16 @@ func2()
 func3()
 ```
 
-### 28
+### 29
 以下代码的执行结果是什么？
 ```python
+def func():
+    try:
+        return 'test'
+    finally:
+        print('finally')
+
+
 def func1():
     try:
         return 1
@@ -568,5 +596,96 @@ def func3():
         return 33
 
 
+f = func()
+print(f)
 print(func1(), func2(), func3())
+```
+
+### 30
+以下代码的执行结果是什么？
+```python
+class BBB(object):
+    def func(self):
+        print('class BBB func')
+
+    def __init__(self):
+        print("class BBB init")
+
+
+class AAA(object):
+    def func(self):
+        print('class AAA func')
+
+    def __new__(cls, num):
+        print("class AAA new", num)
+        if num > 10:
+            return super(AAA, cls).__new__(cls)
+        return BBB()
+
+    def __init__(self, num):
+        print("class AAA init", num)
+
+
+t1 = AAA(5)
+t1.func()
+
+t2 = AAA(20)
+t2.func()
+```
+
+
+### 31
+以下代码的执行结果是什么？
+```python
+class Test(object):
+    def __init__(self):
+        print('class Test init')
+
+    def mydefault(self, *args):
+        print('class Test default', args)
+
+    def __getattr__(self, name):
+        return self.mydefault
+
+
+t1 = Test()
+t1.func1()
+t1.func2(111)
+```
+
+
+### 32
+以下代码的执行结果是什么？
+```python
+class A(object):
+    def __init__(self, value):
+        self.val = value
+
+
+class B(A):
+    def __init__(self, val):
+        super(B, self).__init__(val)
+        self.val += 2
+
+
+class C(A):
+    def __init__(self, val):
+        super(C, self).__init__(val)
+        self.val *= 5
+
+
+class D(C, B):
+    pass
+
+
+class E(D):
+    e = super(D)
+
+    def __init__(self, val):
+        self.e.__init__(val)
+        self.val += 1
+
+
+t = E(5)
+print(t.val)
 ```

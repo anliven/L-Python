@@ -59,6 +59,8 @@ s.who()
 m = Master('CCC', 35, 1000000)
 m.teahing()
 m.learning()
+m.__class__ = SchoolMember  # 利用__class__方法指定类对象，调用父类方法
+m.who()
 
 members = [t, s, m]
 for member in members:

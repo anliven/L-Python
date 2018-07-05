@@ -36,3 +36,7 @@ else:
 # - 每个模块的包中，必须有一个__init__.py文件，才能导入这个目录下的module，在导入一个包时，实际上是导入了包的 __init__.py文件；
 # - 可以在__init__.py文件中再导入其他的包或模块；
 # - 如果在包的__init__.py定义了变量__all__，那么“from PackageName import *”时，就会把__all__中的子模块和子包导入到当前作用域中；
+#
+# ### 示例
+# 假设一个包里有三个模块：mod1.py、mod2.py、mod3.py
+# 在__init__.py文件中设置“__all__ = ['mod1','mod3']”，使用“from PackageName import *”导入模块时，就只有只有mod1和mod3被导入；

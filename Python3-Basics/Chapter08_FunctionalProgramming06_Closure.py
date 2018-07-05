@@ -1,6 +1,16 @@
 #! python3
 # -*- coding: utf-8 -*-
 
+def fnA(num):
+    def fnB(val):
+        return num * val
+
+    return fnB  # 函数作为返回值
+
+
+t = fnA(8)
+print(t(9))
+
 
 # 示例-1
 def hello_conf(prefix):

@@ -82,7 +82,7 @@ while True:
 # ### range()
 # - 内置的range函数可以生成数字序列，每次只会生成一个数字；
 # - range()默认以0作为开始数字，以1逐步递增；
-# - 通过list(range()方式可以获得完整的数字列表；
+# - Python3中range()返回的是“range object”，而不是实际的list值，但可通过list(range()方式得到一个有序数字列表；
 # - 注意生成的序列结束范围；
 #
 # ### 跳出循环

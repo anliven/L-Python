@@ -3,7 +3,8 @@ __author__ = 'Anliven'
 
 
 def func(arg):
-    print arg
+    print(arg)
+
 
 def square(x):
-    return x*x
+    return x * x

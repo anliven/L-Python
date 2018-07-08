@@ -360,3 +360,19 @@ def valid_parentheses(s):
     else:
         return False
 ```
+### 029：编写函数：统计字符串中重复元素的个数；
+```python
+def duplicate(datas):
+    d = {}
+    for k in datas:
+        if k not in d:
+            d[k] = 0
+        d[k] += 1
+    return d
+```
+### 030：编写函数：打印列表的索引和对应的元素；
+```python
+def iterate(datas):
+    for i, v in enumerate(datas):
+        print("Index: %s - Value: %s" % (i, v))
+```

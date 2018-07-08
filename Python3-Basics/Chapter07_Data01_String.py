@@ -53,6 +53,14 @@ delimiter = '_*_'
 testList = ['Anliven', 'Love', 'Angelina']
 print(delimiter.join(testList))  # 联结序列中的项目并生成字符串
 
+aa, bb, cc = 'hello', 'world', '!'
+print('%s-%s%s' % (aa, bb, cc))  # 使用%操作符连接字符串
+print(aa + "-" + bb + cc)  # 通过+号连接字符串
+print('{}-{}{}'.format(aa, bb, cc))  # 使用format方法连接字符串
+print(f'{aa}-{bb}{cc}')  # 使用f-string方式连接字符串
+print(f'第一个：{aa} 第二个：{bb} 第三个：{cc}')
+print('-'.join([aa, bb, cc]))  # 使用join内置方法连接字符串
+
 # ### Number：数字
 # Number包括整型、浮点型、布尔型和复数型。Number可以进行常见的数值运算，运算时布尔型True为1，False为0；
 #
@@ -71,6 +79,13 @@ print(delimiter.join(testList))  # 联结序列中的项目并生成字符串
 # decode()方法将bytes变为str；
 # 中文编码范围超过了ASCII编码范围，含有中文的str无法用ASCII编码，会报错；
 # 如无特殊业务要求，仅使用UTF-8编码；
+#
+# ### 连接字符串的方法
+# - %操作符
+# - +号，适用于连接少量字符串；
+# - format方法
+# - f-string（Formatted String Literals，字面量格式化字符串）方式，适用性广，可读性较好，python3.6及以上版本支持；
+# - join方法，适用于连接大量字符串，但其参数是一个序列类型，例如数组或者元组等；
 #
 # ### 保存中文
 # 源代码包含中文的时，在保存源代码时，务必指定保存为UTF-8编码；

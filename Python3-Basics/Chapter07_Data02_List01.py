@@ -33,6 +33,8 @@ print(test_List2)
 del test_List2[0]
 test_List2.pop(0)  # pop()方法删除元素
 print(test_List2)
+for _ in test_List2:  # 列表迭代
+    print(_)
 for item in test_List2:  # 列表迭代
     print(item, end=' ')
 print('\n')
@@ -82,6 +84,11 @@ print_lol(test_List3)
 # - copy()：复制列表，得到一个相同内容的全新列表，等同于“L2=list(L)”；
 # - help(list)：获取List类的更多信息；
 #
+# ### “_”符号的用法
+# - 表示交互解释器中最后一次执行语句的返回结果；
+# - 作为名称使用，例如在循环中作为特定名称；
+# - 作为函数名，但可能会和上一种用法冲突，应避免同时使用；
+# 
 # ### 递归嵌套列表
 # 递归函数不需要任何改变就可以正确处理任意深度的嵌套列表；
 # Python3默认递归深度不能超过100；

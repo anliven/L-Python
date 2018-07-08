@@ -3,11 +3,12 @@ __author__ = 'Anliven'
 
 
 def func(arg):
-     """TestCase for fun
-     >>> func(1)
-     1
-     """
-     print arg
+    """TestCase for fun
+    >>> func(1)
+    1
+    """
+    print(arg)
+
 
 def square(x):
     """
@@ -17,11 +18,13 @@ def square(x):
     >>> square(3)
     9
     """
-    return x*x
+    return x * x
+
 
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()
 
-# 自从Python2.6之后，可以直接在命令行敲上命令运行testmod()来检测,在这里就不需要if语句部分了。
+# Python2.6之后，可以直接在命令行运行testmod()
 # python -m doctest -v test_func.py

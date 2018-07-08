@@ -25,12 +25,16 @@ print(a == b, a == c, b == c)
 ### 03
 以下代码的执行结果是什么？
 ```python
-tl = [[]] * 3
-print(tl)
-tl[0].append("aaa")
-tl[1].append(111)
-tl.append("AAA")
-print(tl)
+a = [[]] * 3
+print(a)
+a[0].append(111)
+a[1].append(222)
+a.append('AAA')
+print(a)
+
+b = [[] for _ in range(10)]
+b[0].append(10)
+print(b)
 ```
 
 
@@ -688,4 +692,125 @@ class E(D):
 
 t = E(5)
 print(t.val)
+```
+
+
+### 33
+以下代码的执行结果是什么？
+```python
+gen = (x for x in range(3))
+# print(list(gen))
+print(1 in gen, 2 in gen, 1 in gen, 2 in gen)
+print(list(gen))
+
+gen2 = (x for x in range(3))
+test_list = list(gen2)
+print(test_list)
+print(1 in test_list, 2 in test_list, 1 in test_list, 2 in test_list)
+```
+
+
+### 34
+以下代码的执行结果是什么？
+```python
+test_list = [lambda: i for i in range(3)]
+for t in test_list:
+    print("test_list:", t())
+
+test_list2 = [lambda x=i: x for i in range(3)]
+for t in test_list2:
+    print("test_list2:", t())
+
+test_gen = (lambda: i for i in range(3))
+for t in test_gen:
+    print("test_gen:", t())
+```
+
+
+### 35
+以下代码的执行结果是什么？
+```python
+def test(items, size):
+    return zip(*[iter(items)] * size)
+
+
+t = test(range(9), 3)
+print(list(t))
+```
+
+
+### 36
+以下代码的执行结果是什么？
+```python
+test_list = [2, 4, 5, 6]
+for i in test_list:
+    print(i)
+    if not i % 2:
+        test_list.remove(i)
+print(test_list)
+
+test_list2 = [2, 4, 5, 6]
+for index, item in enumerate(test_list2):
+    print("Index:%s - Item:%s" % (index, item))
+    if not item % 2:
+        test_list2.remove(item)
+print(test_list2)
+```
+
+
+### 37
+以下代码的执行结果是什么？
+```python
+test_list = [0]
+
+test_list += [1]
+id_1 = id(test_list)
+
+test_list = test_list + [2]
+id_2 = id(test_list)
+
+test_list.append(3)
+id_3 = id(test_list)
+
+test_list.extend([4])
+id_4 = id(test_list)
+
+print(test_list)
+print(id_1 == id_2, id_3 == id_4)
+```
+
+
+### 38
+以下代码的执行结果是什么？
+```python
+print(isinstance(True, int))
+print(True + 3 * True - False)
+print(True << 10)
+```
+
+
+### 39
+以下代码的执行结果是什么？
+```python
+tup = ([],)
+tup[0].extend([1])
+print(tup)
+
+tup2 = (1,)
+tup2 += (2,)
+tup2 = tup2 + tup
+print(tup2)
+```
+
+
+### 40
+以下代码的执行结果是什么？
+```python
+a = float('inf')
+b = float('inf')*2
+c = float('nan')
+d = float('nan')
+print(a is b, a == b)
+print(c is c, c == c)
+print(c is d, c == d)
 ```

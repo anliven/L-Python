@@ -9,21 +9,24 @@ print('Python Version: ', sys.version, '\nPlatform:', sys.platform, '\nInfo:', s
 print('OS Version: ', platform.version(), '\nPlatform:', platform.platform(), '\nPython:', platform.python_version())
 
 if platform.platform().startswith('Windows'):
-    logging_file = os.path.join(os.getcwd(), 'test.log')  # os.path.join()函数聚合位置信息，并符合当前操作系统的预期格式；
+    logging_file = os.path.join(os.getcwd(), 'test.log')  # os.path.join()函数聚合位置信息，并符合当前操作系统的预期格式
 else:
     logging_file = os.path.join(os.getenv('PWD'), 'test.log')
 
 print("Logging to", logging_file)
 
-logging.basicConfig(  # 配置logging模块，以特定的格式将信息写入指定的文件；
-    level=logging.DEBUG,
-    format='%(asctime)s : %(levelname)s : %(message)s',
-    filename=logging_file,
-    filemode='w',
+logging.basicConfig(  # 通过basicConfig来进行全局配置，以特定的格式将信息写入指定的文件
+    level=logging.INFO,  # 设置只输出INFO级别的信息
+    datefmt='%Y/%m/%d %H:%M:%S',  # 指定时间的输出格式
+    format='%(asctime)s -- %(lineno)d -- %(process)d -- %(name)s -- %(levelname)s -- %(message)s',  # 指定日志输出格式
+    filename=logging_file,  # 日志输出的文件名
+    filemode='w',  # 指定日志文件的写入方式（ w：清除后写入，a：追加写入）
 )
-logging.debug("Start of the program.")
-logging.info("Doing something.")
-logging.warning("Done.")
+logger = logging.getLogger(__name__)  # 声明一个Logger对象，是日志输出的主类
+print("logger name:", logger.name)  # 初始化时已传入模块名称“__name__”
+logger.debug("Start of the program.")  # 调用对象的debug()方法输出DEBUG级别的日志信息
+logger.info("Doing something.")
+logging.warning("Done.")  # 注意和上一行代码的区别
 logging.shutdown()  # 关闭logging之后，可以删除日志文件
 
 # with语句获取由open语句返回的对象，在代码块执行之前调用对象的__enter__函数，之后调用对象的___exit__函数
@@ -44,6 +47,11 @@ os.remove(logging_file)
 # ### 标准库logging模块
 # - Logging facility for Python
 # - 官方文档：https://docs.python.org/3/library/logging.html
+#
+# ### logging模块相比print的优点
+# - 设置输出等级：通过设置不同的输出等级来记录对应的日志；
+# - 设置输出位置：标准输出流、写入文件、写入远程服务器等；
+# - 灵活的配置和格式化功能：输出当前模块信息、运行时间等；
 #
 # ### 一些标准库
 # - sys模块（特定系统的功能）：https://docs.python.org/3/library/sys.html

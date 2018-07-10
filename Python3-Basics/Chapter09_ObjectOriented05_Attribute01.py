@@ -20,7 +20,8 @@ class Sample(object):
 test = Sample()
 print(hasattr(test, 'x'))  # hasattr()是否具有属性
 print(test.x)
-print(hasattr(test, 'y'))
+print(hasattr(test, 'power'))  # 判断类的方法属性是否存在
+print(test.power())
 print(getattr(test, 'y', 404))  # getattr()获取属性，如果不存在，返回默认值404
 setattr(test, 'y', 999)  # setattr()设置属性
 print(getattr(test, 'y'))  # getattr()获取属性

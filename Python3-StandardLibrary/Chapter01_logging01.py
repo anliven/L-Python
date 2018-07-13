@@ -1,8 +1,8 @@
 #! python3
 # -*- coding: utf-8 -*-
-import sys
-import platform
-import os
+import sys  # sys模块（特定系统的功能）：https://docs.python.org/3/library/sys.html
+import platform  # platform模块（获取平台或操作系统的信息）：https://docs.python.org/3/library/platform.html
+import os  # os模块（操作系统交互）：https://docs.python.org/3/library/os.html
 import logging
 
 print('Python Version: ', sys.version, '\nPlatform:', sys.platform, '\nInfo:', sys.version_info)
@@ -53,8 +53,28 @@ os.remove(logging_file)
 # - 设置输出位置：标准输出流、写入文件、写入远程服务器等；
 # - 灵活的配置和格式化功能：输出当前模块信息、运行时间等；
 #
-# ### 一些标准库
-# - sys模块（特定系统的功能）：https://docs.python.org/3/library/sys.html
-# - os模块（操作系统交互）：https://docs.python.org/3/library/os.html
-# - platform模块（获取平台或操作系统的信息）：https://docs.python.org/3/library/platform.html
-# - ......
+# ### logging模块日志信息的输出格式
+# 借助basicConfig进行全局配置格式化输出内容
+# - %(levelno)s ：打印日志级别的数值
+# - %(levelname)s ：打印日志级别的名称
+# - %(pathname)s ：打印当前执行程序的路径，其实就是sys.argv[0]
+# - %(filename)s ：打印当前执行程序名
+# - %(funcName)s ：打印日志的当前函数
+# - %(lineno)d ：打印日志的当前行号
+# - %(asctime)s ：打印日志的时间
+# - %(thread)d ：打印线程ID
+# - %(threadName)s ：打印线程名称
+# - %(process)d ：打印进程ID
+# - %(processName)s ：打印线程名称
+# - %(module)s ：打印模块名称
+# - %(message)s ：打印日志信息
+#
+# ### 输出日志的等级
+# logging模块的每个日志等级都对应了一个数值，系统只会输出大于或等于该指定日志等级数值的日志；
+# 例如设置输出日志level为INFO，那么将不会输出DEBUG和NOTSET级别的日志；
+# - CRITICAL、FATAL --- 50
+# - ERROR --- 40
+# - WARNING、WARN（WARNING的简写形式） --- 30
+# - INFO --- 20
+# - DEBUG --- 10
+# - NOTSET --- 0

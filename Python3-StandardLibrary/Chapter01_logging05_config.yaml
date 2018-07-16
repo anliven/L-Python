@@ -1,0 +1,35 @@
+version: 1.0
+formatters:  # 定义Formatter的配置
+  brief:
+    format: "%(asctime)s - %(message)s"
+  simple:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    datefmt: "%Y/%m/%d %H:%M:%S"
+handlers:  # 定义Handler的配置
+  console:
+    class : logging.StreamHandler
+    formatter: brief
+    level   : INFO
+    stream  : ext://sys.stdout
+  file:
+    class : logging.FileHandler
+    formatter: simple
+    level: DEBUG
+    filename: Chapter01_logging05_debug.log
+  error:
+    class: logging.handlers.RotatingFileHandler
+    level: ERROR
+    formatter: simple
+    filename: Chapter01_logging05_error.log
+    maxBytes: 10485760
+    backupCount: 20
+    encoding: utf8
+loggers:  # 定义Logger的配置
+  mA.mB:  # 定义Logger的名称
+    level: DEBUG
+    handlers: [console, file, error]  # 输出到控制台、输出到普通文件和回滚文件
+root:  # 对应主入口文件
+  level: DEBUG
+  handlers: [console]  # 只输出到控制台（包含所有的运行结果）
+
+# 灵活地定义Handler、Formatter、Logger等配置，显示直观而且易维护，推荐使用此种方式进行配置

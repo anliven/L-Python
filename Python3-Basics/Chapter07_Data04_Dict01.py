@@ -17,8 +17,8 @@ print(testDict)
 print(testDict.items())  # 返回整个字典列表
 print(testDict.keys())  # 输出所有的键，返回一个列表
 print(testDict.values())  # 输出所有的值，返回一个列表
-print("AAA's value is", testDict['AAA'])  # 注意：返回元素而不是列表，所以返回值没有中括号
 
+print("AAA's value is", testDict['AAA'])  # 注意：返回元素而不是列表，所以返回值没有中括号
 print("AAA" in testDict)  # 通过in判断key是否存在
 print(testDict.get('EEE', 'No key!'))  # 通过dict提供的get()方法，如果key不存在，可以返回None，或者自定义的value；
 
@@ -35,6 +35,11 @@ if 'EEE' in testDict:
 
 testDict['BBB'] = '77777'  # 重新赋值；一个key只能对应一个value，所以多次对同一个key赋值，以最后的赋值为准
 print("BBB-value is", testDict['BBB'])
+
+x, y, z = testDict  # 拆包字典时，将会得到键，而不是键值对
+print("x - {}, y - {}, z - {}".format(x, y, z))
+part, *rest = testDict
+print("*rest -", *rest)
 
 a = "abc"  # str是不可变对象；b本身是一个变量，它指向的对象内容是'abc'，'abc'才是字符串对象！
 print(a)

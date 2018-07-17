@@ -814,3 +814,33 @@ print(a is b, a == b)
 print(c is c, c == c)
 print(c is d, c == d)
 ```
+
+
+### 41
+以下代码的执行结果是什么？
+```python
+numbers = [1, 2, 3]
+numbers2 = (1, 2, 3)
+print(sum(numbers), sum(numbers2))
+
+squares = (n + n for n in numbers)
+print(sum(squares))
+
+squares2 = (n + n for n in numbers)
+print(tuple(squares2))
+print(sum(squares2))
+
+squares3 = (n + n for n in numbers)
+print(6 in squares3, 6 in squares3)
+```
+
+
+### 42
+以下代码的执行结果是什么？
+```python
+test_dict = {"AAA": 111, "BBB": 222, "CCC": 333}
+x, y, z = test_dict
+print("x - {}, y - {}, z - {}".format(x, y, z))
+part, *rest = test_dict
+print("*rest - ", *rest)
+```

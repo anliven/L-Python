@@ -22,6 +22,11 @@ def print_max(a, b=7):
         print(b, 'is maximum')
 
 
+print_max(5)  # 直接传递，并使用默认参数值
+print_max(x, y)  # 以参数的形式传递
+print_max(b=333, a=444)  # 使用命名（关键字）而非位置来指定函数中的参数；
+
+
 def changed_global():
     global z  # global语句声明z是一个全局变量
     print('z is', z)
@@ -29,9 +34,16 @@ def changed_global():
     print('Changed global z to', z)
 
 
+changed_global()
+print('Value of z is', z)
+
+
 def print_para(*items):
     for var in items:
         print("*: ", var)
+
+
+print_para(1, 'aaa', "AAA")
 
 
 def total(a=5, *numbers, **phonebook):
@@ -46,16 +58,28 @@ def total(a=5, *numbers, **phonebook):
     return "This is a test!"  # 函数的返回值
 
 
+print(total(10, 1, 2, 3, Jack=11111, John=22222, Inge=33333))
+
+
 def person(name, age, *, city, job):  # 命名关键字参数
     print(name, age, city, job)
+
+
+person('Anliven', 29, city='Chengdu', job='Engineer')  # 命名关键字参数，调用时必须指明参数名字
 
 
 def f1(a, b, c=0, *args, **kw):
     print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
 
 
+f1(1, 2, 3, 'a', 'b', x=99)
+
+
 def f2(a, b, c=0, *, d, **kw):
     print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
+
+
+f2(1, 2, d=99, ext=None)
 
 
 def empty_function():  # 空函数
@@ -63,22 +87,19 @@ def empty_function():  # 空函数
     pass  # pass用来作为占位符，先让代码能运行起来
 
 
-print_max(5)  # 直接传递，并使用默认参数值
-print_max(x, y)  # 以参数的形式传递
-print_max(b=333, a=444)  # 使用命名（关键字）而非位置来指定函数中的参数；
-
-changed_global()
-print('Value of z is', z)
-
-print_para(1, 'aaa', "AAA")
-print(total(10, 1, 2, 3, Jack=11111, John=22222, Inge=33333))
-
-person('Anliven', 29, city='Chengdu', job='Engineer')  # 命名关键字参数，调用时必须指明参数名字
-f1(1, 2, 3, 'a', 'b', x=99)
-f2(1, 2, d=99, ext=None)
-
 empty_function()
 print(empty_function.__doc__)  # 打印函数的文档字符串属性（__doc__）
+
+
+def repeat(count, name):
+    for i in range(count):
+        print(name)
+
+
+args1 = [3, "dogs"]
+repeat(*args1)  # unpack
+args2 = {'count': 3, 'name': 'pigs'}
+repeat(**args2)
 
 
 def get_two_values():  # 通过函数来返回不同的值

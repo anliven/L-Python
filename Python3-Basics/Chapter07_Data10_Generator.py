@@ -15,6 +15,11 @@ geneSample2 = (x * x for x in range(5))
 for n in geneSample2:  # 通过for循环来迭代生成器
     print("x*x:", n)
 
+geneSample3 = (x * x for x in range(5))
+print("Type:", type(geneSample3))  # 生成器是迭代器，而迭代器是一次性的，不能重新加载，也就是说同一个迭代器对象无法多次迭代
+print("Sum:", sum(geneSample3))
+print("Sum:", sum(geneSample3))  # 内部工具(for循环、sum、min、max等)使用迭代器协议访问对象
+
 
 def fib(x):  # 斐波拉契数列
     """
@@ -47,7 +52,12 @@ for n in fib(6):  # 通过for循环来迭代生成器
 #
 # ### 生成器（Generator）
 # 利用生成器（实际上是某种算法）可以推导列表元素，就不用存储完整的列表，从而节省大量的存储空间；
-# 在Python中，这种一边循环一边计算的机制，称为生成器
+# 生成器一般用来产生序列类型的值，可以在for循环中迭代，也可以通过next方法调用;
+#
+# ### 生成器的作用
+# - 减少内存占用，例如可以使用迭代器方式打开文件；
+# - 提高运行效率；
+# - 延迟运行，仅当需要运行的地方才开始执行；
 #
 # ### 创建生成器的两种方法
 # 1.把一个列表生成式的[]改成()，就创建了一个generator；

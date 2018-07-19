@@ -18,8 +18,8 @@ def hello():
 # 在asyncio.sleep(1)执行期间，主线程并未等待，而是继续执行EventLoop中其他可以执行的coroutine，从而实现并发执行；
 
 
-loop = asyncio.get_event_loop()  # 获取EventLoop
-loop.run_until_complete(hello())  # 将coroutine放入到EventLoop中执行
+loop = asyncio.get_event_loop()  # get_event_loop方法创建一个事件循环
+loop.run_until_complete(hello())  # run_until_complete方法将协程注册到事件循环，并启动事件循环
 loop.close()
 
 print(asyncio.iscoroutinefunction(hello))  # 验证是否是协程函数
@@ -39,15 +39,18 @@ print(asyncio.iscoroutine(hello()))  # 验证是否是协程对象
 #
 # ### 协程（Coroutine）
 # 简单理解，可将交给标准库asyncio执行的任务称为协程（微线程、纤程），是运行在单线程当中的“并发”，更适用于IO密集型的应用；
-# 相比多线程，协程不需要多线程的锁机制，省去了多线程之间的切换开销，获得了更大的运行效率；
+# 相比多线程，协程不需要多线程的锁机制，省去了多线程之间的切换开销，让耗时的IO操作异步化，获得了更大的运行效率；
 # 协程的使用：
 # - 等待另一个协程（产生一个结果，或引发一个异常）；
 # - 产生一个结果给正在等它的协程；
 # - 引发一个异常给正在等它的协程；
-# 运行协程对象：协程对象放置在loop里，只有loop运行了，协程才可能运行；
+# 运行协程对象：协程对象不能直接运行，需要放置在事件循环（loop）里，只有loop运行了，协程才可能运行；
 #
 # ### 标准库asyncio
 # Python中的标准库asyncio提供了完善的异步IO支持：
 # - 用@asyncio.coroutine将一个generator标记为coroutine类型，然后在coroutine内部用“yield from”调用另一个coroutine实现异步操作；
 # - 从asyncio模块中直接获取一个EventLoop的引用，然后把需要执行的协程放到EventLoop中执行，从而实现异步IO;
 # 标准库asyncio在Python3.4中引入，在Python3.6中由临时版改为了稳定版；
+#
+# ### 第三方库
+# gevent和tornado实现了类似asyncio的功能；

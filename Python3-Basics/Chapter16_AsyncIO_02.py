@@ -26,6 +26,10 @@ for num in range(0, 100):
     print("开始生产", num)
     consumer.send(num)  # 发送数据给consumer协程
 
+# ### Python中的协程
+# Python3.4中以生成器对象为基础引入了协程的概念，Python3.5则确定了协程的语法；
+# 使用yield关键字可以创建生成器；
+#
 # ### yield关键字
 # 在一个函数代码中添加yield关键字，python会自动将其识别为一个生成器generator；
 # 在generator中，可以通过for循环来迭代，不断调用next()函数来获取由yield语句返回的下一个值；

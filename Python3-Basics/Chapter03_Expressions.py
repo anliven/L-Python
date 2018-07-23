@@ -1,16 +1,6 @@
-#! python3
-# -*- coding: utf-8 -*-
-
-print(-7)
-print(2 * 3)
-print('Test' * 3)
-print(10 / 3)  # 注意观察实际结果
-print(10 // 3)  # 注意观察实际结果
-
-print(11 >> 1)
-print(~555)
-
-print(3 < 5 < 7)
+print(-7, 2 * 3, 'Test' * 3)
+print(10 // 3, 10 / 3)  # 注意观察实际结果
+print(11 >> 1, ~555, 3 < 5 < 7)
 
 x = "vvv"
 y = 123
@@ -18,17 +8,16 @@ print(not x)
 print(x and y)  # 如果x是False，则返回False，否则返回y的计算值
 print(x or y)  # 如果x是True，则返回True，否则它将返回y的计算值；
 
-length = 5  # 长度（Length）
-breadth = 3  # 宽度（Breadth）
-area = length * breadth  # 面积（Area）
-print('Area is', area)  # 注意观察输出的结果，Python自动添加了空格
-print('Perimeter is', 2 * (length + breadth))  # 周长（Perimeter）
+length = 5
+breadth = 3
+area = length * breadth
+print('Area is %d and Perimeter is %d' % (area, 2 * (length + breadth)))
 
 # ### 表达式（Expressions）
 # 表达式是将不同数据（变量、函数等）用运算符号按照一定规则组成的语句；
 # - 表达式可以拆分成运算符（Operators）与操作数（Operands）；
 # - 运算符表明进行何种运算操作，操作数是被操作的数据；
-
+#
 # ### 运算符（Operators）
 # Python运算符包括：算术运算符、赋值运算符、关系（比较）运算符、逻辑运算符；
 #
@@ -68,12 +57,12 @@ print('Perimeter is', 2 * (length + breadth))  # 周长（Perimeter）
 # not （布尔“非”）：如果x是True，则返回False；如果x是False，则返回True；
 # and （布尔“与”）：如果x是False，则返回False，否则返回y的计算值；适用短路计算（Short-circuit Evaluation）；
 # or （布尔“或”）：如果x是True，则返回True，否则它将返回y的计算值；适用短路计算；
-
+#
 # ### 数值运算与赋值的快捷方式
-# “变量 = 变量 运算 表达式”等同于“变量 运算 = 表达式”；
-
+# “变量 = 变量 运算 表达式”等同于“变量 运算 = 表达式”，例如“a = a + 5”等同于“a += 5”；
+#
 # ### 求值顺序
-# - Python 将优先执行高优先级的运算符与表达式；
+# - Python将优先执行高优先级的运算符与表达式；
 # - 相同优先级的运算符将从左至右的方式依次进行求值；
 # - 使用圆括号可以改变运算的顺序；
-# - 建议使用圆括号操作符来对运算符与操作数进行分组，更加明确地指定优先级，使得程序更加可读；
+# - 建议使用圆括号操作符来对运算符与操作数进行分组，更加明确地指定优先级，使程序更加可读；

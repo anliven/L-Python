@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-__author__ = 'Anliven'
-
-
 def func(arg):
     """TestCase for fun
     >>> func(1)
@@ -26,5 +22,4 @@ if __name__ == "__main__":
 
     doctest.testmod()
 
-# Python2.6之后，可以直接在命令行运行testmod()
-# python -m doctest -v test_func.py
+# Python2.6之后，可以直接在命令行运行testmod()：“python -m doctest -v test_func.py”；

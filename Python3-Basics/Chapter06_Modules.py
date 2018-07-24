@@ -1,5 +1,3 @@
-#! python3
-# -*- coding: utf-8 -*-
 import sys  # import语句导入sys模块，sys模块包含了与Python解释器及其环境有关的函数；
 from math import sqrt  # 不建议使用from...import...语句
 import Chapter06_ModuleTest as cMT  # 导入同一目录下的自定义模块，并设置别名
@@ -12,21 +10,17 @@ print('Version', cMT.__version__)
 TestPackage.ModuleTest.say_hello()  # 通过“模块名.方法名”方式调用模块里的方法
 print('Version', TestPackage.ModuleTest.__version__)
 
-print('\nThe PYTHONPATH is', sys.path)
+print('# The PYTHONPATH :\n', sys.path)
 mp = os.getcwd() + "\\Chapter06_ModuleTest"
 sys.path.append(mp)  # 增加sys.path查找路径
-print('\nThe New PYTHONPATH is', sys.path)
+print('# The New PYTHONPATH :\n', sys.path)
 
 print("Square root of 36 is", sqrt(36))  # 通过“from...import...语句”引入模块的指定函数，调用时不需要加模块名
-
-print('dir(): ', dir())
-print('dir(sys): ', dir(sys))
-
 cMT.greeting('Anliven')
 
 # ### 模块（Modules）
 # - 模块是一个包含函数和变量的.py文件，可以被其它程序通过import方式导入，从而使用该模块中的函数等功能，提升代码复用性；
-# - 默认情况下，导入文件或者模块，Python解释器将在sys.path里找其路径，如果没有则报错；
+# - 默认情况下，导入文件或者模块时，Python解释器将在sys.path里找其路径，如果没有则报错；
 # - 可以通过设置环境变量PYTHONPATH来指定搜索目录；
 # - 模块名不能使用特殊字符和中文，更不能与系统模块名冲突；
 #
@@ -34,14 +28,14 @@ cMT.greeting('Anliven')
 # - 1.可以将复杂功能分类细化，提高代码的可维护性和复用性；
 # - 2.避免函数名和变量名冲突:相同名字的函数和变量可以分别存在不同的模块;
 #
-# ### 引入模块
-# - 可以通过“import...”或“from...import...”引入模块；
-# - 可以通过“import...as...”或“from...import...as...”为引入的模块设置别名;
-# - 通过“import 语句”引入模块后，必须通过“模块名.方法名”方式调用模块的方法；
-# - 通过“from...import...语句”导入模块的指定函数后，调用方法时不需要加模块名；
-# - “from support import *”可以引入support模块的所有函数，作用与“import support”一致；
-# - 为了使程序更加易读和避免名称冲突，建议使用import语句导入模块，而不是from...import语句；
-# - 如果导入的模块不存在，Python解释器会报ImportError错误；
+# ### 引入模块的方式
+# 通过“import...”或“from...import...”引入模块；
+# - “import 语句”引入模块后，必须通过“模块名.方法名”方式调用模块的方法；
+# - “from...import...语句”导入模块的指定函数后，调用方法时不需要加模块名；
+# 通过“import...as...”或“from...import...as...”为引入的模块设置别名;
+# 通过“from support import *”引入support模块的所有函数，作用与“import support”一致；
+# 为了使程序更加易读和避免名称冲突，建议使用import语句导入模块，而不是from...import语句；
+# 如果导入的模块不存在，Python解释器会报ImportError错误；
 #
 # ### 同时引入多个模块
 # - “import 语句”格式：import module1,module2,...；
@@ -71,8 +65,3 @@ cMT.greeting('Anliven')
 # ### 第三方模块
 # 通过包管理工具pip安装第三方模块;
 # 通过PyPI（The Python Package Index）获取:https://pypi.python.org/pypi
-#
-# ### 安装常用模块
-# Anaconda是一个基于Python的数据处理和科学计算平台，内置了许多非常有用的第三方库，简单易用；
-# Anaconda官网：https://www.anaconda.com/
-# 安装Anaconda完成后，Path环境变量将指向Anaconda自带的Python，其内置的第三方模块安装在自己的路径下，不影响系统已安装的Python目录；

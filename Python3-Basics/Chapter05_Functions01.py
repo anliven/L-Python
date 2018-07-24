@@ -1,16 +1,31 @@
-#! python3
-# -*- coding: utf-8 -*-
-
 x = 11  # 在主代码块中声明变量，全局变量
 y = 22
 z = 35
 
 
-def say_hello():  # 定义函数“def 函数名（参数列表）:”
-    print('Hello!')  # 函数体
+def test_func():  # 定义函数“def 函数名（参数列表）:”
+    print('Hello Python3!')  # 函数体
 
 
-say_hello()  # 调用函数
+def change_global():
+    global z  # global语句声明z是一个全局变量
+    print('z is', z)
+    z = 29
+    print('Changed global z to', z)
+
+
+def empty_function():  # 空函数
+    """This is an sample of docstrings."""
+    pass  # pass用来作为占位符，先让代码能运行起来
+
+
+test_func()  # 调用函数
+change_global()
+empty_function()
+print(empty_function.__doc__)  # 打印函数的文档字符串属性（__doc__）
+
+f = abs  # 函数名其实就是指向一个函数对象的引用，这里将求绝对值的函数abs赋给一个变量，相当于给这个函数起了一个“别名”
+print(f(-3))  # 通过变量调用abs函数
 
 
 def print_max(a, b=7):
@@ -24,76 +39,44 @@ def print_max(a, b=7):
 
 print_max(5)  # 直接传递，并使用默认参数值
 print_max(x, y)  # 以参数的形式传递
-print_max(b=333, a=444)  # 使用命名（关键字）而非位置来指定函数中的参数；
+print_max(b=333, a=555)  # 使用命名（关键字）而非位置来指定函数中的参数；
 
 
-def changed_global():
-    global z  # global语句声明z是一个全局变量
-    print('z is', z)
-    z = 29
-    print('Changed global z to', z)
+def test_args(a, b, c=0, *args, **kw):
+    print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
 
 
-changed_global()
-print('Value of z is', z)
+def test_args2(a, b, c=0, *, d, **kw):
+    print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
 
 
-def print_para(*items):
+def test_args3(name, age, *, city, job):  # 命名关键字参数
+    print(name, age, city, job)
+
+
+def test_args4(*items):
     for var in items:
         print("*: ", var)
 
 
-print_para(1, 'aaa', "AAA")
-
-
-def total(a=5, *numbers, **phonebook):
+def test_args5(a=5, *numbers, **phonebook):
     print('#a: ', a, ' #numbers: ', numbers, ' #other: ', phonebook)
-
     for single_item in numbers:  # 遍历元组中的所有项目
         print('single_item:', single_item)
-
     for first_part, second_part in phonebook.items():  # 遍历字典中的所有项目
         print(first_part, second_part)
-
     return "This is a test!"  # 函数的返回值
 
 
-print(total(10, 1, 2, 3, Jack=11111, John=22222, Inge=33333))
-
-
-def person(name, age, *, city, job):  # 命名关键字参数
-    print(name, age, city, job)
-
-
-person('Anliven', 29, city='Chengdu', job='Engineer')  # 命名关键字参数，调用时必须指明参数名字
-
-
-def f1(a, b, c=0, *args, **kw):
-    print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
-
-
-f1(1, 2, 3, 'a', 'b', x=99)
-
-
-def f2(a, b, c=0, *, d, **kw):
-    print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
-
-
-f2(1, 2, d=99, ext=None)
-
-
-def empty_function():  # 空函数
-    """This is an sample of docstrings."""
-    pass  # pass用来作为占位符，先让代码能运行起来
-
-
-empty_function()
-print(empty_function.__doc__)  # 打印函数的文档字符串属性（__doc__）
+test_args(1, 2, 3, 'a', 'b', x=99)
+test_args2(1, 2, d=99, ext=None)
+test_args3('Anliven', 29, city='Chengdu', job='Engineer')  # 命名关键字参数，调用时必须指明参数名字
+test_args4(111, 'aaa', "AAA")
+print(test_args5(10, 1, 2, 3, Jack=11111, John=22222, Inge=33333))
 
 
 def repeat(count, name):
-    for i in range(count):
-        print(name)
+    print('count:{}, name:{}'.format(count, name))
 
 
 args1 = [3, "dogs"]
@@ -102,21 +85,17 @@ args2 = {'count': 3, 'name': 'pigs'}
 repeat(**args2)
 
 
-def get_two_values():  # 通过函数来返回不同的值
+def return_two_values():  # 通过函数来返回不同的值
     return 123, 'test'  # 返回多个值
 
 
-returnNum, returnStr = get_two_values()
+returnNum, returnStr = return_two_values()
 print('Values-1:', returnNum, '\nValues-2:', returnStr)
-
-x = abs  # 函数名其实就是指向一个函数对象的引用，这里将求绝对值的函数abs赋给一个变量，相当于给这个函数起了一个“别名”
-print(x(-3))  # 通过变量调用abs函数
 
 # ### 函数（Functions）
 # - 函数是指完成特定功能、可重复使用、具有指定名称的语句组（程序片段）；
-# - 函数调用：通过函数名可以程序的不同地方多次执行；
-# - Python具有大量实现常用功能的内置函数，也可以自定义函数，建议尽可能使用内置函数；
-# - 通过关键字def定义函数，依次写出函数名、括号、括号中的参数和冒号:，然后在缩进块中编写函数体，函数的返回值用return语句返回；
+# - 函数调用：通过函数名可以在程序的不同地方多次执行；
+# - 通过关键字def定义函数，依次写出函数名、括号、括号中的参数和冒号“:”，然后在缩进块中编写函数体，函数的返回值用return语句返回；
 # - 使用函数可以实现代码重用，并且降低编程的难度；
 #
 # ### 函数参数
@@ -125,12 +104,12 @@ print(x(-3))  # 通过变量调用abs函数
 # - 实参（Arguments）：在调用函数时所提供给函数的值；
 # - 默认定义的参数都是位置参数，实参以参数位置来指定给形参；
 # - 可以使用命名（关键字）而非位置来指定函数中的参数，也就是说只需在调用时指明参数名称及其值即可；
-# - 注意！参数定义的顺序必须是：必选参数、默认参数、可变参数、命名关键字参数、关键字参数；
+# - 特别注意：参数定义的顺序必须依次是必选参数、默认参数、可变参数、命名关键字参数、关键字参数；
 #
 # ### 默认参数
 # - 默认参数值：在函数定义时通过赋值运算符（=）可以指定参数的默认值；
 # - 有默认值的参数必须位于没有默认值的参数之后；
-# - 特别注意：定义默认参数时，必须指向不可变对象！
+# - 特别注意：定义默认参数时，必须指向不可变对象！；
 #
 # ### 不定长参数
 # - 可选参数可以通过星号来实现可变的参数数量；
@@ -138,7 +117,7 @@ print(x(-3))  # 通过变量调用abs函数
 # - 关键字参数：类似“**param”，从此处开始直至结束的所有关键字参数被汇集成一个名为param的字典（Dictionary）；
 #
 # ### 命名关键字参数
-# - 利用命名关键字参数可以限制：调用时必须指明参数名字；
+# - 命名关键字参数，调用时必须指明参数名字；
 # - 命名关键字参数需要一个特殊分隔符*，*后面的参数被视为命名关键字参数；
 # - 如果函数定义中已有一个可变参数，后面跟着的命名关键字参数就不再需要一个特殊分隔符*：
 # - 命名关键字参数可以提供默认值；
@@ -167,4 +146,5 @@ print(x(-3))  # 通过变量调用abs函数
 # - 强烈建议为所有重要的函数配以文档字符串；
 #
 # ### 内置函数（Built-in Functions）
+# Python具有大量实现常用功能的内置函数，也可以自定义函数，建议尽可能使用内置函数；
 # https://docs.python.org/3/library/functions.html

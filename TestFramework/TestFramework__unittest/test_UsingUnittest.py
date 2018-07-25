@@ -1,22 +1,16 @@
 # -*- coding: utf-8 -*-
-__author__ = 'Anliven'
-
-# ----------------------------------------------------------------------------------------------------------------------
-### 简单的测试
-
 import unittest
 
 
-class IntegerArithmenticTestCase(unittest.TestCase):
-    def testAdd(self):  # test method names begin 'test*'
-        self.assertEquals((2 + 2), 3)
-        self.assertEquals(0 + 1, 1)
+class IntegerTestCase(unittest.TestCase):  # 继承自unittest.TestCase类
+    def testAdd(self):  # 具体的测试用例，一定要以test开头
+        self.assertEqual((2 + 2), 3)  # 使用断言判断程序执行结果和预期值是否相符
+        self.assertEqual(0 + 1, 1)
 
-    def testMultiply(self):
-        self.assertEquals((0 * 10), 0)
-        self.assertEquals((5 * 8), 40)
+    def test_Multiply(self):
+        self.assertEqual((0 * 10), 0)  # 断言失败，表明测试不通过
+        self.assertEqual((5 * 8), 40)
+
 
 if __name__ == '__main__':
     unittest.main()
-
-# ----------------------------------------------------------------------------------------------------------------------

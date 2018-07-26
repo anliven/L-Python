@@ -2,50 +2,41 @@
 
 ## 001 - 005
 
-### 001-if：不使用列表或排序算法，对输入的三个整数数排序；
+### 001 不使用列表，对输入的三个整数做升序排序；
 ```python
 print("Please input 3 numbers : ")
 a, b, c = input(), input(), input()
 if a >= b:
-    first = a
-    second = b
+    first, second = b, a
 else:
-    first = b
-    second = a
+    first, second = a, b
 
-if c >= first:
-    third = second
-    second = first
-    first = c
+if c <= first:
+    first, second, third = c, first, second
 else:
-    if c >= second:
-        third = second
-        second = c
+    if c <= second:
+        third, second = second, c
     else:
         third = c
 print(first, second, third)
-print(third, second, first)
 ```
-### 002-if：实现菜单选项的功能：（1）求和、（2）求平均值、（X）退出；
+### 002 实现菜单选项：（1）求和、（2）求平均值、（X）退出；
 ```python
 from random import randint
 
-a = randint(1, 1000)
-b = randint(1, 1000)
-c = randint(1, 1000)
-
-print("There are 3 numbers : ", a, b, c)
-print("Please select : (1)summary (2)average (X)exit :")
+a, b, c = [randint(1, 1000) for _ in range(3)]
+print("There are 3 numbers : ", a, b, c,
+      "\nPlease select: (S)summary (A)average (X)exit:")
 option = input()
-if option == "1":
-    print(a + b + c)
-elif option == "2":
-    print((a + b + c) / 5)
+if option == "S":
+    print("Sum:", a + b + c)
+elif option == "A":
+    print("Average:", (a + b + c) / 5)
 elif option == "X":
     print("None Selected!")
     exit()
 ```
-### 003-while：计算等差数列“1 4 7 10 13 16 19 ...”前 100 项的和；
+### 003 使用while循环计算等差数列“1 4 7 10 13 16 ...”前100项的和；
 ```python
 x = 1  # 初始值
 Diff = 3  # 差值
@@ -59,7 +50,7 @@ while Num < 100:
 
 print("Sum: ", Sum)
 ```
-### 004-while：输入一个100以内正整数，满足条件显示成功并退出，否则提示再次输入，直到满足条件为止；
+### 004 输入一个100以内正整数，满足条件显示成功并退出，否则提示再次输入，直到满足条件为止；
 ```python
 try_number = int(input("please input a number between 1 and 100:"))
 while try_number > 100 or try_number < 1:
@@ -67,7 +58,7 @@ while try_number > 100 or try_number < 1:
     try_number = int(input("please input a number between 1 and 100:"))
 print("Right!")
 ```
-### 005-logic：判断给定年份是否是闰年；
+### 005 判断给定年份是否是闰年；
 ```python
 print("Input a particular year:")
 your_year = int(input())
@@ -82,7 +73,7 @@ else:
 
 ## 006 - 010
 
-### 006-function：编写函数：反转字符串的大小写；
+### 006 反转字符串的大小写；
 ```python
 def str_swap1(string):
     return string.swapcase()  # 利用string的swapcase方法
@@ -104,7 +95,7 @@ input_string = input('Input a string :')
 print(str_swap1(input_string))
 print(str_swap2(input_string))
 ```
-### 007-string：编写函数：接受一个字符串，然后返回一个仅首字母变成大写的字符串；
+### 007 接受一个字符串，然后返回一个仅首字母变成大写的字符串；
 ```python
 def firstCharUpper(s):
     return s[0].upper() + s[1:]
@@ -113,7 +104,7 @@ def firstCharUpper(s):
 
 print(firstCharUpper('hello'))
 ```
-### 008-string：编写函数：按单词反转字符串；
+### 008 按单词反转字符串；
 ```python
 import re
 
@@ -130,7 +121,7 @@ s = 'Hello  World!'
 print(reverse_word(s))
 print(reverse_word2(s))
 ```
-### 009-list：编写函数：接受一个list，然后把list中的所有字符串变成大写后返回，非字符串元素将被忽略；
+### 009 接受一个list，然后把list中的所有字符串变成大写后返回，非字符串元素将被忽略；
 ```python
 def toUppers(L):
     return [x.upper() for x in L if type(x) == str]
@@ -138,7 +129,7 @@ def toUppers(L):
 
 print(toUppers(['Hello', 'world', 101]))
 ```
-### 010-list：找出所有对称的2位数和3位数；
+### 010 找出所有对称的2位数和3位数；
 ```python
 print([x for x in range(10, 100) if x % 11 == 0])
 print([x for x in range(100, 1000) if int(x / 100) == x % 10])
@@ -148,7 +139,7 @@ print([x for x in range(100, 1000) if int(x / 100) == x % 10])
 
 ## 011 - 015
 
-### 011-file：以文件形式保存输入内容, 文件名以日期时间作为前缀；
+### 011 以文件形式保存输入内容, 文件名以日期时间作为前缀；
 ```python
 import time
 
@@ -161,17 +152,17 @@ f = open(filename, 'wt')
 f.write("Some words : %s " % input_content)
 f.close()
 ```
-### 012-sorted：忽略大小写对一个列表进行排序；
+### 012 忽略大小写对一个列表进行排序；
 ```python
 test_list = ['bbb', 'aaa', 'DDD', '111', 'CCC', 'E22']
 print(sorted(test_list, key=str.lower))
 ```
-### 013-sorted：对包含负数和正数的列表进行排序：1.正数在前负数在后，2.整数从小到大，3.负数从大到小；
+### 013 对包含负数和正数的列表进行排序：1.正数在前负数在后，2.整数从小到大，3.负数从大到小；
 ```python
 test_list = [7, -8, 5, 4, 0, -2, -5]
 print(sorted(test_list, key=lambda x: (x < 0, abs(x))))
 ```
-### 014-map：将一个list所有元素的首字母大写；
+### 014 将一个list所有元素的首字母大写；
 ```python
 def format_name(s):
     return s[:1].upper() + s[1:].lower()
@@ -179,7 +170,7 @@ def format_name(s):
 
 print(list(map(format_name, ['aaa', 'BBB', '1CC', '2dd', '333'])))
 ```
-### 015-map：对输入的整数进行正向和逆向排序；
+### 015 对输入的整数进行正向和逆向排序；
 ```python
 import sys
 
@@ -193,7 +184,7 @@ print(sorted(in_numbers, reverse=True))
 
 ## 016 - 020
 
-### 016-reduce：求一个整数列表所有元素的积；
+### 016 求一个整数列表所有元素的积；
 ```python
 from functools import reduce  # 引入functools模块的reduce函数
 
@@ -215,7 +206,7 @@ def calc_product(lst):
 func = calc_product([1, 2, 3, 4])
 print(func())
 ```
-### 017-filter：筛选出1~100中平方根是整数的数；
+### 017 筛选出1~100中平方根是整数的数；
 ```python
 import math
 
@@ -226,13 +217,13 @@ def is_sqr(x):
 
 print(list(filter(is_sqr, range(1, 101))))
 ```
-### 018-filter：去除列表中的空白字符和空值；
+### 018 去除列表中的空白字符和空值；
 ```python
 test_list = ['aaa', None, '', '111', ' ', '   ']
 f = list(filter(lambda s: s and len(s.strip()) > 0, test_list))
 print(f)
 ```
-### 019-decorator：实现一个装饰器（@performance），打印出函数调用的时间；
+### 019 实现一个装饰器（@performance），打印出函数调用的时间；
 ```python
 import time
 from functools import reduce
@@ -258,7 +249,7 @@ def factorial(n):
 
 print(factorial(10))
 ```
-### 020-class：创建一个类，可以统计出一共创建了多少个类的实例；
+### 020 创建一个类，可以统计出一共创建了多少个类的实例；
 ```python
 class Person(object):
     count = 0
@@ -282,7 +273,7 @@ print(Person.count)
 
 ## 021 - 025
 
-### 021-string：编写函数：将IPv4地址转换成列表；
+### 021 将IPv4地址转换成列表；
 ```python
 def myipv4addr(var):
     if isinstance(var, str):
@@ -294,7 +285,7 @@ def myipv4addr(var):
 test_ip = "192.168.123.111"
 print(myipv4addr(test_ip))
 ```
-### 022-list： 编写函数：实现字符串和列表的互换，例如"1,a,A" 和 ["1", "a", "A"]；
+### 022 实现字符串和列表的互换，例如"1,a,A" 和 ["1", "a", "A"]；
 ```python
 def myswitch(var):
     if isinstance(var, str):
@@ -310,17 +301,17 @@ test_list = ["1", "a", "A"]
 print(myswitch(test_str))
 print(myswitch(test_list))
 ```
-### 023：编写函数：实现类似字符串"CbaBc"到字符串"C-Bb-Aaa-Bbbb-Ccccc"的转换；
+### 023 实现类似字符串"CbaBc"到字符串"C-Bb-Aaa-Bbbb-Ccccc"的转换；
 ```python
 def convert(s):
     return '-'.join(y.upper() + y.lower() * x for x, y in enumerate(s))
 ```
-### 024：编写函数：将任何非负整数以降序的数字返回，例如“58769”的返回结果为“98765”；
+### 024 将任何非负整数以降序的数字返回，例如“58769”的返回结果为“98765”；
 ```python
 def descending_order(num):
     return int("".join(sorted(str(num), reverse=True)))
 ```
-### 025：编写函数：以二进制形式返回两个整数的和；
+### 025 以二进制形式返回两个整数的和；
 ```python
 def add_binary(n1, n2):
     return format(n1 + n2, 'b')
@@ -330,7 +321,7 @@ def add_binary(n1, n2):
 
 ## 026 - 030
 
-### 026：编写函数：以位数扩展的形式来表示一个非负整数，例如321的对应表示为“300 + 20 + 1”；
+### 026 以位数扩展的形式来表示一个非负整数，例如321的对应表示为“300 + 20 + 1”；
 ```python
 def expanded_form(num):
     nums = str(num)
@@ -341,12 +332,12 @@ def expanded_form(num):
             x.append(s)
     return ' + '.join(x)
 ```
-### 027：编写函数：统计指定字符在字符串中出现的次数；
+### 027 统计指定字符在字符串中出现的次数；
 ```python
 def countChars(s, c):
     return format(s, 's').count(c)
 ```
-### 028：编写函数：判断字符串中的括号是否有效；
+### 028 判断字符串中的括号是否有效；
 ```python
 def valid_parentheses(s):
     cnt = 0
@@ -360,7 +351,7 @@ def valid_parentheses(s):
     else:
         return False
 ```
-### 029：编写函数：统计字符串中重复元素的个数；
+### 029 统计字符串中重复元素的个数；
 ```python
 def duplicate(datas):
     d = {}
@@ -370,9 +361,23 @@ def duplicate(datas):
         d[k] += 1
     return d
 ```
-### 030：编写函数：打印列表的索引和对应的元素；
+### 030 打印列表的索引和对应的元素；
 ```python
 def iterate(datas):
     for i, v in enumerate(datas):
         print("Index: %s - Value: %s" % (i, v))
+```
+
+
+
+## 031 - 035
+
+### 031 统计一个字符串中相邻n个字符的子字符重复次数；
+```python
+def get_items(seq, n, r=1):
+    items = [seq[pos:pos + n] for pos in range(len(seq) - (n - 1))]  # 利用切片获得所有组合
+    for item in set(items):
+        rn = items.count(item)
+        if rn >= int(r):
+            print("The number of '%s' is %d." % (item, rn))  # 打印大于等于指定次数的结果
 ```

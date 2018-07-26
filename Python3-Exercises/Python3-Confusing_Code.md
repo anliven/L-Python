@@ -2,7 +2,7 @@
 
 
 
-### 01
+## 01
 以下代码的执行结果是什么？
 ```python
 testList = ['a', 'b', 'c']
@@ -10,7 +10,7 @@ print(testList[5:])
 ```
 
 
-### 02
+## 02
 以下代码的执行结果是什么？
 ```python
 a = [123, "xxx", "yyy"]
@@ -22,7 +22,7 @@ print(a == b, a == c, b == c)
 ```
 
 
-### 03
+## 03
 以下代码的执行结果是什么？
 ```python
 a = [[]] * 3
@@ -38,7 +38,7 @@ print(b)
 ```
 
 
-### 04
+## 04
 以下代码的执行结果是什么？
 ```python
 list_1 = [111, 333, 555, "aaa", "ccc"]
@@ -50,7 +50,7 @@ print([i for i in list_2 if i not in list_1])
 ```
 
 
-### 05
+## 05
 以下代码的执行结果是什么？
 ```python
 list1 = [(2), (0), (1), (8)]
@@ -61,7 +61,7 @@ print(type((list2[0])))
 ```
 
 
-### 06
+## 06
 在Python3和Python2中分别执行如下代码，结果分别是什么？
 ```python
 print(5/2, 5./2)
@@ -70,7 +70,7 @@ print(10//5, (-10)//5)
 ```
 
 
-### 07
+## 07
 以下代码的执行结果是什么？
 ```python
 class Parent():
@@ -93,7 +93,7 @@ print(Parent.x, Child1.x, Child2.x)
 ```
 
 
-### 08
+## 08
 以下代码的执行结果是什么？
 ```python
 def multipliers(x):
@@ -120,7 +120,7 @@ print([m(2) for m in test3()])
 ```
 
 
-### 09
+## 09
 以下代码的执行结果是什么？
 ```python
 A = 'abc'
@@ -139,7 +139,7 @@ print(a == b, c == d, e == f)
 ```
 
 
-### 10
+## 10
 以下代码的执行结果是什么？
 ```python
 a = "abc"
@@ -162,7 +162,7 @@ print(c is b, c == b)
 ```
 
 
-### 11
+## 11
 以下代码的执行结果是什么？
 ```python
 a = 111
@@ -185,7 +185,7 @@ print(a, b)
 ```
 
 
-### 12
+## 12
 以下代码的执行结果是什么？
 ```python
 a = [1, 2, 3]
@@ -204,7 +204,7 @@ print(e == f, e is f)
 ```
 
 
-### 13
+## 13
 以下代码的执行结果是什么？
 ```python
 class Person:
@@ -221,7 +221,7 @@ print(AAA.name, AAA.money, BBB.name, BBB.money, Person.name, Person.money)
 ```
 
 
-### 14
+## 14
 以下代码的执行结果是什么？
 ```python
 import copy
@@ -236,7 +236,7 @@ print(c, a == c, a is c)
 ```
 
 
-### 15
+## 15
 以下代码的执行结果是什么？
 ```python
 import copy
@@ -252,7 +252,7 @@ print("a= ", a, "\nb= ", b, "\ncc= ", cc, "\ncd= ", cd)
 ```
 
 
-### 16
+## 16
 以下代码的执行结果是什么？
 ```python
 test = dict(zip(('a', 'b', 'c', 'd', 'e'), (1, 2, 3, 4, 5)))
@@ -264,7 +264,7 @@ print("\n", test1, "\n", test2, "\n", test3)
 ```
 
 
-### 17
+## 17
 以下代码的执行结果是什么？
 ```python
 class A(object):
@@ -325,7 +325,7 @@ print("e.stop", "&" * 20), e.stop()
 ```
 
 
-### 18
+## 18
 以下代码的执行结果是什么？
 ```python
 st = "abc"
@@ -338,7 +338,7 @@ print("after: ", li, li_new)
 ```
 
 
-### 19
+## 19
 以下代码的执行结果是什么？
 ```python
 import copy
@@ -359,7 +359,7 @@ print(id(li) == id(aaa), id(li) == id(bbb), id(li) == id(ccc))
 ```
 
 
-### 20
+## 20
 以下代码的执行结果是什么？
 ```python
 def f(x, li=[]):
@@ -374,7 +374,7 @@ f(3)
 ```
 
 
-### 21
+## 21
 以下代码的执行结果是什么？
 ```python
 def append_list(val, var=[]):
@@ -391,7 +391,7 @@ print(f3)
 ```
 
 
-### 22
+## 22
 以下代码的执行结果是什么？
 ```python
 def extendList(val, tl=[]):
@@ -418,7 +418,7 @@ print("list4= %s, list5= %s, list6= %s" % (list4, list5, list6))
 ```
 
 
-### 23
+## 23
 以下代码的执行结果是什么？
 ```python
 def func(var1, var2=[]):
@@ -442,7 +442,7 @@ func2("c")
 ```
 
 
-### 24
+## 24
 ```python
 class Student:
     score = []
@@ -458,7 +458,7 @@ print(stu2.score)
 ```
 
 
-### 25
+## 25
 以下代码的执行结果是什么？
 ```python
 class Test():
@@ -489,7 +489,7 @@ print(c.var, d.var)
 ```
 
 
-### 26
+## 26
 以下代码的执行结果是什么？
 ```python
 a = 1 or 3
@@ -505,7 +505,7 @@ print(a, b, c, d, e, f, g, h)
 ```
 
 
-### 27
+## 27
 以下代码的执行结果是什么？
 ```python
 num = 6
@@ -525,7 +525,7 @@ func2()
 ```
 
 
-### 28
+## 28
 以下代码的执行结果是什么？
 - Temp.py
 ```python
@@ -565,7 +565,7 @@ func2()
 func3()
 ```
 
-### 29
+## 29
 以下代码的执行结果是什么？
 ```python
 def func():
@@ -605,7 +605,7 @@ print(f)
 print(func1(), func2(), func3())
 ```
 
-### 30
+## 30
 以下代码的执行结果是什么？
 ```python
 class BBB(object):
@@ -638,7 +638,7 @@ t2.func()
 ```
 
 
-### 31
+## 31
 以下代码的执行结果是什么？
 ```python
 class Test(object):
@@ -658,7 +658,7 @@ t1.func2(111)
 ```
 
 
-### 32
+## 32
 以下代码的执行结果是什么？
 ```python
 class A(object):
@@ -695,7 +695,7 @@ print(t.val)
 ```
 
 
-### 33
+## 33
 以下代码的执行结果是什么？
 ```python
 gen = (x for x in range(3))
@@ -710,7 +710,7 @@ print(1 in test_list, 2 in test_list, 1 in test_list, 2 in test_list)
 ```
 
 
-### 34
+## 34
 以下代码的执行结果是什么？
 ```python
 test_list = [lambda: i for i in range(3)]
@@ -727,7 +727,7 @@ for t in test_gen:
 ```
 
 
-### 35
+## 35
 以下代码的执行结果是什么？
 ```python
 def test(items, size):
@@ -739,7 +739,7 @@ print(list(t))
 ```
 
 
-### 36
+## 36
 以下代码的执行结果是什么？
 ```python
 test_list = [2, 4, 5, 6]
@@ -758,7 +758,7 @@ print(test_list2)
 ```
 
 
-### 37
+## 37
 以下代码的执行结果是什么？
 ```python
 test_list = [0]
@@ -780,7 +780,7 @@ print(id_1 == id_2, id_3 == id_4)
 ```
 
 
-### 38
+## 38
 以下代码的执行结果是什么？
 ```python
 print(isinstance(True, int))
@@ -789,7 +789,7 @@ print(True << 10)
 ```
 
 
-### 39
+## 39
 以下代码的执行结果是什么？
 ```python
 tup = ([],)
@@ -803,7 +803,7 @@ print(tup2)
 ```
 
 
-### 40
+## 40
 以下代码的执行结果是什么？
 ```python
 a = float('inf')
@@ -816,7 +816,7 @@ print(c is d, c == d)
 ```
 
 
-### 41
+## 41
 以下代码的执行结果是什么？
 ```python
 numbers = [1, 2, 3]
@@ -835,7 +835,7 @@ print(6 in squares3, 6 in squares3)
 ```
 
 
-### 42
+## 42
 以下代码的执行结果是什么？
 ```python
 test_dict = {"AAA": 111, "BBB": 222, "CCC": 333}

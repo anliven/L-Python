@@ -1,7 +1,6 @@
 # coding=utf-8
 import tkinter as tk
 from tkinter import ttk
-from tkinter import scrolledtext
 
 win = tk.Tk()
 win.title("Python GUI")
@@ -28,6 +27,7 @@ number_chosen['values'] = (1, 2, 4, 42, 100)
 number_chosen.grid(column=1, row=1)
 number_chosen.current(0)
 
+# Creating three checkbuttons
 chVarDis = tk.IntVar()
 check1 = tk.Checkbutton(win, text="Disabled", variable=chVarDis, state='disabled')
 check1.select()
@@ -38,45 +38,7 @@ check2.deselect()
 check2.grid(column=1, row=4, sticky=tk.W)
 chVarEn = tk.IntVar()
 check3 = tk.Checkbutton(win, text="Enabled", variable=chVarEn)
-check3.deselect()
+check3.select()
 check3.grid(column=2, row=4, sticky=tk.W)
-
-
-def checkCallback(*ignoredArgs):
-    if chVarUn.get():
-        check3.configure(state='disabled')
-    else:
-        check3.configure(state='normal')
-    if chVarEn.get():
-        check2.configure(state='disabled')
-    else:
-        check2.configure(state='normal')
-
-
-chVarUn.trace('w', lambda unused0, unused1, unused2: checkCallback())
-chVarEn.trace('w', lambda unused0, unused1, unused2: checkCallback())
-
-colors = ["Blue", "Gold", "Red"]
-
-
-def radCall():
-    radSel = radVar.get()
-    if radSel == 0:
-        win.configure(background=colors[0])
-    elif radSel == 1:
-        win.configure(background=colors[1])
-    elif radSel == 2:
-        win.configure(background=colors[2])
-
-
-radVar = tk.IntVar()
-radVar.set(99)  # selecting a non-existing index value for radVar
-for col in range(3):  # creating all three Radiobutton widgets within one loop
-    curRad = tk.Radiobutton(win, text=colors[col], variable=radVar, value=col, command=radCall)
-    curRad.grid(column=col, row=5, sticky=tk.W)
-
-scrol_w, scrol_h = 30, 3
-scr = scrolledtext.ScrolledText(win, width=scrol_w, height=scrol_h, wrap=tk.WORD)
-scr.grid(column=0, columnspan=3)
 
 win.mainloop()

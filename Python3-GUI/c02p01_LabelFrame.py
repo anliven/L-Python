@@ -17,7 +17,6 @@ def click_me():
 name = tk.StringVar()
 name_entered = ttk.Entry(win, width=12, textvariable=name)
 name_entered.grid(column=0, row=1)
-name_entered.focus()
 
 action = ttk.Button(win, text="Click Me!", command=click_me)
 action.grid(column=2, row=1)
@@ -27,17 +26,16 @@ number_chosen = ttk.Combobox(win, width=12, textvariable=number, state='readonly
 number_chosen['values'] = (1, 2, 4, 42, 100)
 number_chosen.grid(column=1, row=1)
 number_chosen.current(0)
+name_entered.focus()
 
 chVarDis = tk.IntVar()
 check1 = tk.Checkbutton(win, text="Disabled", variable=chVarDis, state='disabled')
 check1.select()
 check1.grid(column=0, row=4, sticky=tk.W)
-
 chVarUn = tk.IntVar()
 check2 = tk.Checkbutton(win, text="UnChecked", variable=chVarUn)
 check2.deselect()
 check2.grid(column=1, row=4, sticky=tk.W)
-
 chVarEn = tk.IntVar()
 check3 = tk.Checkbutton(win, text="Enabled", variable=chVarEn)
 check3.deselect()
@@ -58,30 +56,40 @@ def check_callback(*ignoredArgs):
 chVarUn.trace('w', lambda unused0, unused1, unused2: check_callback())
 chVarEn.trace('w', lambda unused0, unused1, unused2: check_callback())
 
-COLOR1, COLOR2, COLOR3 = "Blue", "Gold", "Red"
+scrol_w, scrol_h = 30, 3
+scr = scrolledtext.ScrolledText(win, width=scrol_w, height=scrol_h, wrap=tk.WORD)
+scr.grid(column=0, row=5, columnspan=3)
+
+colors = ["Blue", "Gold", "Red"]
 
 
 def rad_call():
     radSel = radVar.get()
-    if radSel == 1:
-        win.configure(background=COLOR1)
+    if radSel == 0:
+        win.configure(background=colors[0])
+    elif radSel == 1:
+        win.configure(background=colors[1])
     elif radSel == 2:
-        win.configure(background=COLOR2)
-    elif radSel == 3:
-        win.configure(background=COLOR3)
+        win.configure(background=colors[2])
 
 
 radVar = tk.IntVar()
-rad1 = tk.Radiobutton(win, text=COLOR1, variable=radVar, value=1, command=rad_call)
-rad1.grid(column=0, row=5, sticky=tk.W, columnspan=3)
-rad2 = tk.Radiobutton(win, text=COLOR2, variable=radVar, value=2, command=rad_call)
-rad2.grid(column=1, row=5, sticky=tk.W, columnspan=3)
-rad3 = tk.Radiobutton(win, text=COLOR3, variable=radVar, value=3, command=rad_call)
-rad3.grid(column=2, row=5, sticky=tk.W, columnspan=3)
+radVar.set(99)
+for col in range(3):
+    curRad = tk.Radiobutton(win, text=colors[col], variable=radVar, value=col, command=rad_call)
+    curRad.grid(column=col, row=6, sticky=tk.W)
 
-# Using a scrolled Text control    
-scrol_w, scrol_h = 30, 3
-scr = scrolledtext.ScrolledText(win, width=scrol_w, height=scrol_h, wrap=tk.WORD)
-scr.grid(column=0, columnspan=3)
+# Create a container to hold labels
+buttons_frame = ttk.LabelFrame(win, text=' Labels in a Frame ')
+# buttons_frame = ttk.LabelFrame(win, text=' Labels in a Frame ')  # no LabelFrame name
+buttons_frame.grid(column=0, row=7, padx=10, pady=10)  # padx, pady
+
+# Place labels into the container element - vertically
+ttk.Label(buttons_frame, text="Label1").grid(column=0, row=0)
+ttk.Label(buttons_frame, text="Label2").grid(column=0, row=1)
+ttk.Label(buttons_frame, text="Label3").grid(column=0, row=2)
+
+for child in buttons_frame.winfo_children():  # use a loop to add space around the labels
+    child.grid_configure(padx=8, pady=4)
 
 win.mainloop()

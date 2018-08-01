@@ -86,11 +86,17 @@ for col in range(3):
     curRad = tk.Radiobutton(mighty, text=colors[col], variable=radVar, value=col, command=rad_call)
     curRad.grid(column=col, row=6, sticky=tk.W)
 
-buttons_frame = ttk.LabelFrame(mighty, text=' Labels in a Frame ')
-buttons_frame.grid(column=0, row=7)
+# Create a container to hold labels
+buttons_frame = ttk.LabelFrame(win, text=' Labels in a Frame ')
+# buttons_frame = ttk.LabelFrame(win, text=' Labels in a Frame ')  # no LabelFrame name
+buttons_frame.grid(column=0, row=7, padx=10, pady=10)  # padx, pady
 
-ttk.Label(buttons_frame, text="Label1").grid(column=0, row=0, sticky=tk.W)
-ttk.Label(buttons_frame, text="Label2").grid(column=1, row=0, sticky=tk.W)
-ttk.Label(buttons_frame, text="Label3").grid(column=2, row=0, sticky=tk.W)
+# Place labels into the container element - vertically
+ttk.Label(buttons_frame, text="Label1").grid(column=0, row=0)
+ttk.Label(buttons_frame, text="Label2").grid(column=0, row=1)
+ttk.Label(buttons_frame, text="Label3").grid(column=0, row=2)
+
+for child in buttons_frame.winfo_children():  # use a loop to add space around the labels
+    child.grid_configure(padx=8, pady=4)
 
 win.mainloop()

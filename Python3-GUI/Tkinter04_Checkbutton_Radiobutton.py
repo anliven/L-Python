@@ -28,6 +28,7 @@ number_chosen.grid(column=1, row=1)
 number_chosen.current(0)
 name_entered.focus()
 
+# Creating three checkbuttons
 chVarDis = tk.IntVar()
 check1 = tk.Checkbutton(win, text="Disabled", variable=chVarDis, state='disabled')
 check1.select()

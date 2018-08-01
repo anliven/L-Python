@@ -3,18 +3,19 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import scrolledtext
 from tkinter import Menu
+from tkinter import messagebox  # message box
 
 win = tk.Tk()
 win.title("Python GUI")
 
-tabControl = ttk.Notebook(win)  # Create Tab Control
-tab1 = ttk.Frame(tabControl)  # Create a tab
-tabControl.add(tab1, text='Tab 1')  # Add the tab
-tab2 = ttk.Frame(tabControl)  # Add a second tab
-tabControl.add(tab2, text='Tab 2')  # Make second tab visible
-tabControl.pack(expand=1, fill="both")  # Pack to make visible
+tabControl = ttk.Notebook(win)
+tab1 = ttk.Frame(tabControl)
+tabControl.add(tab1, text='Tab 1')
+tab2 = ttk.Frame(tabControl)
+tabControl.add(tab2, text='Tab 2')
+tabControl.pack(expand=1, fill="both")
 
-mighty = ttk.LabelFrame(tab1, text=' Mighty Python ')  # creating a container frame
+mighty = ttk.LabelFrame(tab1, text=' Mighty Python ')
 mighty.grid(column=0, row=0, padx=8, pady=4)
 
 ttk.Label(mighty, text="Enter a name:").grid(column=0, row=0, sticky='W')
@@ -27,7 +28,7 @@ def click_me():
 
 name = tk.StringVar()
 name_entered = ttk.Entry(mighty, width=12, textvariable=name)
-name_entered.grid(column=0, row=1, sticky='W')  # align left/West
+name_entered.grid(column=0, row=1, sticky='W')
 name_entered.focus()
 
 action = ttk.Button(mighty, text="Click Me!", command=click_me)
@@ -43,7 +44,7 @@ scrol_w, scrol_h = 30, 3
 scr = scrolledtext.ScrolledText(mighty, width=scrol_w, height=scrol_h, wrap=tk.WORD)
 scr.grid(column=0, row=2, sticky='WE', columnspan=3)
 
-mighty2 = ttk.LabelFrame(tab2, text=' The Snake ')  # creating a container frame
+mighty2 = ttk.LabelFrame(tab2, text=' The Snake ')
 mighty2.grid(column=0, row=0, padx=8, pady=4)
 
 chVarDis = tk.IntVar()
@@ -107,15 +108,30 @@ def _quit():
     exit()
 
 
+# Display a Message Box
+def _msgBox():
+    # messagebox.showinfo('Message Info Box', 'A Python GUI created using tkinter:\nTest!.')
+    # messagebox.showwarning('Message Warning Box', 'A Python GUI created using tkinter:\nWarning: Test!.')
+    # messagebox.showerror('Message Error Box', 'A Python GUI created using tkinter:\nError: Test!')
+    answer = messagebox.askyesnocancel("Python Message Multi Choice Box", "Make the choice:")
+    print(answer)
+    if answer is True:
+        messagebox.showinfo('Message Info Box', 'YES is the Chosen One.')
+    elif answer is False:
+        messagebox.showwarning('Message Warning Box', 'NO is the chosen One.')
+    else:
+        messagebox.showerror('Message Error Box', 'Cancel is the chosen One.')
+
+
 menu_bar = Menu(win)
-win.config(menu=menu_bar)
 file_menu = Menu(menu_bar, tearoff=0)
 file_menu.add_command(label="New")
 file_menu.add_separator()
 file_menu.add_command(label="Exit", command=_quit)
 menu_bar.add_cascade(label="File", menu=file_menu)
 help_menu = Menu(menu_bar, tearoff=0)
-help_menu.add_command(label="About")
 menu_bar.add_cascade(label="Help", menu=help_menu)
+help_menu.add_command(label="About", command=_msgBox)  # command: display a Message Box
 
+win.config(menu=menu_bar)
 win.mainloop()

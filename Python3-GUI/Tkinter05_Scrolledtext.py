@@ -1,7 +1,7 @@
 # coding=utf-8
 import tkinter as tk
 from tkinter import ttk
-from tkinter import scrolledtext
+from tkinter import scrolledtext  # scrolled text
 
 win = tk.Tk()
 win.title("Python GUI")
@@ -17,6 +17,7 @@ def click_me():
 name = tk.StringVar()
 name_entered = ttk.Entry(win, width=12, textvariable=name)
 name_entered.grid(column=0, row=1)
+name_entered.focus()
 
 action = ttk.Button(win, text="Click Me!", command=click_me)
 action.grid(column=2, row=1)
@@ -26,7 +27,6 @@ number_chosen = ttk.Combobox(win, width=12, textvariable=number, state='readonly
 number_chosen['values'] = (1, 2, 4, 42, 100)
 number_chosen.grid(column=1, row=1)
 number_chosen.current(0)
-name_entered.focus()
 
 chVarDis = tk.IntVar()
 check1 = tk.Checkbutton(win, text="Disabled", variable=chVarDis, state='disabled')
@@ -56,10 +56,6 @@ def check_callback(*ignoredArgs):
 chVarUn.trace('w', lambda unused0, unused1, unused2: check_callback())
 chVarEn.trace('w', lambda unused0, unused1, unused2: check_callback())
 
-scrol_w, scrol_h = 30, 3
-scr = scrolledtext.ScrolledText(win, width=scrol_w, height=scrol_h, wrap=tk.WORD)
-scr.grid(column=0, row=5, columnspan=3)
-
 colors = ["Blue", "Gold", "Red"]
 
 
@@ -73,23 +69,17 @@ def rad_call():
         win.configure(background=colors[2])
 
 
-radVar = tk.IntVar()
-radVar.set(99)
-for col in range(3):
+# widgets in loop
+radVar = tk.IntVar()  # create three Radiobuttons using one variable
+radVar.set(99)  # selecting a non-existing index value for radVar
+for col in range(3):  # creating all three Radiobutton widgets within one loop
     curRad = tk.Radiobutton(win, text=colors[col], variable=radVar, value=col, command=rad_call)
-    curRad.grid(column=col, row=6, sticky=tk.W)
+    curRad.grid(column=col, row=5, sticky=tk.W)
 
-# Create a container to hold labels
-buttons_frame = ttk.LabelFrame(win, text=' Labels in a Frame ')
-# buttons_frame = ttk.LabelFrame(win, text=' Labels in a Frame ')  # no LabelFrame name
-buttons_frame.grid(column=0, row=7, padx=10, pady=10)  # padx, pady
-
-# Place labels into the container element - vertically
-ttk.Label(buttons_frame, text="Label1").grid(column=0, row=0)
-ttk.Label(buttons_frame, text="Label2").grid(column=0, row=1)
-ttk.Label(buttons_frame, text="Label3").grid(column=0, row=2)
-
-for child in buttons_frame.winfo_children():  # use a loop to add space around the labels
-    child.grid_configure(padx=8, pady=4)
+# Using a scrolled Text control
+scrol_w, scrol_h = 30, 3
+scr = scrolledtext.ScrolledText(win, width=scrol_w, height=scrol_h, wrap=tk.WORD)
+# scr.grid(column=0, sticky='WE', columnspan=3)
+scr.grid(column=0, columnspan=3)  # sticky property removed
 
 win.mainloop()

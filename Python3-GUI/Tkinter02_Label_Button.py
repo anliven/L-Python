@@ -5,7 +5,7 @@ from tkinter import ttk
 win = tk.Tk()
 win.title("Python GUI")
 
-a_label = ttk.Label(win, text="A Label")
+a_label = ttk.Label(win, text="A Label")  # Adding a Label
 a_label.grid(column=0, row=0)
 
 

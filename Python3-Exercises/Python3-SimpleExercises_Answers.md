@@ -381,3 +381,7 @@ def get_items(seq, n, r=1):
         if rn >= int(r):
             print("The number of '%s' is %d." % (item, rn))  # 打印大于等于指定次数的结果
 ```
+### 032 打印九九乘法表；
+```python
+print('\n'.join([' '.join(['%s*%s=%-2s' % (y, x, x * y) for y in range(1, x + 1)]) for x in range(1, 10)]))
+```

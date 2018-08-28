@@ -1,23 +1,21 @@
-#! python3
 # -*- coding: utf-8 -*-
 
 tup = ()  # 创建空元组
-zoo = ('python', 'elephant', 'penguin')
-x, y, z = zoo  # 元组的拆分
-print("Zoo: ", x, y, z)
-print('Number of animals in the zoo is', len(zoo))
-print(zoo[0])  # 打印索引为0的元素（注意：返回元素而不是元组，所以返回值没有中括号）
-print(zoo[1:3])  # 打印索引为1到2的元素，作为一个元组返回
-for single_item in zoo:  # 遍历元组中的所有项目
+tup2 = (123,)  # 只包含一个值的元组，必须使用逗号
+tup3 = tuple("abc")  # 列表转换为元组
+print(tup, tup2, tup3)
+
+t = ('aaa', 'bbb', 'ccc')
+x, y, z = t  # 元组的拆分
+print(x, y, z, len(t))
+print(t[0])  # 打印索引为0的元素（注意：返回元素而不是元组，所以返回值没有中括号）
+print(t[1:3])  # 打印索引为1到2的元素，作为一个元组返回
+for single_item in t:  # 遍历元组中的所有项目
     print('single_item:', single_item)
 
-newZoo = 'monkey', 'camel', zoo
-print('All animals in new zoo are', newZoo)  # 注意打印结果
-print('Number of cages in the new zoo is', len(newZoo))
-print('Animals brought from old zoo are', newZoo[2])
-print('Last animal brought from old zoo is', newZoo[2][2])
-print('Number of animals in the new zoo is', len(newZoo) - 1 + len(newZoo[2]))
-
+nt = '111', '222', '333', t
+print(len(nt), nt)  # 注意打印结果
+print(nt[2], nt[3][2])
 
 # ### 元组（Tuple）
 # - 使用括号()声明列表，在括号内部用逗号进行分隔项目，定义格式：tuple = (obj1,obj2,obj3,…)；

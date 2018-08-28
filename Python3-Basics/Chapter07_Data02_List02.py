@@ -1,25 +1,32 @@
-#! python3
 # -*- coding: utf-8 -*-
 
 test_str = "aaa,111,---,###"
 print(list(test_str))  # 字符串转换为列表 - list()函数
 print(test_str.strip().split(','))  # 字符串转换为列表 - 字符串的strip().split()方法
 
-test_list = [222, 555, 777, 333, 666, 999, 444, 111, 888]
-print(sorted(test_list, reverse=True))
-print("# test_list: ", test_list)
-test_list.sort()
-print("# test_list: ", test_list)
+testlist = list("ABC")
+testlist[3:] = list("123")  # 切片赋值
+testlist[3:3] = ['a', 'b', 'c']  # 使用切片赋值来插入新元素
+testlist[1:8] = []  # 使用切片赋值来删除元素
+print(testlist)
 
-test_list2 = ["Hello", "Python", '!']
-print("".join(test_list2))  # 列表转换为字符串 - 针对所有元素为str类型的列表
-print(" ".join(test_list2))  # 用空格分割
+test_list = ["Hello", "Python", '!']
+print("".join(test_list))  # 列表转换为字符串 - 针对所有元素为str类型的列表
+print(" ".join(test_list))  # 用空格分割
 
-test_list3 = ["Hello", "Python", 2018, '!']
+test_list2 = ["Hello", "Python", 2018, '!']
 out_str = ""
-for item in test_list3:  # 列表转换为字符串
+for item in test_list2:  # 列表转换为字符串
     out_str = out_str + str(item) + " "
 print(out_str)
+
+test_list3 = [2222, 555, 777, 333, 6666, 999, 4444, 111, 8888]
+print(sorted(test_list3, reverse=True))  # 获得排序后列表的副本
+print("# test_list: ", test_list3)
+test_list3.sort()  # 就地排序列表中的元素
+print("# test_list: ", test_list3)
+test_list3.reverse()  # 就地反序列表中的元素
+print("# test_list: ", test_list3)
 
 str1 = "2-34,3:21,2.34,2.45,3.01,2:01,2:01,3:10,2-22"
 str2 = "2.59,2.11,2:11,2:23,3-10,2-23,3:10,3.21,3-21"

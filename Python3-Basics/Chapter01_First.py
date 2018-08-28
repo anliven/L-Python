@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 print("Hello, Python3!")  # 使用print函数打印字符串
 print("你好，Python3！")
 
@@ -19,8 +21,7 @@ print("你好，Python3！")
 # - Python3.x不能向下兼容Python2.x（官网声明Python2.7将支持维护到2020年，编写新的Python程序建议使用Python3.x）；
 #
 # ### 字符编码
-# Python2中脚本文件的默认编码格式是ASCII，而中文是非ASCII字符，要显示中文就必须在文件开头部分显式指定编码类型；
-# Python3中脚本文件的默认编码格式是UTF-8（支持中文），因此不需要通过“# -*- coding: utf-8 -*-”显式指定；
+# UTF-8编码格式支持中文，可以通过“# -*- coding: utf-8 -*-”或“# coding=utf-8”在文件开头显式指定；
 #
 # ### 注释
 # 注释是代码的解释说明；

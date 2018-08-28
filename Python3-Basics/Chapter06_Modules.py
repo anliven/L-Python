@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import sys  # import语句导入sys模块，sys模块包含了与Python解释器及其环境有关的函数；
 from math import sqrt  # 不建议使用from...import...语句
 import Chapter06_ModuleTest as cMT  # 导入同一目录下的自定义模块，并设置别名

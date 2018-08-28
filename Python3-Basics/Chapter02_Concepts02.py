@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import keyword
 
 m = r'\n'  # 输出时原型打印

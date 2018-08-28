@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 x = 123
 if x:  # 非零数值、非空字符串、非空list等判断为True，否则为False
     print('Yes, it is true')

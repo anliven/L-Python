@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 
 a = 2  # 整型变量
@@ -6,19 +5,38 @@ b = 1.5  # 浮点型变量
 c = True  # 布尔型变量
 d = 3.14j  # 复数型变量
 e = True + False  # True代表1，False代表0
-print(a, b, c, d, e)
+print(a, b, c, d, e, sep=" - ")
 
-string_sample = "Hello Python!"
-print(string_sample.replace('!', '!!!'))  # replace方法并返回一个新字符串
-print(string_sample.find('P'))  # find方法判断指定子字符串是否存在，若存在，返回索引位置，若不存在，返回-1
-print(string_sample.split('P', 1))  # split方法分解字符串，并返回一个字符串列表
-print(string_sample)
+print("Hello"[0], 'Python'[-1])  # 对于字符串字面量，可直接执行索引操作
 
-print(string_sample[0:2])  # 从下标0到下标2，包括0不包括2
-print(string_sample[0:-1])  # 从下标0到倒数第1个,不包括倒数第1个
-print(string_sample[5:])  # 从下标5到最后
-print(string_sample[:-7])  # 从开始到倒数第7个,,不包括倒数第7个
-print(string_sample[0])  # 打印下标0的值
+string_sample = "1234567890"
+print("All elements: %s" % string_sample)  # 打印所有元素
+print("# Elements[0]: ", string_sample[0])  # 打印索引为0的元素（注意：返回元素而不是列表，所以返回值没有中括号）
+print("# Elements[1:3]: ", string_sample[1:3])  # 第二个索引指定的元素不包含在切片内，这里是将索引为1到2的元素作为一个列表返回
+print("# Elements[3:]: ", string_sample[3:])  # 切片结束于序列末尾，可省略第二个索引
+print("# Elements[:2]: ", string_sample[:2])  # 切片开始于序列开头，可省略第一个索引
+
+print("# Elements[-1]: ", string_sample[-1])  # 可使用负数索引从列表末尾开始计数，从右往左，“-1”是最后一个元素的索引
+print("# Elements[-3:-1]: ", string_sample[-3:-1])  # 第二个索引指定的元素不包含包含在切片内
+print("# Elements[:-1]: ", string_sample[:-1])  # 排除最后一个元素（打印从开始到倒数第2个元素）
+
+print("# Elements[0:10:2]: ", string_sample[0:10:2])  # 显示指定切片的起点、终点和步长，步长默认为1
+print("# Elements[2::2]: ", string_sample[2::2])  # 从第2个索引开始每隔2个元素打印
+print("# Elements[:8:2]: ", string_sample[:8:2])  # 从序列开头到第8个索引之间，每隔2个元素打印
+print("# Elements[::4]: ", string_sample[::4])  # 从序列开头每隔3个元素打印
+print("# Elements[0:10:-2]: ", string_sample[0:10:-2])  # 步长为负数时，第一个索引必须比第二个索引大，否则将为空序列
+print("# Elements[0:10:-2]: ", string_sample[10:0:-2])  # 步长为负数时，从右向左提取元素
+print("# Elements[5::-2]: ", string_sample[5::-2])  # 省略结束索引
+print("# Elements[:5:-2]: ", string_sample[:5:-2])  # 省略起始索引
+
+print("# Elements[:]: ", string_sample[:])  # 复制整个序列，可省略两个索引
+print("# Elements[-3:0]: ", string_sample[-3:0])  # 空序列（第一个索引位于第二个索引之后）
+print("# Elements[::-1]: ", string_sample[::-1])  # 反序打印所有元素
+
+print("# string replace:", string_sample.replace('0', '#'))  # replace方法并返回一个新字符串
+print("# string find:", string_sample.find('6'))  # find方法判断指定子字符串是否存在，若存在，返回索引位置，若不存在，返回-1
+print("# string split:", string_sample.split('6', 1))  # split方法分解字符串，并返回一个字符串列表
+
 print(string_sample * 2)  # 连续输出两次
 print(string_sample + "HelloWorld!")  # 连接字符串
 print('Hello' in string_sample)  # in运算符用以检查给定的字符串是否是查询的字符串中的一部分
@@ -87,12 +105,5 @@ print('-'.join([aa, bb, cc]))  # 使用join内置方法连接字符串
 # - f-string（Formatted String Literals，字面量格式化字符串）方式，适用性广，可读性较好，python3.6及以上版本支持；
 # - join方法，适用于连接大量字符串，但其参数是一个序列类型，例如数组或者元组等；
 #
-# ### 保存中文
-# 源代码包含中文的时，在保存源代码时，务必指定保存为UTF-8编码；
-# 指定Python解释器按UTF-8编码读取源代码：“# -*- coding: utf-8 -*-”
-#
 # ### 字符串常用方法
 # - help(str)获取String类的更多信息；
-#
-# ### 数据结构（ Data Structures）
-# - 四种内置的数据结构：列表（List）、元组（Tuple）、字典（Dictionary）和集合（Set），都是使用对象与类的实例；

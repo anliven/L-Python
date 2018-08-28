@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 print("### Keywords List: ")
 help("keywords")  # 查看所有的关键字
 

@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 def fact(n):  # 计算阶乘n! = 1 * 2 * 3 * ... * n
     if 1 == n:
         return 1

@@ -10,6 +10,7 @@ print(a, b, c, d, e, sep=" - ")
 print("Hello"[0], 'Python'[-1])  # 对于字符串字面量，可直接执行索引操作
 
 string_sample = "1234567890"
+print(ascii(string_sample))  # 创建指定对象的ASCII表示
 print("All elements: %s" % string_sample)  # 打印所有元素
 print("# Elements[0]: ", string_sample[0])  # 打印索引为0的元素（注意：返回元素而不是列表，所以返回值没有中括号）
 print("# Elements[1:3]: ", string_sample[1:3])  # 第二个索引指定的元素不包含在切片内，这里是将索引为1到2的元素作为一个列表返回
@@ -104,6 +105,3 @@ print('-'.join([aa, bb, cc]))  # 使用join内置方法连接字符串
 # - format方法
 # - f-string（Formatted String Literals，字面量格式化字符串）方式，适用性广，可读性较好，python3.6及以上版本支持；
 # - join方法，适用于连接大量字符串，但其参数是一个序列类型，例如数组或者元组等；
-#
-# ### 字符串常用方法
-# - help(str)获取String类的更多信息；

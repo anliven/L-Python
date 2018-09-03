@@ -9,7 +9,7 @@ class SchoolMember:  # 基类（Base Class）或超类（Superclass）
         print('(Initialized SchoolMember: {})'.format(self.name))
 
     def tell(self):
-        print('Name:"{}" Age:"{}"'.format(self.name, self.age), end=" ")
+        print('Name:"{}" Age:"{}"'.format(self.name, self.age))
 
     def who(self):
         print("This ia a school member.")
@@ -66,6 +66,7 @@ members = [t, s, m]
 for member in members:
     member.tell()
 
+print(issubclass(Teacher, SchoolMember), issubclass(Student, SchoolMember), issubclass(Master, (Teacher, Student)))
 print(isinstance(s, SchoolMember), isinstance(s, Student), isinstance(s, Master))
 
 
@@ -131,6 +132,9 @@ print(la + 10)
 # 类可以重载算术运算、打印、函数调用、索引、属性等魔法方法；
 #
 # ### isinstance()
-# isinstance()判断是否是摸个指定类型的数据对象；
+# 判断是否是某个指定类型的数据对象；
 # 可以用在内置数据类型如str、list、dict等，也可以判断自定义的类，因为自定义类本质上都是数据类型；
 # 父类的实例不能是子类类型，因为子类比父类多了一些属性和方法，而子类的实例可以看成它本身的类型，也可以看成它父类的类型；
+#
+# ### issubclass()
+# 判断是否是某个类的子类；

@@ -27,6 +27,13 @@ print(keyword.kwlist)  # 返回python所有关键字
 print(locals())  # 所有局部变量组成的字典
 print(locals().values())  # 所有局部变量值的列表
 
+x: int = 123
+y: str = "abc123ABC"
+z: bool = True
+print(type(x), type(y), type(z))
+t: float = 'test'  # 特别注意：仅仅是具备了“提示”功能，对于不符合期望的数据类型并不会报错
+print(type(t))  # 真实数据类型是由实际赋值决定的
+
 # ### 变量（Variables）
 # 变量不需要声明类型，但在使用前必须赋值;
 # 允许多个变量同时赋值;
@@ -48,3 +55,8 @@ print(locals().values())  # 所有局部变量值的列表
 # - 内置的数据类型转换函数：int(),str(),chr(),float(),bool(),hex()等;
 # - 内置函数isinstance()实现数据类型检查;
 # - 内置函数id()查看变量的值在内存中的地址；
+#
+# ### 指定变量类型
+# Python是动态编程语言，不需要在创建变量时声明变量类型:
+# 在PEP526中阐述了指定变量类型的方法：https://www.python.org/dev/peps/pep-0526/
+# 特别注意：仅仅是具备了“提示”功能，对于不符合期望的数据类型并不会报错；

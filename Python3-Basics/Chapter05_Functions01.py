@@ -6,6 +6,7 @@ z = 35
 
 
 def test_func():  # 定义函数“def 函数名（参数列表）:”
+    """This is an sample of docstrings."""
     print('Hello Python3!')  # 函数体
 
 
@@ -21,6 +22,8 @@ def empty_function():  # 空函数
     pass  # pass用来作为占位符，先让代码能运行起来
 
 
+print("# Callable: ", callable(test_func))  # 判断对象是否是可调用的（函数或方法）
+
 test_func()  # 调用函数
 change_global()
 empty_function()
@@ -28,6 +31,7 @@ print(empty_function.__doc__)  # 打印函数的文档字符串属性（__doc__�
 
 f = abs  # 函数名其实就是指向一个函数对象的引用，这里将求绝对值的函数abs赋给一个变量，相当于给这个函数起了一个“别名”
 print(f(-3))  # 通过变量调用abs函数
+print("# Callable: ", callable(f))  # 判断对象是否是可调用的（函数或方法）
 
 
 def print_max(a, b=7):
@@ -99,6 +103,7 @@ print('Values-1:', returnNum, '\nValues-2:', returnStr)
 # - 函数调用：通过函数名可以在程序的不同地方多次执行；
 # - 通过关键字def定义函数，依次写出函数名、括号、括号中的参数和冒号“:”，然后在缩进块中编写函数体，函数的返回值用return语句返回；
 # - 使用函数可以实现代码重用，并且降低编程的难度；
+# - 所有的函数都有返回值，如果没有指定返回值，默认返回None；
 #
 # ### 函数参数
 # - 函数参数在定义函数的一对圆括号中指定，并通过逗号予以分隔；
@@ -137,6 +142,9 @@ print('Values-1:', returnNum, '\nValues-2:', returnStr)
 # - 如果没有return语句，函数执行完后会返回结果为None（可以理解为，每一个函数都在其末尾隐含了一句“return None”）；
 # - return执行后，函数终止；
 # - 特别注意：区分返回值和输出（例如：print）
+#
+# ### callable()
+# 内置函数callable可用来判断对象是否是可调用的（函数或方法）；
 #
 # ### pass
 # - 用于指示一个没有内容的语句块；

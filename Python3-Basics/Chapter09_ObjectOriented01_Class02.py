@@ -1,17 +1,16 @@
-#! python3
 # -*- coding: utf-8 -*-
 
 
 class Rectangle:
-    width = 0  # 定义类的属性
-    height = 0
+    # width = 0  # 定义类的属性
+    # height = 0
 
     __color = ""  # 定义类的私有属性
 
-    def __init__(self, width, height, color, **kwargs):  # 定义可变长参数的构造函数
+    def __init__(self, color, width=0, height=0, **kwargs):  # 定义可变长参数的构造函数
+        self.__color = color
         self.width = width
         self.height = height
-        self.__color = color
         # self.id = kwargs.get('id')  # 不建议这样设置可变长参数的属性
         # self.owner = kwargs.get('owner')
         for k, w in kwargs.items():  # **kwargs是字典类型，推荐设置属性的方式
@@ -30,7 +29,7 @@ class Rectangle:
         self.__color = color
 
 
-R = Rectangle(3, 4, "blue", id="001", owner="AAA")  # 创建类的实例，自动调用__init__()构造方法
+R = Rectangle("blue", 3, 4, id="001", owner="AAA")  # 创建类的实例，自动调用__init__()构造方法
 print("width =", R.width, "id = ", R.id, "owner = ", R.owner)  # 访问实例的属性
 R.printme()  # 访问实例的方法
 # print("color = %s, Area = %d " % (R.__color, R.__getArea()))  # 报错，因为实例无法访问类的私有属性和私有方法

@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 from enum import Enum
 from enum import unique

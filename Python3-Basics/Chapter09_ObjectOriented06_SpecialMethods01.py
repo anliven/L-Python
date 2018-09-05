@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 
 
@@ -67,7 +66,7 @@ print(float(t))
 # - 特殊方法定义在class中；
 # - 不需要直接调用（几乎所有的特殊方法都是隐式调用）；
 # - 某些函数或操作符会调用对应的特殊方法；
-# Python的官方文档: https://docs.python.org/3/reference/datamodel.html#special-method-names;
+# Python的官方文档: https://docs.python.org/3/reference/datamodel.html#special-method-names
 #
 # ### 实现特殊方法
 # - 只需要编写实际用到的特殊方法；
@@ -76,7 +75,7 @@ print(float(t))
 # ### 一些特殊方法
 # __str__(): 用于显示给用户：返回用户看到的字符串，如果没有提供 __str__，str()缺省使用repr()的结果；
 # __repr__(): 用于显示给开发人员：返回程序开发者看到的字符串，为调试服务的
-# __len__()：返回类实例的“长度”
+# __len__()：返回类实例的“长度”，对序列来说为元素个数，对映射来说是键值对的个数；
 # __call__()：直接对实例进行调用，实际上是将一个类实例变成一个可调用对象
 # ......
 #

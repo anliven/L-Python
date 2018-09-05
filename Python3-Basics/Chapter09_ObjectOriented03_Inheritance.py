@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 
 
@@ -106,8 +105,9 @@ print(la + 10)
 # 特别注意：在Python3中默认都是创建新式类，在Python2中只有继承自object类的才是新式类；
 #
 # ### super()
-# 使用super()函数可以在子类中调用父类的方法；
+# 使用super()函数可以在子类中调用父类的方法，多用于子类的构造函数中；
 # 可以在__init__前加上父类名作为前缀，再传入self和其余变量来初始化父类，也可以使用super()来初始化父类；
+# 特别注意：函数super只适用于新式类；
 # 示例： super(Student, self).__init__(name, age)
 # - 函数super(Student, self)将返回当前类继承的父类，然后调用__init__()方法；
 # - self参数已在super()中传入，在__init__()中将隐式传递，不需要写出（也不能写）；

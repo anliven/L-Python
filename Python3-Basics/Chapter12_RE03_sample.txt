@@ -1,0 +1,7 @@
+From: Aaa, aaa (TEST - CN/Chengdu)
+Sent: Wednesday, March 07, 2018 5:05 PM
+To: Aaa, aaa <aaa-aaa@test.net); Bbb, bbb <bbb-bbb@test.net>; Ccc, ccc <ccc-ccc@test.net>
+Cc: Ddd, ddd <ddd-ddd@test.net>;
+Subject: Jira training for R&D and Program
+When: 2018年3月13日星期二 10:00-11:30 (UTC+08:00) Beijing, Chongqing, Hong Kong.
+Where: 1F Presentation Hall

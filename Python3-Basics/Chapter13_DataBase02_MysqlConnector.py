@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import mysql.connector  # 导入MySQL驱动
 

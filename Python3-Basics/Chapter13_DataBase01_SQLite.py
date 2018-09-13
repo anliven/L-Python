@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import sqlite3  # 导入SQLite驱动
 import os
@@ -44,6 +43,7 @@ finally:
 # 通过数据库连接（Connection）登录到数据库后，需要打开游标（Cursor），通过游标执行SQL语句，然后获得执行结果；
 # 确保打开的Connection对象和Cursor对象都正确地被关闭，否则资源会泄露；
 #
-# ### API接口
-# Python定义了一套操作数据库的API接口，任何数据库要连接到Python，只需要提供符合Python标准的数据库驱动即可。
+# ### 标准数据库API
+# 标准数据库API（DB API）：https://www.python.org/dev/peps/pep-0249/
+# Python定义了一套操作数据库的API接口，任何数据库要连接到Python，只需要提供符合Python标准的数据库驱动即可；
 # 由于SQLite的驱动内置在Python标准库中，所以可以直接来操作SQLite数据库；

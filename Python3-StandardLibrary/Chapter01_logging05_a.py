@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import logging
 import Chapter01_logging05_b as moduleB  # 导入其他模块

@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import sys  # sys模块（特定系统的功能）：https://docs.python.org/3/library/sys.html
 import platform  # platform模块（获取平台或操作系统的信息）：https://docs.python.org/3/library/platform.html

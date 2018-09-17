@@ -1,7 +1,8 @@
-#! python3
 # -*- coding: utf-8 -*-
 import cProfile
 import random
+import pstats
+import os
 
 
 def func1(li):
@@ -17,14 +18,19 @@ def func2(li):
 
 
 testlist = [random.random() for i in range(1000000)]
-cProfile.run('func1(testlist)')
-cProfile.run('func2(testlist)')
+cProfile.run('func1(testlist)')  # 进行性能分析并显示结果
+cProfile.run('func2(testlist)', filename='test.profile')  # 分析结果保存到文件中
+ps = pstats.Stats('test.profile')  # 使用标准模块pstats研究分析结果
+ps.print_stats()  # 通过使用Stats对象可以编程方式研究分析结果
+
+os.remove('test.profile')
 
 # ### 标准库cProfile和profile模块
 # The Python Profilers
 # https://docs.python.org/3/library/profile.html
-# 两者都是内置的性能分析工具，能够描述程序运行时候的性能，并提供统计数据以定位程序的性能瓶颈；
+# 两者都是内置的性能分析工具，能够描述程序运行时的性能，并提供统计数据以定位程序的性能瓶颈；
 # 两者接口相同，但profile是由纯Python实现，而cProfile由c语言实现；
+# cProfile的性能分析速度要快于profile；
 #
 # ### 标准库pstats模块
 # Analysis of the profiler data is done using the Stats class.
@@ -37,4 +43,3 @@ cProfile.run('func2(testlist)')
 # - cumtime：指定函数的总运行时间(包括所有子函数的调用运行时间），即函数开始调用到返回的时间；
 # - percall：函数运行一次的平均时间（第2个percall），等于“cumtime/ncalls”；
 # - filename:lineno(function)：函数调用的具体信息（函数所在的文件名，函数的行号，函数名）；
-

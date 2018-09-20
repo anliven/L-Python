@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 
 sample_set = set(['AAA', 'BBB', 'AAA', 'BBB', 111, 222])  # 重复元素在set中自动被过滤
@@ -47,5 +46,5 @@ print(dir(testSet4))
 # set()定义：每个元素为obj拆分的单个字符列表，“s2 = set(obj)”；
 #
 # ### 常用方法
-# - 支持union(联合),intersection(交),difference(差)等数学运算；
+# - 支持union(联合)，intersection(交)，difference(差)等数学运算；
 # - help(set)获取Set类的更多信息；

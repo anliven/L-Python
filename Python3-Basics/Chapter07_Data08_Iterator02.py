@@ -49,11 +49,13 @@ for var in iter_tup:  # for循环遍历元组
 # - 可迭代对象：实现了__iter__()方法，__iter__()返回一个迭代器对象；
 # - 迭代器对象：实现了__iter__()和__next__()方法，__iter__()返回的是迭代器对象本身；
 #
-# ### iter()函数
+# ### iter()
+# https://docs.python.org/3/library/functions.html#iter
 # - 生成器都是Iterator对象;
 # - 集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象；
 #
-# ### isinstance()函数
+# ### isinstance()
+# https://docs.python.org/3/library/functions.html#isinstance
 # - isinstance()可以判断一个对象是否是可迭代对象（Iterable）或迭代器对象（Iterator）；
 # - Python的for循环本质上就是通过不断调用next()函数实现的；
 #

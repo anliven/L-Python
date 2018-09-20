@@ -14,11 +14,14 @@ if is_palindrome(something):
     print("Yes, it is a palindrome.")
     with open("test.log", "w") as f:
         print("Yes, it is a palindrome.", file=f)
+    os.remove("test.log")
 else:
     print("No, it is not a palindrome.", file=sys.stderr)
 
-os.remove("test.log")
-
+# ### input()
+# https://docs.python.org/3/library/functions.html#input
+# 内置input()函数用来获得输入的内容；
+#
 # ### input()与print()
 # 使用内置input()函数与print()函数可以分别实现输入与输出；
 # - input()：实现标准键盘输入，可以接收一行文本并返回该文本(注意：返回的是str类型)；

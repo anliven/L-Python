@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 __all__ = ['ModuleTest']
 
 PI = 3.1415926

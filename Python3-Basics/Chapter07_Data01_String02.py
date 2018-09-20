@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from string import Template
-pi=3.1415926
+
+pi = 3.1415926
 
 tmp = Template("Hello $what. I am $who.")  # 使用模板字符串
 tmp.substitute(what="Python3", who="Anliven")
@@ -20,7 +21,6 @@ print("{:,}".format(123456789))  # 千位分隔符
 print("{:010.2f}".format(pi))  # 指定填充内容，默认为(零、加号、减号、空格)，默认为空格
 print("{:^010.2f}".format(pi))  # 指定对齐方式（对齐说明符：<左对齐、>右对齐、^居中）
 print("{:$^010.2f}".format(pi))  # 扩充对齐说明符
-
 
 # ### 设置字符串格式
 # - 使用模板字符串；

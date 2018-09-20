@@ -80,5 +80,6 @@ cMT.greeting('Anliven')
 # - 如果参数是模块名称，函数将返回这一指定模块的名称列表；
 #
 # ### 第三方模块
-# 通过包管理工具pip安装第三方模块;
+# 通过包管理工具pip安装第三方模块；
 # 通过PyPI（The Python Package Index）获取:https://pypi.python.org/pypi
+# Awesome Python：https://awesome-python.com/ （中文：https://github.com/jobbole/awesome-python-cn）

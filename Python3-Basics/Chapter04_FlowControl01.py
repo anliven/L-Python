@@ -61,5 +61,5 @@ assert num < 500, "The number is bigger than 500."  # 可添加说明字符串
 # and （布尔“与”）：如果x是False，则返回False，否则返回y的计算值；适用短路计算（Short-circuit Evaluation）；
 # or （布尔“或”）：如果x是True，则返回True，否则它将返回y的计算值；适用短路计算；
 #
-# ### 断言
+# ### 断言（assert）
 # 可使用关键字assert来验证指定条件是否得到满足，充当检查点；

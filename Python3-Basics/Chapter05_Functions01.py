@@ -144,11 +144,12 @@ print('Values-1:', returnNum, '\nValues-2:', returnStr)
 # - 特别注意：区分返回值和输出（例如：print）
 #
 # ### callable()
-# 内置函数callable可用来判断对象是否是可调用的（函数或方法）；
+# https://docs.python.org/3/library/functions.html#callable
+# 内置函数callable()可用来判断对象是否是可调用的（函数或方法）；
 #
 # ### pass
 # - 用于指示一个没有内容的语句块；
-# - 可以用来作为占位符，比如代替未完成的代码，就可以放一个pass，先让代码能运行起来
+# - 可以用来作为占位符，比如代替未完成的代码，就可以放一个pass，先让代码能运行起来；
 #
 # ### 文档字符串（Documentation Strings）
 # - 函数的文档字符串（DocString）放置在函数的第一逻辑行；
@@ -156,5 +157,5 @@ print('Values-1:', returnNum, '\nValues-2:', returnStr)
 # - 强烈建议为所有重要的函数配以文档字符串；
 #
 # ### 内置函数（Built-in Functions）
-# Python具有大量实现常用功能的内置函数，也可以自定义函数，建议尽可能使用内置函数；
 # https://docs.python.org/3/library/functions.html
+# Python具有大量实现常用功能的内置函数，也可以自定义函数，建议尽可能使用内置函数；

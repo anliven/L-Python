@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 from multiprocessing import Process, Queue
 import os

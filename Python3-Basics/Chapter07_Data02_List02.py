@@ -66,7 +66,7 @@ print(sorted(set([sanitize(t) for t in str3.strip().split(',')]))[0:3])
 
 print(list(set(['123', 'abc', '123', '123'])))  # 通过集合set()去除列表的重复项
 
-for i, n in enumerate(['aaa', 'bbb', 'ccc']):  # enumerate函数得到索引值和对应值
+for i, n in enumerate(['aaa', 'bbb', 'ccc']):  # enumerate()函数得到索引值和对应值
     print(i, n)
 
 # ### 方法串链（method chaining）
@@ -76,3 +76,11 @@ for i, n in enumerate(['aaa', 'bbb', 'ccc']):  # enumerate函数得到索引值�
 # 原地排序（In-place sorting）：排序后的数据替换原来的数据，sort()方法实现；
 # 复制排序（Copied sorting）: 排序后返回的是原数据的一个有序副本，原数据不发生改变，内置sorted()函数实现；
 # sort()方法和sorted()内置函数的参数reverse可以指定升序降序，默认都按升序排列（reverse=False）；
+#
+# ### set()
+# https://docs.python.org/3/library/functions.html#func-set
+# 内置函数set()用来返回一个新的set对象；
+#
+# ### sorted()
+# https://docs.python.org/3/library/functions.html#sorted
+# 内置函数sorted()用来从一个可迭代对象返回新的排序列表；

@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 
 
@@ -38,9 +37,10 @@ def check(x):
 
 print(list(filter(check, range(2, 25))))
 
-# ### filter函数
-# 内建的filter(func, seq)函数用于过滤序列，通过函数方法只保留结果为真的值组成列表；
-# 接收两个参数：一个函数和一个序列；
-# filter()调用一个布尔函数func来迭代遍历序列的每个元素，根据函数返回值（True或False）自动过滤掉不符合条件的元素；
-# 最终返回一个迭代器，内容是原序列的子序列（符合条件元素组成的新list）;
-# filter()函数返回的是一个惰性Iterator序列，但可以使用list()函数获得所有结果并返回list；
+# ### filter()
+# https://docs.python.org/3/library/functions.html#filter
+# 内置函数filter(func, seq)用于过滤序列，通过函数方法只保留结果为真的值组成列表；
+#  - 接收两个参数：一个函数和一个序列；
+#  - filter()调用一个布尔函数func来迭代遍历序列的每个元素，根据函数返回值（True或False）自动过滤掉不符合条件的元素；
+#  - 最终返回一个迭代器，内容是原序列的子序列（符合条件元素组成的新list）;
+#  - filter()函数返回的是一个惰性Iterator序列，但可以使用list()函数获得所有结果并返回list；

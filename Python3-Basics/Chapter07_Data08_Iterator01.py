@@ -58,13 +58,13 @@ print(list(t))  # 使用list()显示将迭代器转换为列表
 # 方法__iter__返回一个迭代器（包含方法__next__的对象），调用时可不提供任何参数；
 #
 # ### iter()
+# https://docs.python.org/3/library/functions.html#iter
 # 对可迭代对象调用内置函数iter()，可以获得一个迭代器；
 # 也可使用iter()从函数或其他可调用对象创建可迭代对象；
-# https://docs.python.org/3/library/functions.html#iter
 #
 # ### next()
-# 对迭代器调用其__next__()方法来获取下一个值；
 # https://docs.python.org/3/library/functions.html#next
+# 对迭代器调用其__next__()方法来获取下一个值；
 #
 # ### 从迭代器创建序列
 # 可以将迭代器和可迭代对象转换为序列，例如：可使用list()显示将迭代器转换为列表；

@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import functools
 from functools import partial

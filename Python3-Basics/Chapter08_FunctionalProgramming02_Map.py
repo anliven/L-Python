@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 
 
@@ -25,8 +24,9 @@ for var in result2:
 result3 = list(map(str, [1, 2, 3, 4, 5, 6, 7, 8, 9]))  # 将list所有数字转为字符串
 print("Result_3:", result3)
 
-# ### map函数
+# ### map()
+# https://docs.python.org/3/library/functions.html#map
 # map(func, seq1[, seq2])
-# 接收两个参数，一个是函数func，一个是Iterator，map将函数func作用于给定序列的每个元素，并把结果作为新的Iterator返回；
-# 如果函数func比较简单，可以不事先定义函数，而是以匿名函数的形式来进行计算；
-# 注意：对序列中每个值进行批量转化操作后，结果是作为Iterator返回，利用for循环或者next()函数来访问Iterator的每个值；
+#  - 接收两个参数，一个是函数func，一个是Iterator，map将函数func作用于给定序列的每个元素，并把结果作为新的Iterator返回；
+#  - 如果函数func比较简单，可以不事先定义函数，而是以匿名函数的形式来进行计算；
+#  - 注意：对序列中每个值进行批量转化操作后，结果是作为Iterator返回，利用for循环或者next()函数来访问Iterator的每个值；

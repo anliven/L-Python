@@ -49,7 +49,8 @@ print(str("Test, \nTest"))  # 使用str能以合理方式将内容显示给用�
 # 用“%%”来表示字符串里面的普通字符“%”；
 # format()方法也可以格式化字符串，{0}对应该格式化方法中的第一个参数，{1}对应第二个参数，以此类推；
 #
-# ### Python从0开始计数，索引中的第一位是0，第二位是1，以此类推；
+# ### 索引的计数
+# Python从0开始计数，索引中的第一位是0，第二位是1，以此类推；
 #
 # ### 转义序列（Escape Sequence）
 # - 通过反斜杠（\）可以转义特殊字符；
@@ -76,14 +77,23 @@ print(str("Test, \nTest"))  # 使用str能以合理方式将内容显示给用�
 # - 错误的缩进可能会导致运行错误，或引发不期望的行为；
 #
 # ### 多行语句（多行书写）
-# 在Python shell界面或IDE中可以用反斜\或'''...'''实现多行语句;
+# 在Python shell界面或IDE中可以用反斜\或'''...'''实现多行语句；
 #
-# ### print函数
-# print函数作用是打印输出指定内容；
-# 强制参数
-# - value: 打印的值，可多个
-# 可选参数
-# - file: 输出流，默认是sys.stdout
-# - sep: 多个值之间的分隔符
-# - end: 结束符，默认是换行符“\n”
-# - flush: 是否强制刷新到输出流，默认否
+# ### print()
+# https://docs.python.org/3/library/functions.html#print
+# 内置print()函数用来打印（输出）指定内容；
+# 强制参数：
+#   - value    打印的值，可多个
+# 可选参数：
+#   - file     输出流，默认是sys.stdout
+#   - sep      多个值之间的分隔符
+#   - end      结束符，默认是换行符“\n”
+#   - flush    是否强制刷新到输出流，默认否
+#
+# ### repr()
+# https://docs.python.org/3/library/functions.html#repr
+# 内置repr()函数用来返回指定对象的合法Python表达式表示；
+#
+# ### str()
+# https://docs.python.org/3/library/functions.html#func-str
+# 返回指定对象的字符串形式；

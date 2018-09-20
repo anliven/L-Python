@@ -1,5 +1,5 @@
-#! python3
 # -*- coding: utf-8 -*-
+
 
 def fnA(num):
     def fnB(val):

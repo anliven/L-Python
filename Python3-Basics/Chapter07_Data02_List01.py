@@ -74,6 +74,7 @@ print_lol(test_List5, True, 2)
 print_lol(test_List5)
 
 # ### 列表（List）
+# https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
 # - 列表是一种有序元素的集合，可以随时添加和删除其中的元素；
 # - 使用方括号[]声明列表；定义格式：list = [obj1,obj2,obj3,…]；
 # - 列表中元素的类型可以不相同，支持数字、字符串、列表（嵌套）；

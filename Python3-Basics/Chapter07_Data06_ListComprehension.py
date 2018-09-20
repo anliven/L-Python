@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 
 r = range(0, 4)  # 生成列表[0,1,2,3]
@@ -17,7 +16,7 @@ def func(i):
     return i * i
 
 
-# 列表解析（List Comprehension）
+# 列表推导（List Comprehension）
 sampleList1 = [1, 2, 3, 4]
 print("new list: ", [func(x) for x in sampleList1])  # 使用列表解析产生新列表
 print("old list: ", sampleList1)  # 原始列表保持不变
@@ -48,16 +47,17 @@ for i in list_g:
     list_g2.append(i)
 print(type(list_g2), list_g2)  # 对比查看类型信息
 
-# ### range() 函数
-# 内置range()函数可以生成一个规律的整数序列，一般用在for循环中；
+# ### range()
+# https://docs.python.org/3/library/functions.html#func-range
+# 内置函数range()用来生成一个规律的整数序列，一般用在for循环中；
 # 语法格式： range(start,end[,step])；
 # start：起始下标（可选），默认为0；end：终止下标；step：步长（可选），默认为1；
 # 特别注意：下标的实际有效范围是“前开后闭”的，也就是不包括终止下标的元素。
 #
 # 可以使用列表解析和生成表达式操作和处理一个序列（或其他的可迭代对象）来创建一个新的列表；
 #
-# ### 列表解析（List Comprehension）
-# 也称为列表推导，是一种从其它列表来创建新列表的方式；
+# ### 列表推导（List Comprehension）
+# 也称为列表解析，是一种从其它列表来创建新列表的方式；
 # 适用于根据旧表建立新表的场景（也就是必须对原列表的每一项就进行转换），有效减少代码数量；
 # 列表解析表达式为：
 # - [expr for iter_var in iterable]

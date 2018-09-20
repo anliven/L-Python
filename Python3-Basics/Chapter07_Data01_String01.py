@@ -80,13 +80,16 @@ print(f'{aa}-{bb}{cc}')  # 使用f-string方式连接字符串
 print(f'第一个：{aa} 第二个：{bb} 第三个：{cc}')
 print('-'.join([aa, bb, cc]))  # 使用join内置方法连接字符串
 
-# ### Number：数字
-# Number包括整型、浮点型、布尔型和复数型。Number可以进行常见的数值运算，运算时布尔型True为1，False为0；
+# ### Number（数字）
+# Number包括整型int、浮点型float和复数型complex；
+# 特别注意：布尔型也可以进行常见的数字运算，此时True为1，False为0；
+# 详细信息：https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
 #
-# ### String：字符串
+# ### String（字符串）
 # - 字符串是一种对象，具有自己的方法；在程序中使用的所有字符串都是str类下的对象；
 # - 字符串使用单引号(”)或双引号(“”)括起来，同时使用反斜杠(\)转义特殊字符；
 # - 字符串截取的语法格式：变量[头下标:尾下标]；
+# 详细信息：https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 #
 # ### 字符串输出格式化
 # 字符串有多种输出方式，最基本的用法是将一个值插入到一个有字符串格式符 %s 的字符串中；
@@ -105,3 +108,15 @@ print('-'.join([aa, bb, cc]))  # 使用join内置方法连接字符串
 # - format方法
 # - f-string（Formatted String Literals，字面量格式化字符串）方式，适用性广，可读性较好，python3.6及以上版本支持；
 # - join方法，适用于连接大量字符串，但其参数是一个序列类型，例如数组或者元组等；
+#
+# ### ascii()
+# https://docs.python.org/3/library/functions.html#ascii
+# 内置函数ascii()用来创建指定对象的ASCII表示；
+#
+# ### chr()
+# https://docs.python.org/3/library/functions.html#chr
+# 内置函数chr()用来将整数转换为对应的Unicode编码字符；
+#
+# ### ord()
+# https://docs.python.org/3/library/functions.html#ord
+# 内置函数ord()用来获取Unicode字符的整数表示；

@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import random
@@ -29,5 +28,5 @@ for t in range(4):
 image = image.filter(ImageFilter.BLUR)  # 应用模糊滤镜
 image.show()
 
-# ### Pillow示例(生成字母验证码图片)
-# 利用ImageDraw提供的绘图方法可以直接绘图
+# ### Pillow示例
+# 生成字母验证码图片：利用ImageDraw提供的绘图方法可以直接绘图；

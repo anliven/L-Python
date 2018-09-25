@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 from datetime import datetime
 from datetime import timedelta
@@ -32,7 +31,7 @@ print(dt_bj)
 
 # ### 标准库datetime模块
 # - Basic date and time types
-# - 官方文档：https://docs.python.org/3/library/datetime.html
+# - https://docs.python.org/3/library/datetime.html
 #
 # ### datetime
 # - datetime表示的时间需要时区信息才能确定一个特定的时间，否则只能视为本地时间；

@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 from urllib import request
 from html.parser import HTMLParser
@@ -67,4 +66,5 @@ if __name__ == '__main__':
         parser.feed(data.decode('utf-8'))
         parser.print_info()
 
+# ### 示例
 # 解析HTML(https://www.python.org/events/python-events/)，获得Python官网发布的会议时间、名称和地点；

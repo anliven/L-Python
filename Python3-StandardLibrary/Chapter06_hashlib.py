@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import hashlib
 import random
@@ -63,7 +62,7 @@ print('login2 ok')
 
 # ### 标准库hashlib模块
 # - Secure hashes and message digests
-# - 官方文档：https://docs.python.org/3/library/hashlib.html
+# - https://docs.python.org/3/library/hashlib.html
 #
 # ### 摘要算法
 # 也称为哈希算法或散列算法：通过摘要函数对任意长度的数据计算出固定长度的摘要digest（通常用16进制的字符串表示）；

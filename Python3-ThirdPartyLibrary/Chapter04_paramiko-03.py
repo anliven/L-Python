@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import paramiko
 import os
@@ -46,4 +45,5 @@ scp('10.91.116.87', 'root', 'arthur', '/root/newtest.txt', 'newfile.txt', 'put')
 scp_dir('10.91.116.87', 'root', 'arthur', '/root/test/', os.getcwd())
 scp_dir('10.91.116.87', 'root', 'arthur', '/root/test/', os.getcwd(), 'put')
 
-# ### 实现sftp上传与下载
+# ### paramiko示例
+# 实现SFTP上传与下载；

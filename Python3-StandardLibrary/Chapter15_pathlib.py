@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import sys
 import pathlib
@@ -59,4 +58,4 @@ if __name__ == '__main__':
 
 # ### 标准库pathlib模块
 # - Object-oriented filesystem paths
-# - 官方文档：https://docs.python.org/3/library/pathlib.html
+# - https://docs.python.org/3/library/pathlib.html

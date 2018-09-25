@@ -23,7 +23,7 @@ while deck:
 
 # ### 标准库random模块
 # - Generate pseudo-random numbers
-# - 官方文档：https://docs.python.org/3/library/random.html
+# - https://docs.python.org/3/library/random.html
 #
 # ### 一些常用的函数
 # - random()：返回一个0~1（包含1）的随机实数

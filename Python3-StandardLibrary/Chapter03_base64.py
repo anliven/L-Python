@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 
 import base64
@@ -27,9 +26,9 @@ print('ok')
 
 # ### 标准库base64模块
 # - Base16, Base32, Base64, Base85 Data Encodings
-# - 官方文档：https://docs.python.org/3/library/base64.html
+# - https://docs.python.org/3/library/base64.html
 #
 # ### Base64
-# - 是一种任意二进制到文本字符串的编码方法，适用于小段内容的编码，常用于在URL、Cookie、数字证书签名、网页中传输少量二进制数据;
+# - 是一种任意二进制到文本字符串的编码方法，适用于小段内容的编码，常用于在URL、Cookie、数字证书签名、网页中传输少量二进制数据；
 # - 实际是通过查找已定义编码表的方式来进行编码和解码，可以自定义Base64编码表；
 # - 不能用于加密；

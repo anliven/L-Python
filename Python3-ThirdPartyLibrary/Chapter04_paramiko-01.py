@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import paramiko
 
@@ -24,10 +23,9 @@ ssh2("10.91.116.87", "root", "arthur", "w")  # 注意：实参均为字符串类
 ssh2("10.91.116.88", "root", "arthur", "hostname;uptime")  # 通过分号分割多个命令
 
 # ### paramiko
-# SSH2 protocol library.
-# PyPI: https://pypi.python.org/pypi/paramiko/
-# Home Page: https://github.com/paramiko/paramiko/  http://www.paramiko.org/
-# Documentation： http://docs.paramiko.org/
+# - SSH2 protocol library.
+# - Home Page: https://github.com/paramiko/paramiko/  http://www.paramiko.org/
+# - Documentation: http://docs.paramiko.org/
 #
 # ### 连接方式
 # -通过paramiko.SSHClient()函数；

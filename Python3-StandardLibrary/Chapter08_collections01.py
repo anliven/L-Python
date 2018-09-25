@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import collections
 from collections import Counter
@@ -51,11 +50,11 @@ print(OrderedDict(sorted(dic.items(), key=lambda t: len(t[0]))))  # dictionary s
 
 # ### 标准库collections模块
 # - Container datatypes
-# - 官方文档：https://docs.python.org/3/library/collections.html
-# - collections模块主要用来扩展容器相关的数据类型
+# - https://docs.python.org/3/library/collections.html
+# - 主要用来扩展容器相关的数据类型；
 #
 # ### 一些方法
-# namedtuple(): 用来创建一个自定义的tuple对象（具备tuple的不变性），并规定tuple元素的个数，并可以用属性引用tuple的某个元素;
-# deque(): list是线性存储，数据量大的时候，插入和删除效率很低，利用deque()可以高效实现插入和删除操作的双向列表，适合用于队列和栈：
+# namedtuple(): 用来创建一个自定义的tuple对象（具备tuple的不变性），并规定tuple元素的个数，并可以用属性引用tuple的某个元素；
+# deque(): list是线性存储，数据量大的时候，插入和删除效率很低，利用deque()可以高效实现插入和删除操作的双向列表，适合用于队列和栈；
 # OrderedDict(): dict是无序的，利用OrderedDict()可以对dict排序；
-# Counter(): A Counter is a dict subclass for counting hashable objects.
+# Counter(): A Counter is a dict subclass for counting hashable objects；

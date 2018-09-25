@@ -45,7 +45,7 @@ os.remove(logging_file)
 #
 # ### 标准库logging模块
 # - Logging facility for Python
-# - 官方文档：https://docs.python.org/3/library/logging.html
+# - https://docs.python.org/3/library/logging.html
 #
 # ### logging模块相比print的优点
 # - 设置输出等级：通过设置不同的输出等级来记录对应的日志；

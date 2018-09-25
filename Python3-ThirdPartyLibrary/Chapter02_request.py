@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import requests
 
@@ -16,7 +15,6 @@ print("request:", s.status_code,
       )
 
 # ### requests
-# Python HTTP for Humans.
-# PYPI: https://pypi.python.org/pypi/requests
-# Home Page: python-requests.org
-# Documentation： http://docs.python-requests.org/zh_CN/latest/
+# - Python HTTP for Humans.
+# - Home Page: python-requests.org
+# - Documentation: http://docs.python-requests.org/zh_CN/latest/

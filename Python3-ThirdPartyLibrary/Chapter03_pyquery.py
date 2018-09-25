@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 from pyquery import PyQuery
 from urllib import request
@@ -17,10 +16,9 @@ with opener.open('https://www.python.org/events/python-events/') as f:
 print(events2)
 
 # ### pyquery
-# A jquery-like library for python
-# PYPI: https://pypi.python.org/pypi/pyquery/
-# Home Page: https://github.com/gawel/pyquery
-# Documentation： http://pythonhosted.org/pyquery/
+# - A jquery-like library for python
+# - Home Page: https://github.com/gawel/pyquery
+# - Documentation: http://pythonhosted.org/pyquery/
 #
-# ### 示例
+# ### pyquery示例
 # 解析HTML(https://www.python.org/events/python-events/)，获得Python官网发布的会议时间、名称和地点；

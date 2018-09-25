@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 from PIL import Image, ImageFilter
 
@@ -14,7 +13,6 @@ im2 = im.filter(ImageFilter.BLUR)  # 应用模糊滤镜
 im2.show()
 
 # ### Pillow(PIL, Python Imaging Library)
-# Python Imaging Library (Fork)
-# PYPI: https://pypi.python.org/pypi/Pillow/
-# Home Page: https://python-pillow.org
-# Documentation: https://pillow.readthedocs.io/en/latest/
+# - Python Imaging Library (Fork)
+# - Home Page: https://python-pillow.org
+# - Documentation: https://pillow.readthedocs.io/en/latest/

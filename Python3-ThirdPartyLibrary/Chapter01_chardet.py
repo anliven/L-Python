@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import chardet
 
@@ -16,10 +15,9 @@ print(chardet.detect('野火烧不尽，春风吹又生。'.encode('utf-8')))
 print(chardet.detect('最新のニュース'.encode('EUC-JP')))
 
 # ### chardet
-# Universal encoding detector for Python 2 and 3
-# PYPI: https://pypi.python.org/pypi/chardet/
-# Home Page: https://github.com/chardet/chardet
-# Documentation: https://chardet.readthedocs.io
+# - Universal encoding detector for Python 2 and 3
+# - Home Page: https://github.com/chardet/chardet
+# - Documentation: https://chardet.readthedocs.io
 #
 # 通过encode()和decode()可以转换Unicode表示的str和bytes两种数据类型，如果不知道编码，需要先“猜测”编码，难以有效对bytes做decode()；
 # 使用chardet可以对未知编码的bytes做检测，确认编码后，易于转换为str；

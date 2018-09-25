@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 from contextlib import contextmanager
 from contextlib import closing

@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 from contextlib import contextmanager
 
@@ -18,7 +17,7 @@ with func():
 
 # ### 标准库contextlib模块
 # - Utilities for with-statement contexts
-# - 官方文档：https://docs.python.org/3/library/contextlib.html
+# - https://docs.python.org/3/library/contextlib.html
 #
 # ### with语句
 # Python的with语句可以方便地使用资源，而不必担心资源没有关闭；

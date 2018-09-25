@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import itertools
 
@@ -38,5 +37,5 @@ for key, group in itertools.groupby('AaBbcCc', lambda c: c.upper()):
 
 # ### 标准库itertools模块
 # - Functions creating iterators for efficient looping
-# - 官方文档：https://docs.python.org/3/library/itertools.html
-# - itertools模块常用来扩展迭代器的使用
+# - https://docs.python.org/3/library/itertools.html
+# - 常用来扩展迭代器的使用；

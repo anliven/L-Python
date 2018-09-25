@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 
 from urllib import request
@@ -21,4 +20,4 @@ with opener.open('http://www.pythonchallenge.com/') as f:
 
 # ### 标准库urllib模块
 # - URL handling modules
-# - 官方文档：https://docs.python.org/3/library/urllib.html
+# - https://docs.python.org/3/library/urllib.html

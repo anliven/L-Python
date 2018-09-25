@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import paramiko
 
@@ -21,5 +20,8 @@ def ssh2_trans(ip, username, passwd, cmd):
         trans.close()
 
 
-ssh2_trans("10.91.116.87", "root", "arthur", "w")  # 注意：实参均为字符串类型
-ssh2_trans("10.91.116.88", "root", "arthur", "hostname;uptime")  # 通过分号分割多个命令
+ssh2_trans("10.91.48.171", "root", "arthur", "w")  # 注意：实参均为字符串类型
+ssh2_trans("10.91.48.172", "root", "arthur", "hostname;uptime")  # 通过分号分割多个命令
+
+# ### paramiko示例
+# 实现SSH登录并执行命令；

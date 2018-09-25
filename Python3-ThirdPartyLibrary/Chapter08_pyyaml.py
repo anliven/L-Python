@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import yaml
 import os
@@ -21,8 +20,9 @@ with open(file_path, 'a', encoding='utf-8') as f:
     yaml.dump(data, f)
 
 # ### pyyaml
-# - HomePage：http://pyyaml.org/wiki/PyYAML
-# - PyPI：https://pypi.org/project/PyYAML/
+# - PyYAML is a YAML parser and emitter for Python.
+# - HomePage: http://pyyaml.org/wiki/PyYAML
+# - Documentation: https://pyyaml.org/wiki/PyYAMLDocumentation
 #
 # ### YAML（Yet Another Markup Language）
 # YAML实质上是一种通用的数据串行化格式，适用于编写配置文件，非常简洁和强大，比JSON格式更方便；

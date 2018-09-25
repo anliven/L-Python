@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 from collections import defaultdict
 import json
@@ -16,4 +15,4 @@ root['Page']['Java'] = None
 print(type(root))
 print(json.dumps(root, indent=4))
 
-# 使用collections模块的defaultdict构造树形数据结构
+# 使用collections模块的defaultdict可以构造树形数据结构；

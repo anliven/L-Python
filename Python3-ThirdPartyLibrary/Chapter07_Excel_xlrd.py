@@ -28,9 +28,9 @@ for (row, row_range, col, col_range) in s_3.merged_cells:
     print(s_3.cell_value(row, col))
 
 # ### xlrd
-# This package is for reading data and formatting information from older Excel files (ie: .xls)；
-# PyPI：https://pypi.org/project/xlrd/
-# Homepage：http://www.python-excel.org/
+# - This package is for reading data and formatting information from older Excel files (ie: .xls).
+# - Homepage: http://www.python-excel.org/
+# - Documentation: https://xlrd.readthedocs.io/en/latest/
 #
 # ### 读取日期格式单元格的内容
 # python读取excel单元格内容，返回值有5种类型(ctype)：0(empty)、1(string)、2(number)、3(date)、4(boolean)、5(error)；
@@ -40,3 +40,8 @@ for (row, row_range, col, col_range) in s_3.merged_cells:
 # merged_cells()：获取合并单元格，返回结果的形式为“(row,row_range,col,col_range)”；
 # 例如(7, 8, 2, 6)的含义是第7行的第2到5列为合并单元格；
 # 只能通过合并单元格第一个cell的行列索引来获取合并单元格的内容，否则会得到空值；
+#
+# ### openpyxl
+# - openpyxl is a Python library to read/write Excel 2010 xlsx/xlsm/xltx/xltm files.
+# - Homepage: http://www.python-excel.org/
+# - Documentation: https://openpyxl.readthedocs.org

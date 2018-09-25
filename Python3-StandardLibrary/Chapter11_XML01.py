@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 from xml.parsers.expat import ParserCreate
 
@@ -39,11 +38,11 @@ print('\n'.join(x))
 
 # ### xml package
 # - XML Processing Modules
-# - 官方文档：https://docs.python.org/3/library/xml.html
+# - https://docs.python.org/3/library/xml.html
 #
 # ### 标准库xml.parsers.expat模块
 # - Fast XML parsing using Expat
-# - 官方文档：https://docs.python.org/3/library/pyexpat.html
+# - https://docs.python.org/3/library/pyexpat.html
 #
 # ### 操作XML的两种方法
 # - DOM：将整个XML读入内存，解析为树，可以任意遍历树的节点；占用内存大，解析慢；

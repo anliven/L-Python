@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import webbrowser
 
@@ -12,8 +11,8 @@ webbrowser.register('chrome', None, webbrowser.BackgroundBrowser(chromePath))  #
 webbrowser.get('chrome').open('www.baidu.com', new=1, autoraise=True)  # # webbrowser.get()方法获取到系统浏览器的操作对象
 
 # ### 标准库webbrowser模块
-# Convenient Web-browser controller
-# https://docs.python.org/3/library/webbrowser.html
+# - Convenient Web-browser controller
+# - https://docs.python.org/3/library/webbrowser.html
 #
 # ### webbrowser.open(url, new=0, autoraise=True)
 # Display url using the default browser

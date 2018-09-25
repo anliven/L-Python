@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import psutil
 
@@ -49,7 +48,6 @@ print("process: ", p.name(),  # 进程名称
 psutil.test()  # test()函数可模拟出ps命令的效果
 
 # ### psutil
-# Cross-platform lib for process and system monitoring in Python.
-# PYPI: https://pypi.python.org/pypi/psutil/
-# Home Page: https://github.com/giampaolo/psutil
-# Documentation: http://psutil.readthedocs.io/en/latest/
+# - Cross-platform lib for process and system monitoring in Python.
+# - Home Page: https://github.com/giampaolo/psutil
+# - Documentation: http://psutil.readthedocs.io/en/latest/

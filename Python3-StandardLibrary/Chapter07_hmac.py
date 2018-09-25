@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import hmac
 import random
@@ -39,8 +38,8 @@ print('login ok')
 
 # ### 标准库hmac模块
 # - Keyed-Hashing for Message Authentication
-# - 官方文档：https://docs.python.org/3/library/hmac.html
+# - https://docs.python.org/3/library/hmac.html
 #
 # ### Hmac算法（Keyed-Hashing for Message Authentication）
 # 通过一个标准算法，在计算哈希的过程中，把key混入计算过程中；
-# Hmac算法实现了“加盐”的过程，并且针对所有哈希算法都通用；
+# 实现了“加盐”的过程，并且针对所有哈希算法都通用；

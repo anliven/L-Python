@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 from html.parser import HTMLParser
 
@@ -43,8 +42,8 @@ parser.feed(h3)
 
 # ### html package
 # - HyperText Markup Language support
-# - 官方文档：https://docs.python.org/3/library/html.html
+# - https://docs.python.org/3/library/html.html
 #
 # ### 标准库html.parser模块
 # - Simple HTML and XHTML parser
-# - 官方文档：https://docs.python.org/3/library/html.parser.html
+# - https://docs.python.org/3/library/html.parser.html

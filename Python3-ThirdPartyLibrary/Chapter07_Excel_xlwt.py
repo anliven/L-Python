@@ -39,12 +39,17 @@ if __name__ == '__main__':
     write_excel()
 
 # ### xlwt
-# This package is for writing data and formatting information to older Excel files (ie: .xls)；
-# PyPI：https://pypi.org/project/xlwt/
-# Homepage：http://www.python-excel.org/
+# - This package is for writing data and formatting information to older Excel files (ie: .xls).
+# - Homepage: http://www.python-excel.org/
+# - Documentation: https://xlwt.readthedocs.io/en/latest/
 #
 # ### 写入合并单元格的内容
 # write_merge(x, x+m, y, y+n, string, style)
 # - “x, x+m, y, y+n”：行、跨行个数、列、跨列个数，都以0开始计数；
 # - string: 写入的单元格内容；
 # - style：单元格样式；
+#
+# ### openpyxl
+# - openpyxl is a Python library to read/write Excel 2010 xlsx/xlsm/xltx/xltm files.
+# - Homepage: http://www.python-excel.org/
+# - Documentation: https://openpyxl.readthedocs.org

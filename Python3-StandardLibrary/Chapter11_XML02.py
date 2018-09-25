@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import xml.etree.ElementTree as ET
 import os
@@ -82,8 +81,8 @@ os.remove(new_xml2)
 
 # ### xml package
 # - XML Processing Modules
-# - 官方文档：https://docs.python.org/3/library/xml.html
+# - https://docs.python.org/3/library/xml.html
 #
 # ### 标准库xml.etree.ElementTree模块
 # - The ElementTree XML API(实现用于解析和创建XML数据的简单有效的API)
-# - 官方文档：https://docs.python.org/3/library/xml.etree.elementtree.html
+# - https://docs.python.org/3/library/xml.etree.elementtree.html

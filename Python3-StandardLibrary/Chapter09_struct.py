@@ -1,4 +1,3 @@
-#! python3
 # -*- coding: utf-8 -*-
 import struct
 
@@ -13,8 +12,8 @@ print(struct.unpack('>IH', b'\x07[\xcd\x15\x03\x15'))
 
 # ### 标准库struct模块
 # - Interpret bytes as packed binary data
-# - 官方文档：https://docs.python.org/3/library/struct.html
-# - Python不适合编写底层操作字节流的代码，但可以利用struct应对性能要求不高的场景；
+# - https://docs.python.org/3/library/struct.html
+# - 虽然Python不适合编写底层操作字节流的代码，但可以利用struct应对性能要求不高的场景；
 #
 # ### 一些方法
 # - pack(fmt,v1,v2…)：按照给定的格式(fmt)，把数据转换成字符串(字节流)，并将该字符串返回；

@@ -13,9 +13,9 @@ ws['A1'] = 123456789
 ws2 = wb['Sheet-Two']  # 通过Worksheet['表名']获取Worksheet对象
 ws2['B1'] = "abc abc abc"
 
-wb.create_sheet("Sheet-3th")  # 创建一个空的表格
+wb.create_sheet(title="Sheet-3th")  # 创建一个指定名称的空表格
 
-wb.save(filename="Chapter07_Excel_openpyxl_Test.xlsx")
+wb.save(filename="Chapter07_Excel_openpyxl_Test.xlsx")  # 文件操作完成后必须调用Workbook的save()方法来保存改动
 wb.close()
 
 # ### 相关的类
@@ -31,13 +31,15 @@ wb.close()
 # 常见的Workbook属性和方法
 #   - read_only：判断是否以read_only模式打开Excel文档
 #   - encoding：获取文档的字符集编码
-#   - worksheets：以列表的形式返回所有的Worksheet
-#   - sheetnames：以列表的形式返回工作簿中所有的表名
+#   - worksheets：以列表的形式返回所有Worksheet
+#   - sheetnames：以列表的形式返回所有WorkSheet的名字
 #   - properties：获取文档的元数据（标题，创建者，创建日期等）
-#   - active：获取当前活跃的Worksheet对象
+#   - active：获取当前活跃（默认选中）的Worksheet对象
 #   - get_sheet_names：获取所有表格的名称(建议通过Workbook的sheetnames属性即可获取)
-#   - get_sheet_by_name：通过表格名称获取Worksheet对象(建议通过Worksheet['表名']获取)
+#   - get_sheet_by_name(name)：通过表格名称获取Worksheet对象(建议通过Worksheet['name']获取)
 #   - get_active_sheet：获取活跃的表格(建议通过active属性获取)
 #   - remove_sheet：删除一个表格
+#   - remove(worksheet)：删除一个WorkSheet对象
 #   - create_sheet：创建一个空的表格
 #   - copy_worksheet：在Workbook内拷贝表格
+#   - save(filename)：保存到文件

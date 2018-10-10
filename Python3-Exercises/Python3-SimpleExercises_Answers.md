@@ -1,6 +1,5 @@
-# Python3-SimpleExercises
 
-## 001 - 005
+# 001 - 005
 
 ### 001 不使用列表，对输入的三个整数做升序排序；
 ```python
@@ -71,7 +70,7 @@ else:
 
 
 
-## 006 - 010
+# 006 - 010
 
 ### 006 反转字符串的大小写；
 ```python
@@ -137,7 +136,7 @@ print([x for x in range(100, 1000) if int(x / 100) == x % 10])
 
 
 
-## 011 - 015
+# 011 - 015
 
 ### 011 以文件形式保存输入内容, 文件名以日期时间作为前缀；
 ```python
@@ -182,7 +181,7 @@ print(sorted(in_numbers, reverse=True))
 
 
 
-## 016 - 020
+# 016 - 020
 
 ### 016 求一个整数列表所有元素的积；
 ```python
@@ -271,7 +270,7 @@ print(Person.count)
 
 
 
-## 021 - 025
+# 021 - 025
 
 ### 021 将IPv4地址转换成列表；
 ```python
@@ -319,7 +318,7 @@ def add_binary(n1, n2):
 
 
 
-## 026 - 030
+# 026 - 030
 
 ### 026 以位数扩展的形式来表示一个非负整数，例如321的对应表示为“300 + 20 + 1”；
 ```python
@@ -370,7 +369,7 @@ def iterate(datas):
 
 
 
-## 031 - 035
+# 031 - 035
 
 ### 031 统计一个字符串中相邻n个字符的子字符重复次数；
 ```python
@@ -384,4 +383,26 @@ def get_items(seq, n, r=1):
 ### 032 打印九九乘法表；
 ```python
 print('\n'.join([' '.join(['%s*%s=%-2s' % (y, x, x * y) for y in range(1, x + 1)]) for x in range(1, 10)]))
+```
+### 033 实现一个带访问计数器的列表；
+```python
+class CountList(list):
+    """A list with access counters"""
+
+    counter = 0
+
+    def __getitem__(self, index):
+        self.counter += 1
+        return super(CountList, self).__getitem__(index)
+
+
+t = CountList()
+t.append('AAA')
+print(t, t[0])
+print(t.counter)
+
+t2 = CountList([111, 222, 333])
+t2.append(666)
+print(t2, t2[0], t2[1], t2[2], t2[3])
+print(t2.counter)
 ```

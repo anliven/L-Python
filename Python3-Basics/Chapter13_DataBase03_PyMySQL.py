@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import pymysql  # 引入pymysql模块
 
 conn = pymysql.connect("192.168.16.200", "root", "anliven", "pythondb")  # connect()打开数据库连接

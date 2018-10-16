@@ -28,7 +28,8 @@ while True:  # 通常在一个无限循环中完成新连接的建立和处理
 # 套接字基本上是一个信息通道，两端各有一个程序（服务器套接字和客户端套接字），通过套接字可以向对方发送消息；
 # 创建服务器套接字后，将在某个网络地址（IP地址和端口号）处监听，等待客户端连接请求，直到和客户端套接字建立连接，双方就能通信；
 #
-# ### Python中的套接字
+# ### 模块socket
+# Low-level networking interface
+# 详细信息：https://docs.python.org/3/library/socket.html
 # Python中的套接字是模块socket中socket类的实例；
 # 在Python中大多数网络编程都隐藏了模块socket的基本工作原理，不会与套接字直接交互；
-# 详细信息：https://docs.python.org/3/library/socket.html

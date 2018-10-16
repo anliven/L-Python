@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
 import sys
-import Chapter01_logging04_b as mB  # 导入其他模块
+import Chapter14_logging04_b as mB  # 导入其他模块
 
 logger = logging.getLogger('mA')  # 定义Logger的名称
 logger.setLevel(level=logging.DEBUG)

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import logging
-import Chapter01_logging05_b as moduleB  # 导入其他模块
+import Chapter14_logging05_b as moduleB  # 导入其他模块
 import yaml
 import logging.config
 import os
@@ -22,7 +22,7 @@ def log_a():
 
 
 if __name__ == '__main__':
-    config_file_path = 'Chapter01_logging05_config.yaml'
+    config_file_path = 'Chapter14_logging05_config.yaml'
     setup_logging(config_file_path)
     log_a()
     moduleB.log_b()  # 调用导入模块的run()方法

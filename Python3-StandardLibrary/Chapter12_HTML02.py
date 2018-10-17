@@ -1,70 +1,48 @@
 # -*- coding: utf-8 -*-
-from urllib import request
+from urllib.request import urlopen
 from html.parser import HTMLParser
 
 
-class MyHTMLParser(HTMLParser):
+def isjob(url):
+    try:
+        a, b, c, d = url.split('/')
+    except ValueError:
+        return False
+    return a == d == '' and b == 'jobs' and c.isdigit()
 
-    def __init__(self):
-        HTMLParser.__init__(self)
-        self.event_info = []
-        self.temp_dict = {}
-        self.flag = 0
+
+class Scraper(HTMLParser):
+    in_link = False  # 使用布尔状态变量（属性）来跟踪是否位于相关的链接中
 
     def handle_starttag(self, tag, attrs):
-        if ('class', 'event-title') in attrs:
-            self.flag = 1
-        if 'time' == tag:
-            self.flag = 2
-        if ('class', 'event-location') in attrs:
-            self.flag = 3
+        attrs = dict(attrs)  # 参数attrs是形如(key,value)的元组组成的列表，这里使用dick函数转换为字典
+        url = attrs.get('href', '')
+        if tag == 'a' and isjob(url):
+            self.url = url
+            self.in_link = True  # 在事件处理程序中，检查并更新属性
+            self.chunks = []
+
+    def handle_data(self, data):  # 假定文本分成多个块，需要多次调用handle_data
+        if self.in_link:  # 在事件处理程序中，检查并更新属性
+            self.chunks.append(data)  # 属性chunks
 
     def handle_endtag(self, tag):
-        pass
-
-    def handle_startendtag(self, tag, attrs):
-        pass
-
-    def handle_data(self, content):
-        if self.flag == 1:
-            self.temp_dict['name'] = content
-            self.flag = 0
-
-        if self.flag == 2:
-            self.temp_dict['date'] = content
-            self.flag = 0
-
-        if self.flag == 3:
-            self.temp_dict['address'] = content
-            self.flag = 0
-            self.event_info.append(self.temp_dict)
-            self.temp_dict = {}
-
-    def handle_comment(self, content):
-        pass
-
-    def handle_entityref(self, name):
-        pass
-
-    def handle_charref(self, name):
-        pass
-
-    def print_info(self):
-        for n in self.event_info:
-            print('-----------------------------------------------------')
-            print('Events: %s' % n['name'])
-            print('Date: %s' % n['date'])
-            print('Address: %s' % n['address'])
+        if tag == 'a' and self.in_link:  # 在事件处理程序中，检查并更新属性
+            print('{} (http://python.org{})'.format(''.join(self.chunks), self.url))  # 合并所有的文本块并打印
+            self.in_link = False  # 在事件处理程序中，检查并更新属性
 
 
-if __name__ == '__main__':
-    proxy_handler = request.ProxyHandler({'https': '10.144.1.10:8080'})  # 使用https的代理
-    opener = request.build_opener(proxy_handler)
-    with opener.open('https://www.python.org/events/python-events/') as f:
-        data = f.read()
-        parser = MyHTMLParser()
-        parser.feed(data.decode('utf-8'))
-        parser.print_info()
+text = urlopen('http://python.org/jobs').read().decode()
+parser = Scraper()
+parser.feed(text)  # 调用feed方法运行解析器
+parser.close()
 
-# ### 示例
-# 解析HTML(https://www.python.org/events/python-events/)，获得Python官网发布的会议时间、名称和地点；
+# ### 脚本说明
+# 使用html.parser模块实现屏幕抓取（下载网页并从中提取和分析信息）；
+#   - 无需实现所有的事件处理程序（解析器回调方法）；
+#   - 也可能无需创建整个文档的抽象表示（例如文档树）就能找到所需的内容；
+#   - 只需要跟踪找到目标内容所需的信息即可；
+#
+# ### 对比正则表达式
+# 对于屏幕抓取而言，使用html.parser模块比使用正则表达式更健壮（应对输入数据变化的能力更强）；
+# 但代码实现起来可能更繁琐，结构不清晰；

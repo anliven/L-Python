@@ -12,7 +12,7 @@ print('Hello, world!')
 # 执行脚本：
 #   1-启动支持cgi的Web服务器：在命令行下执行“py -3 -m http.server --cgi”；
 #   2-将本CGI脚本放在服务器所在目录的子目录cgi-bin，并设置权限；
-#   3-在浏览器打开“http://127.0.0.1:8000/cgi-bin/Chapter18_Web02_cgitb.py”；
+#   3-在浏览器打开“http://127.0.0.1:8000/cgi-bin/Chapter16_Web05_cgitb.py”；
 #   4-打开的页面将显示有关“ZeroDivisionError”的信息；
 #
 # ### 标准库cgitb模块

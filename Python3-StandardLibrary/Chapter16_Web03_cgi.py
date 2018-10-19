@@ -4,6 +4,7 @@ import cgi
 form = cgi.FieldStorage()  # 创建FieldStorage实例（应只创建一个）
 name = form.getvalue('name', 'world')  # CGI脚本通过getvalue方法获取值，这里默认值为world
 print("""Content-type: text/html
+
 <html>
   <head>
     <title>Greeting Page</title>

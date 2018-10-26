@@ -18,7 +18,7 @@ if __name__ == "__main__":
     t3 = timeit.timeit("timeTest()", setup="from __main__ import timeTest", number=10)
     print("t3: ", t3)
 
-# ### 标准库time模块
+# ### 标准库timeit模块
 # Measure execution time of small code snippets
 # https://docs.python.org/3/library/timeit.html
 # 可以对小段Python代码的运行时间进行简单测试；

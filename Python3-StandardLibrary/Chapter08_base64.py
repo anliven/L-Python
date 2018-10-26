@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import base64
 
 en = base64.b64encode(b'Testing ! \x00')

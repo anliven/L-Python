@@ -1,15 +1,24 @@
 # -*- coding: utf-8 -*-
 
 
-def fnA(num):
-    def fnB(val):
-        return num * val
+def fnA(x):
+    def fnB():  # 当一个嵌套函数在其外部区域引用了一个值时，该嵌套函数就是一个闭包,其意义就是会记录这个值
+        return x * x
 
     return fnB  # 函数作为返回值
 
 
-t = fnA(8)
-print(t(9))
+def fnC(num):
+    def fnD(val):
+        return num * val
+
+    return fnD
+
+
+t = fnA(7)()
+print(t)
+t2 = fnC(8)
+print(t2(9))
 
 
 # 示例-1

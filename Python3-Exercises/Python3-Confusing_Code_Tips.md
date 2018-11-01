@@ -273,3 +273,10 @@ for循环的本质就是遵循迭代器协议去访问对象，Python中所有�
 ```
 拆包字典时，将会得到键，而不是键值对；
 ```
+
+## 43
+```
+Python中的三元运算规则：
+- “[on true] if [expression] else [on false]”；
+- 如果表达式为True就执行[on true]中的语句，否则就执行[on false]中的语句；
+```

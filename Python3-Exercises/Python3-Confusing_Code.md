@@ -844,3 +844,11 @@ print("x - {}, y - {}, z - {}".format(x, y, z))
 part, *rest = test_dict
 print("*rest - ", *rest)
 ```
+
+
+## 43
+以下代码的执行结果是什么？
+```python
+a, b = 2, 3
+print("Hi") if a < b else print("Bye")
+```

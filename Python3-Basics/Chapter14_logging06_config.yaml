@@ -15,12 +15,12 @@ handlers:  # 定义Handler的配置
     class : logging.FileHandler
     formatter: simple
     level: DEBUG
-    filename: Chapter01_logging05_debug.log
+    filename: Chapter01_logging06_debug.log
   error:
     class: logging.handlers.RotatingFileHandler
     level: ERROR
     formatter: simple
-    filename: Chapter01_logging05_error.log
+    filename: Chapter01_logging06_error.log
     maxBytes: 10485760
     backupCount: 20
     encoding: utf8

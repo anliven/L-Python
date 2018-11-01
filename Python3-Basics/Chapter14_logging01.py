@@ -8,9 +8,9 @@ print('Python Version: ', sys.version, '\nPlatform:', sys.platform, '\nInfo:', s
 print('OS Version: ', platform.version(), '\nPlatform:', platform.platform(), '\nPython:', platform.python_version())
 
 if platform.platform().startswith('Windows'):
-    logging_file = os.path.join(os.getcwd(), 'test.log')  # os.path.join()函数聚合位置信息，并符合当前操作系统的预期格式
+    logging_file = os.path.join(os.getcwd(), 'Chapter14_logging01_output.log')  # os.path.join()函数聚合位置信息，并符合当前操作系统的预期格式
 else:
-    logging_file = os.path.join(os.getenv('PWD'), 'test.log')
+    logging_file = os.path.join(os.getenv('PWD'), 'Chapter14_logging01_output.log')
 
 print("Logging to", logging_file)
 
@@ -35,14 +35,6 @@ with open(logging_file) as f:
 
 os.remove(logging_file)
 
-# ### Python标准库（Python Standard Library）
-# - 标准库是标准的Python安装包中的一部分，包含了大量有用的模块，能够满足和实现大部分的功能需求；
-# - 熟悉Python标准库将极大地有助于解决问题；
-#
-# ### 一些文档
-# - Python标准库文档: http://docs.python.org/3/library/
-# - Python 3 Module of the Week : https://pymotw.com/3/
-#
 # ### 标准库logging模块
 # - Logging facility for Python
 # - https://docs.python.org/3/library/logging.html
@@ -53,24 +45,25 @@ os.remove(logging_file)
 # - 灵活的配置和格式化功能：输出当前模块信息、运行时间等；
 #
 # ### logging模块日志信息的输出格式
-# 借助basicConfig进行全局配置格式化输出内容
-# - %(levelno)s ：打印日志级别的数值
-# - %(levelname)s ：打印日志级别的名称
-# - %(pathname)s ：打印当前执行程序的路径，其实就是sys.argv[0]
-# - %(filename)s ：打印当前执行程序名
-# - %(funcName)s ：打印日志的当前函数
-# - %(lineno)d ：打印日志的当前行号
-# - %(asctime)s ：打印日志的时间
-# - %(thread)d ：打印线程ID
-# - %(threadName)s ：打印线程名称
-# - %(process)d ：打印进程ID
-# - %(processName)s ：打印线程名称
-# - %(module)s ：打印模块名称
-# - %(message)s ：打印日志信息
+# 借助basicConfig进行全局配置格式化输出内容：
+#   - %(levelno)s ：打印日志级别的数值
+#   - %(levelname)s ：打印日志级别的名称
+#   - %(pathname)s ：打印当前执行程序的路径，其实就是sys.argv[0]
+#   - %(filename)s ：打印当前执行程序名
+#   - %(funcName)s ：打印日志的当前函数
+#   - %(lineno)d ：打印日志的当前行号
+#   - %(asctime)s ：打印日志的时间
+#   - %(thread)d ：打印线程ID
+#   - %(threadName)s ：打印线程名称
+#   - %(process)d ：打印进程ID
+#   - %(processName)s ：打印线程名称
+#   - %(module)s ：打印模块名称
+#   - %(message)s ：打印日志信息
 #
 # ### 输出日志的等级
-# logging模块的每个日志等级都对应了一个数值，系统只会输出大于或等于该指定日志等级数值的日志；
-# 例如设置输出日志level为INFO，那么将不会输出DEBUG和NOTSET级别的日志；
+# logging模块通过“日志级别”来区分日志的重要程度，每个日志等级都对应了一个数值，系统只会输出大于或等于该指定日志等级数值的日志；
+# 默认日志的级别为warning，级别比warning高的日志才会被显示（critical > error > warning > info > debug）；
+# 例如：设置输出日志level为INFO，那么将不会输出DEBUG和NOTSET级别的日志；
 # - CRITICAL、FATAL --- 50
 # - ERROR --- 40
 # - WARNING、WARN（WARNING的简写形式） --- 30

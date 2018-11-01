@@ -30,3 +30,8 @@ print(b.my_prop)
 print(b.my_name)
 b.my_test()
 print(b.echo("hi"))
+
+# ### 自定义Metaclass的作用
+# 1-可以拦截类的创建；
+# 2-可以读取类的信息，并做修改；
+# 3-可以返回新的类；

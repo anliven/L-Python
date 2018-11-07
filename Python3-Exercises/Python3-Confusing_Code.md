@@ -852,3 +852,36 @@ print("*rest - ", *rest)
 a, b = 2, 3
 print("Hi") if a < b else print("Bye")
 ```
+
+
+## 44
+以下代码的执行结果是什么？
+```python
+Data = dict(zip(('a', 'b', 'c'), (1, 2, 3)))
+Data2 = [Data[s] for s in Data]
+print("Data:", Data)
+print("Data2:", Data2)
+
+print({i: i * i for i in Data2})
+print([[i, i * i] for i in Data2])
+```
+
+## 45
+以下代码的执行结果是什么？
+```python
+a = []
+for _ in range(5):
+    a.append(0)
+b = [0] * 5
+print(a == b)
+
+c = [[0]] * 5
+print(c)
+c[0][0] = 123
+print(c)
+
+d = [[0] for _ in range(5)]
+print(d)
+d[0][0] = 123
+print(d)
+```

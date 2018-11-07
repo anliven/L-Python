@@ -406,3 +406,31 @@ t2.append(666)
 print(t2, t2[0], t2[1], t2[2], t2[3])
 print(t2.counter)
 ```
+### 034 合并两个列表排除重复元素；
+```
+def merge_list(*args):
+    s = set()
+    for i in args:
+        s = s.union(i)
+    print(s)
+    return s
+
+
+a = ['a', 'b', 'c', ]
+b = ['a', 'A', 'B', 'C']
+merge_list(a, b)
+```
+### 035 将目录路径作为输入参数，返回该目录及子目录中文件的路径；
+```
+def print_directory_contents(path):
+    import os
+    for child in os.listdir(path):
+        child_path = os.path.join(path, child)
+        if os.path.isdir(child_path):
+            print_directory_contents(child_path)
+        else:
+            print(child_path)
+
+
+print_directory_contents("D:/AAA/BBB/")
+```

@@ -155,7 +155,3 @@ print('Values-1:', returnNum, '\nValues-2:', returnStr)
 # - 函数的文档字符串（DocString）放置在函数的第一逻辑行；
 # - 可以通过使用函数的“__doc__”属性来获取函数的文档字符串属性，例如：help()函数和pydoc命令；
 # - 强烈建议为所有重要的函数配以文档字符串；
-#
-# ### 内置函数（Built-in Functions）
-# https://docs.python.org/3/library/functions.html
-# Python具有大量实现常用功能的内置函数，也可以自定义函数，建议尽可能使用内置函数；

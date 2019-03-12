@@ -35,6 +35,18 @@ for key, group in itertools.groupby('A BBCCc'):  # groupby()归类迭代器中�
 for key, group in itertools.groupby('AaBbcCc', lambda c: c.upper()):
     print("groupby:", key, list(group))
 
+# 循环嵌套
+x_list = [1, 2, 3]
+y_list = ['a', 'b']
+z_list = ['A']
+for x, y, z in itertools.product(x_list, y_list, z_list):
+    print(x, y, z)
+
+# for x in x_list:
+#     for y in y_list:
+#         for z in z_list:
+#             print(x, y, z)
+
 # ### 标准库itertools模块
 # - Functions creating iterators for efficient looping
 # - https://docs.python.org/3/library/itertools.html

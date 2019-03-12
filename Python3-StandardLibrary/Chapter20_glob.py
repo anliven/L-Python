@@ -1,5 +1,7 @@
 # coding=utf-8
 import glob
+import itertools as it
+import os
 
 file_list = glob.glob(r'./*.py')
 print(type(file_list), file_list)  # 返回的数据类型是列表
@@ -14,6 +16,15 @@ print(file_list3)
 
 file_list4 = glob.glob('../[0-9].*')  # 使用相对路径和指定范围字符
 print(file_list4)
+
+
+def multiple_file_types(*patterns):  # 查找多个文件类型
+    """multiple file types"""
+    return it.chain.from_iterable(glob.glob(pattern) for pattern in patterns)
+
+
+for filename in multiple_file_types("*.txt", "*.py"):
+    print("file: {}".format(os.path.realpath(filename)))  # 调用realpath()函数得到每个文件的绝对路径
 
 # ### 标准库glob模块
 # - Unix style pathname pattern expansion

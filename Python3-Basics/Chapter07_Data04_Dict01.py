@@ -41,11 +41,13 @@ del testDict['DDD']  # 删除键值对
 testDict.pop('CCC')  # pop(key)方法删除键值对
 print('There are {} contacts in the testDict.'.format(len(testDict)))
 
+for key in testDict:  # 遍历字典
+    print('{} - {}'.format(key, testDict[key]))
 for key, value in testDict.items():  # 遍历字典
     print('{} - {}'.format(key, value))
 
 testDict['EEE'] = '55555'  # 添加键值对
-if 'EEE' in testDict:
+if 'EEE' in testDict:  # 字典键值判断
     print("EEE-value is", testDict['EEE'])
 
 testDict['BBB'] = '77777'  # 重新赋值；一个key只能对应一个value，所以多次对同一个key赋值，以最后的赋值为准

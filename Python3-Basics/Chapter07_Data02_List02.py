@@ -10,6 +10,9 @@ testlist[3:3] = ['a', 'b', 'c']  # 使用切片赋值来插入新元素
 testlist[1:8] = []  # 使用切片赋值来删除元素
 print(testlist)
 
+nums = [str(n) for n in range(10)]
+print("".join(nums))  # 创建一个连接从0到9的字符串
+
 test_list = ["Hello", "Python", '!']
 print("".join(test_list))  # 列表转换为字符串 - 针对所有元素为str类型的列表
 print(" ".join(test_list))  # 用空格分割

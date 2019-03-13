@@ -19,7 +19,7 @@ print(id(a) == id(b) == id(c), id(i) == id(j) == id(k))  # id()查看在内存�
 
 a = 555  # 重新赋值
 b = 888
-a, b = b, a  # the fastest way to swap two variables in Python
+a, b = b, a  # 交换赋值，实际上是先生成了一个元组(tuple)对象，然后unpack
 print('a:', a, 'b:', b)
 
 print(keyword.iskeyword(str))  # "str"是否为python关键字
@@ -33,6 +33,15 @@ z: bool = True
 print(type(x), type(y), type(z))
 t: float = 'test'  # 特别注意：仅仅是具备了“提示”功能，对于不符合期望的数据类型并不会报错
 print(type(t))  # 真实数据类型是由实际赋值决定的
+
+# 检查变量是否等于常数
+attr = 789
+if attr:
+    print("attr is true.")
+if not attr:
+    print("attr is false.")
+if attr is None:
+    print("attr is None.")
 
 # ### 变量（Variables）
 # 变量不需要声明类型，但在使用前必须赋值；

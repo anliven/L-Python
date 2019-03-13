@@ -19,6 +19,7 @@ def func(i):
 # 列表推导（List Comprehension）
 sampleList1 = [1, 2, 3, 4]
 print("new list: ", [func(x) for x in sampleList1])  # 使用列表解析产生新列表
+print([elem * 2 for elem in sampleList1 if elem % 2 == 0])  # 列表中符合条件的元素翻倍
 print("old list: ", sampleList1)  # 原始列表保持不变
 
 sampleList2 = ["AAA", "bbb", "CCC"]

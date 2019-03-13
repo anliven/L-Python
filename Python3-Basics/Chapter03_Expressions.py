@@ -15,6 +15,10 @@ breadth = 3
 area = length * breadth
 print('Area is %d and Perimeter is %d' % (area, 2 * (length + breadth)))
 
+m = 77
+n = 88 if (m == 66) else 99  # 三元操作符，这里如果m是66，那么给n赋值88，否则赋值99
+print(n)
+
 # ### 表达式（Expressions）
 # 表达式是将不同数据（变量、函数等）用运算符号按照一定规则组成的语句；
 # - 表达式可以拆分成运算符（Operators）与操作数（Operands）；
@@ -68,3 +72,6 @@ print('Area is %d and Perimeter is %d' % (area, 2 * (length + breadth)))
 # - 相同优先级的运算符将从左至右的方式依次进行求值；
 # - 使用圆括号可以改变运算的顺序；
 # - 建议使用圆括号操作符来对运算符与操作数进行分组，更加明确地指定优先级，使程序更加可读；
+#
+# ### 三元操作符
+# 是“if-else”语句是条件操作符的一个快捷方式：[表达式为真的返回值] if [表达式] else [表达式为假的返回值]

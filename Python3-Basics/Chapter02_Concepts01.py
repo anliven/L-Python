@@ -24,11 +24,14 @@ print('{} was {} years old.'.format(name, age))  # 索引数字是可选项
 print('{0:.3f}'.format(10.0 / 3))  # 对于浮点数保留小数点(.)后三位
 print('{0:_^9}'.format('WOW'))  # 使用下划线填充文本，并保持文字处于中间位置；使用 (^) 定义字符串长度为9
 
-print('This is the 1st line.\nThis is the 2nd line.')  # 换行显示
-print('This is the 1st line. \
-This is the 2nd line.')  # 换行书写，显式行连接（Explicit Line Joining）
+print('This is the 1st line.\nThis is the 2nd line.')  # 结果显示换行
 print('''This is the 1st line.
-This is the 2nd line.''')  # 用'''...'''格式换行书写
+This is the 2nd line.''')  # 三引号格式换行书写，结果显示换行
+
+print('This is the 1st line.\
+This is the 2nd line.')  # 换行书写，显式行连接（Explicit Line Joining），结果显示不换行
+print("This is the 1st line."
+      "This is the 2nd line.")  # 双引号分行书写，结果显示不换行
 
 print(repr("Test, \nTest"))  # 使用repr通常会得到内容的合法Python表达式表示
 print(str("Test, \nTest"))  # 使用str能以合理方式将内容显示给用户

@@ -35,6 +35,15 @@ print(a)
 b = [[] for _ in range(10)]
 b[0].append(10)
 print(b)
+
+c = [[0]] * 5
+c[0][0] = 1
+print(c)
+
+d = [[456]] * 5
+d[0][0] = 0
+d[1].append(789)
+print(d)
 ```
 
 

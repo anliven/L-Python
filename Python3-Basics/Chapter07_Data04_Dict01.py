@@ -82,6 +82,13 @@ newDict4 = {'aaa': "AAA", 'bbb': 456, 'ccc': 789}
 newDict3.update(newDict4)  # 使用一个字典中的项来更新另一个字典；
 print(newDict3)
 
+# 使用字典来存储选择操作
+test = {
+    'sum': lambda x, y: x + y,
+    'subtract': lambda x, y: x - y
+}
+print("Sum:{} Subtract:{}".format(test['sum'](9, 3), test['subtract'](9, 3)))
+
 # ### 字典（Dictionary）
 # - 等同于其他编程语言中的“映射”、“散列”、“关联数组”等；
 # - 字典将键（Keys）与值（Values）联立到一起，其中键必须是唯一的；
